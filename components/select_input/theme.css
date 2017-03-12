@@ -1,0 +1,25 @@
+.select_input {
+    min-width: 120px;
+    text-align: left;
+
+    .value {
+        float: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 100%;
+        padding-right: 14px;
+    }
+
+    .arrow {
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        margin-top: -0.5em;
+        transform: rotate(0deg);
+        transition: transform .2s ease;
+        &.open {
+            transform: rotate(180deg);
+        }
+    }
+}

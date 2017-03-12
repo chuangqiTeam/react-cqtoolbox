@@ -1,0 +1,5 @@
+/* 定义动画基本特性 */
+.ani {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
