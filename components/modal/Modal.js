@@ -66,7 +66,7 @@ class Modal extends Component {
   }
 
   updateAppendElements() {
-    render(<span>{getAppendedElements()}</span>, appendElementContainer);
+    render(<span data-react-toolbox="Modal">{getAppendedElements()}</span>, appendElementContainer);
   }
 
   removeAppendElement() {

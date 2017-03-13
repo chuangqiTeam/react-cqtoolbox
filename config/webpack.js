@@ -68,7 +68,7 @@ const plugins = [
 
   happyPackPlugin({
       name: 'happypack-component-css',
-      loaders: ['style', 'css?modules&localIdentName=[name]__[local]', 'postcss'],
+      loaders: ['style', 'css?modules&localIdentName=[name]__[local]___[hash:base64:5]', 'postcss'],
   }),
 
   happyPackPlugin({

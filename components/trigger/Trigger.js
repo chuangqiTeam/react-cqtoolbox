@@ -1,6 +1,6 @@
 import React, { PropTypes, cloneElement } from 'react';
 import { findDOMNode } from 'react-dom';
-import domAlign from 'dom-align';
+import Popup from '../popup';
 import events from '../utils/events.js';
 import renderModalComponent from '../decorator/renderModalComponent.js';
 import pureRender from '../decorator/pureRender.js';
@@ -28,9 +28,8 @@ class Trigger extends React.Component {
     mask: false,
     maskClosable: false,
     popupAlign: {
-      points: ['tl', 'br'], // align top left point of sourceNode with top right point of targetNode
-      offset: [10, 20], // the offset sourceNode by 10px in x and 20px in y,
-      targetOffset: ['30%','40%'],
+      points: ['tl', 'bl'], // align top left point of sourceNode with top right point of targetNode
+      offset: [0, 0], // the offset sourceNode by 10px in x and 20px in y,
     },
     onPopupVisibleChange: () => void 0,
   }
@@ -68,13 +67,21 @@ class Trigger extends React.Component {
       this.props.renderModalComponent(this.getComponent());
 
     } else {
-      this.clickOutsideHandler = false;
-      events.removeEventsFromDocument({
-        click: this.onDocumentClick,
-      });
 
+      this.removeEventsFromDocument();
       this.props.renderModalComponent();
     }
+  }
+
+  componentWillUnmount() {
+    this.removeEventsFromDocument();
+  }
+
+  removeEventsFromDocument = () => {
+    this.clickOutsideHandler = false;
+    events.removeEventsFromDocument({
+      click: this.onDocumentClick,
+    });
   }
 
   onDocumentClick = (event) => {
@@ -84,7 +91,7 @@ class Trigger extends React.Component {
 
     const root = this.getRootDomNode();
     const popupNode = this.getPopupDomNode();
-    console.log(popupNode);
+
     if (!events.targetIsDescendant(event, root) &&
     !events.targetIsDescendant(event, popupNode)) {
       this.setPopupVisible(false);
@@ -102,33 +109,34 @@ class Trigger extends React.Component {
   }
 
   getComponent = () => {
-    const props = this.props;
+    const {
+      mask,
+      popup,
+      popupAlign,
+    } = this.props;
+
     return (
-      <div ref={component => this._component = component}>
-        {typeof props.popup === 'function' ?
-          props.popup() :
-          props.popup}
-      </div>
+      <Popup
+        mask={mask}
+        align={popupAlign}
+        getRootDomNode={this.getRootDomNode}
+        innerRef={component => this._component = component}>
+        {typeof popup === 'function' ?
+          popup() : popup}
+      </Popup>
     );
   }
 
-  getPopupDomNode() {
+  getPopupDomNode = () => {
     return this._component ?
-    // this._component.getPopupDomNode() : null;
-    this._component : null;
+      this._component.getPopupDomNode() : null;
   }
 
-  getRootDomNode() {
+  getRootDomNode = () => {
     return findDOMNode(this);
   }
 
-  setPopupAlign = (sourceNode, targetNode, popupAlign) => {
-    domAlign(sourceNode, targetNode, popupAlign);
-  }
-
   setPopupVisible = (popupVisible) => {
-    this.clearDelayTimer();
-
     if (this.state.popupVisible !== popupVisible) {
       if (!('popupVisible' in this.props)) {
         this.setState({
@@ -136,13 +144,6 @@ class Trigger extends React.Component {
         });
       }
       this.props.onPopupVisibleChange(popupVisible);
-    }
-  }
-
-  clearDelayTimer = () => {
-    if (this.delayTimer) {
-      clearTimeout(this.delayTimer);
-      this.delayTimer = null;
     }
   }
 
@@ -163,7 +164,6 @@ class Trigger extends React.Component {
     const nextVisible = !this.state.popupVisible;
     this.setPopupVisible(nextVisible);
   }
-
 
   render () {
     const {

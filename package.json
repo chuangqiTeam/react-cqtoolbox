@@ -52,6 +52,7 @@
     "promise": "^7.1.1",
     "ramda": "^0.23.0",
     "react": "^15.4.1",
+    "react-addons-css-transition-group": "^15.4.1",
     "react-css-themr": "^2.0.0",
     "react-dom": "^15.4.1",
     "whatwg-fetch": "^2.0.1"

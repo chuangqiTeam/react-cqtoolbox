@@ -1,37 +1,30 @@
 import React, {Component} from 'react';
-import SelectInput from '../../components/select_input';
-import Trigger from '../../components/trigger';
-
-const selectedItem = {
-  label: '微信',
-  value: '微信',
-};
-
+import Select from '../../components/select';
 
 class SelectTest extends Component {
-  state = {
-    isActive: false,
-  }
-
-  onClick = () => {
-    this.setState({
-      isActive: !this.state.isActive,
-    });
-  }
 
   render() {
+    const selectData = {
+      value: 1,
+      data: [{
+        value: 1,
+        label: '选项一',
+      }, {
+        value: 2,
+        label: '选项二',
+      }, {
+        value: 3,
+        label: '选项三',
+      }],
+      onChange: console.log.bind(console),
+    };
+
     return (
       <section>
         <h5>下拉框</h5>
 
         <div>
-          <Trigger
-            popup={<div>hehe</div>}>
-            <SelectInput
-              isActive={this.state.isActive}
-              onClick={this.onClick}
-              selectedItem={selectedItem} />
-          </Trigger>
+          <Select key="select" {...selectData} />
         </div>
 
       </section>

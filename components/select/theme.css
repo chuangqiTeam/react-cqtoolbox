@@ -1,0 +1,36 @@
+@import '../colors.css';
+@import '../variables.css';
+@import './config.css';
+
+.menu {
+    box-shadow: 0 1px 6px rgba(0,0,0,.2);
+    border-radius: 4px;
+    z-index: 1050;
+    float: left;
+    white-space: nowrap;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: rgba(0,0,0,.65);
+    background: #fff;
+    overflow: hidden;
+    min-width: 120px;
+}
+
+.menuItem {
+  color: var(--color-text);
+  font-size: var(--menu-item-font-size);
+  height: var(--menu-item-height);
+  line-height: var(--menu-item-height);
+  overflow: hidden;
+  padding: 0 var(--menu-item-padding);
+  position: relative;
+  user-select: none;
+  text-align: center;
+
+  &:not(.disabled):hover {
+    background-color: var(--menu-item-hover-background);
+    cursor: pointer;
+  }
+}
