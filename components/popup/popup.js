@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
 import domAlign from 'dom-align';
 import classnames from 'classnames';
+import events from '../utils/events.js';
 
 import Overlay from '../overlay';
 import Portal from '../portal';
@@ -14,7 +15,6 @@ class Popup extends React.Component {
     mask: PropTypes.bool,
     theme: PropTypes.object,
     getRootDomNode: PropTypes.func,
-    // onOverlayClick: PropTypes.func,
   }
 
   static defaultProps = {
@@ -26,10 +26,55 @@ class Popup extends React.Component {
     const target = this.props.getRootDomNode();
     const align = this.props.align;
     this.setPopupAlign(source, target, align);
+    console.log(this.props.active);
+    if (this.props.active) {
+      this.clickOutsideHandler = true;
+      events.addEventsToDocument([{
+        click: this.onDocumentClick,
+      }]);
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.active && !this.clickOutsideHandler) {
+      this.clickOutsideHandler = true;
+      events.addEventsToDocument({
+        click: this.onDocumentClick,
+      });
+    } else {
+      this.removeEventsFromDocument();
+    }
+  }
+
+  componentWillUnmount() {
+    this.removeEventsFromDocument();
+  }
+
+  removeEventsFromDocument = () => {
+    this.clickOutsideHandler = false;
+    events.removeEventsFromDocument({
+      click: this.onDocumentClick,
+    });
   }
 
   setPopupAlign = (sourceNode, targetNode, popupAlign) => {
     domAlign(sourceNode, targetNode, popupAlign);
+  }
+
+  onDocumentClick = (event) => {
+    if (this.props.mask && !this.props.maskClosable) {
+      return;
+    }
+
+    const rootNode = this.props.getRootDomNode();
+    const popupNode = this.getPopupDomNode();
+
+    console.log(rootNode, popupNode);
+
+    if (!events.targetIsDescendant(event, rootNode) &&
+    !events.targetIsDescendant(event, popupNode)) {
+      this.props.setPopupVisible(false);
+    }
   }
 
   getMaskElement = () => {

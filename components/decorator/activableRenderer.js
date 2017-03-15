@@ -48,7 +48,7 @@ const ActivableRendererFactory = (options = { delay: 500 }) =>
       const { active, rendered } = this.state;
 
       return rendered
-        ? <ActivableComponent ref="innerComponent" {...others} active={active} />
+        ? <ActivableComponent {...others} active={active} />
         : null;
     }
   };

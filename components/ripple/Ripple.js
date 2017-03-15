@@ -77,12 +77,7 @@ const rippleFactory = (options = {}) => {
 
       /**
        * Find out a descriptor object for the ripple element being created depending on
-       * the position where the it was triggered and the component's dimensions.
-       *
-       * @param {Number} x Coordinate x in the viewport where ripple was triggered
-       * @param {Number} y Coordinate y in the viewport where ripple was triggered
-       * @return {Object} Descriptor element including position and size of the element
-       */
+       * the position where the it was triggered and the component's dimensions.*/
       getDescriptor(x, y) {
         const { left, top, height, width } = ReactDOM.findDOMNode(this).getBoundingClientRect();
         const { rippleCentered: centered, rippleSpread: spread } = this.props;
@@ -96,8 +91,6 @@ const rippleFactory = (options = {}) => {
       /**
        * Increments and internal counter and returns the next value as a string. It
        * is used to assign key references to new ripple elements.
-       *
-       * @return {String} Key to be assigned to a ripple.
        */
       getNextKey() {
         this.currentCount = this.currentCount ? this.currentCount + 1 : 1;
@@ -107,25 +100,17 @@ const rippleFactory = (options = {}) => {
       /**
        * Return the last generated key for a ripple element. When there is only one ripple
        * and to get the reference when a ripple was just created.
-       *
-       * @return {String} The last generated ripple key.
        */
       getLastKey() {
         return `ripple${this.currentCount}`;
       }
 
-      /**
-       * Variable to store the ripple references
-       */
       rippleNodes = {};
 
       /**
        * Determine if a ripple should start depending if its a touch event. For mobile both
        * touchStart and mouseDown are launched so in case is touch we should always trigger
        * but if its not we should check if a touch was already triggered to decide.
-       *
-       * @param {Boolean} isTouch True in case a touch event triggered the ripple false otherwise.
-       * @return {Boolean} True in case the ripple should trigger or false if it shouldn't.
        */
       rippleShouldTrigger(isTouch) {
         const shouldStart = isTouch ? true : !this.touchCache;
@@ -139,10 +124,6 @@ const rippleFactory = (options = {}) => {
        * ripple present, it creates a new key. If it's a simple ripple and already exists,
        * it just restarts the current ripple. The animation happens in two state changes
        * to allow triggering via css.
-       *
-       * @param {Number} x Coordinate X on the screen where animation should start
-       * @param {Number} y Coordinate Y on the screen where animation should start
-       * @param {Boolean} isTouch Use events from touch or mouse.
        */
       animateRipple(x, y, isTouch) {
         if (this.rippleShouldTrigger(isTouch)) {
@@ -170,7 +151,6 @@ const rippleFactory = (options = {}) => {
        * ends we can be sure that it finished and it can be safely removed from the state.
        * This function is called whenever a new ripple is added to the component.
        *
-       * @param {String} rippleKey Is the key of the ripple to add the event.
        */
       addRippleRemoveEventListener(rippleKey) {
         const self = this;
@@ -190,10 +170,6 @@ const rippleFactory = (options = {}) => {
        * Add an event listener to the document needed to deactivate a ripple and make it dissappear.
        * Deactivation can happen with a touchend or mouseup depending on the trigger type. The
        * ending function is created from a factory function and returned.
-       *
-       * @param {Boolean} isTouch True in case the trigger was a touch event false otherwise.
-       * @param {String} rippleKey It's a key to identify the ripple that should be deactivated.
-       * @return {Function} Callback function that deactivates the ripple and removes the listener
        */
       addRippleDeactivateEventListener(isTouch, rippleKey) {
         const eventType = isTouch ? 'touchend' : 'mouseup';
@@ -206,10 +182,6 @@ const rippleFactory = (options = {}) => {
        * Generates a function that can be called to deactivate a ripple and remove its finishing
        * event listener. If is generated because we need to store it to be called on unmount in case
        * the ripple is still running.
-       *
-       * @param {String} eventType Is the event type that can be touchend or mouseup
-       * @param {String} rippleKey Is the key representing the ripple
-       * @return {Function} Callback function that deactivates the ripple and removes the listener
        */
       createRippleDeactivateCallback(eventType, rippleKey) {
         const self = this;

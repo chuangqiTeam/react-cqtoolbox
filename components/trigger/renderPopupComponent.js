@@ -1,6 +1,5 @@
 import React, {Component, PropTypes} from 'react';
 import { findDOMNode } from 'react-dom';
-import events from '../utils/events.js';
 import Popup from '../popup';
 
 const renderPopupComponent = (WrappedComponent) =>
@@ -34,17 +33,6 @@ const renderPopupComponent = (WrappedComponent) =>
       popupVisible: this.props.popupVisible,
     }
 
-    componentDidMount() {
-      if (this.state.popupVisible) {
-        this.clickOutsideHandler = true;
-        events.addEventsToDocument([{
-          click: this.onDocumentClick,
-        }]);
-
-        this.props.renderPopupComponent(this.getComponent());
-      }
-    }
-
     componentWillReceiveProps(nextProps) {
       if ('popupVisible' in nextProps &&
         this.props.popupVisible !== nextProps.popupVisible) {
@@ -52,50 +40,8 @@ const renderPopupComponent = (WrappedComponent) =>
       }
     }
 
-    componentDidUpdate(prevProps, prevState) {
-      const state = this.state;
-
-      if (state.popupVisible && !this.clickOutsideHandler) {
-        this.clickOutsideHandler = true;
-        events.addEventsToDocument({
-          click: this.onDocumentClick,
-        });
-      } else {
-        this.removeEventsFromDocument();
-      }
-    }
-
-    componentWillUnmount() {
-      this.removeEventsFromDocument();
-    }
-
-    removeEventsFromDocument = () => {
-      this.clickOutsideHandler = false;
-      events.removeEventsFromDocument({
-        click: this.onDocumentClick,
-      });
-    }
-
-    onDocumentClick = (event) => {
-      if (this.props.mask && !this.props.maskClosable) {
-        return;
-      }
-
-      const rootNode = this.getRootDomNode();
-      const popupNode = this.getPopupDomNode();
-
-      if (!events.targetIsDescendant(event, rootNode) &&
-      !events.targetIsDescendant(event, popupNode)) {
-        this.setPopupVisible(false);
-      }
-    }
-
     getRootDomNode = () => {
       return findDOMNode(this.refs._rootComponent);
-    }
-
-    getPopupDomNode = () => {
-      return this._popupComponent.refs.innerComponent.getPopupDomNode();
     }
 
     setPopupVisible = (popupVisible) => {
@@ -129,7 +75,6 @@ const renderPopupComponent = (WrappedComponent) =>
             active={popupVisible}
             mask={mask}
             align={popupAlign}
-            innerRef={component => this._popupComponent = component}
             getRootDomNode={this.getRootDomNode}>
             {typeof popup === 'function' ?
               popup() : popup}
