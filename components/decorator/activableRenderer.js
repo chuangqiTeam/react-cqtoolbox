@@ -46,8 +46,9 @@ const ActivableRendererFactory = (options = { delay: 500 }) =>
     render() {
       const { delay, ...others } = this.props; // eslint-disable-line no-unused-vars
       const { active, rendered } = this.state;
+
       return rendered
-        ? <ActivableComponent {...others} active={active} />
+        ? <ActivableComponent ref="innerComponent" {...others} active={active} />
         : null;
     }
   };

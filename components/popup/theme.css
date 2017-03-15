@@ -1,12 +1,16 @@
+@import '../variables.css';
 
-
-.popup-appear {
+.popup {
     opacity: 0.01;
     transform: translate(0, 10px);
-}
+    opacity: 0;
+    transition:
+      opacity var(--animation-duration) var(--animation-curve-default),
+      transform var(--animation-duration) var(--animation-curve-default);
+    transition-delay: var(--animation-delay);
 
-.popup-appear-active {
-    opacity: 1;
-    transform: translate(0, 0);
-    transition: opacity .2s ease-in, transform .2s ease-in;
+    &.active {
+      opacity: 1;
+      transform: translateY(0%);
+    }
 }

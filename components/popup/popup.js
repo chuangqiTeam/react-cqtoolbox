@@ -1,16 +1,24 @@
 import React, { PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
 import domAlign from 'dom-align';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import classnames from 'classnames';
+
 import Overlay from '../overlay';
+import Portal from '../portal';
 
 class Popup extends React.Component {
 
   static propTypes = {
+    active: PropTypes.bool,
     align: PropTypes.object,
     mask: PropTypes.bool,
     theme: PropTypes.object,
     getRootDomNode: PropTypes.func,
+    // onOverlayClick: PropTypes.func,
+  }
+
+  static defaultProps = {
+    active: false,
   }
 
   componentDidMount() {
@@ -25,37 +33,27 @@ class Popup extends React.Component {
   }
 
   getMaskElement = () => {
-    const {theme, mask} = this.props;
+    const {theme, mask, active, onOverlayClick} = this.props;
 
     return mask ?
     <Overlay
-      active={true}
+      onClick={onOverlayClick}
+      active={active}
       className={theme.overlay} /> : null;
   }
 
   getPopupElement = () => {
-    const {children, theme} = this.props;
+    const {children, theme, active} = this.props;
+
     const newProps = {
-      ...children.props,
       key: 'popup',
       ref: 'popup',
     };
 
-    const popupTheme = {
-      appear: theme['popup-appear'],
-      appearActive: theme['popup-appear-active'],
-    };
+    const classes = classnames(theme.popup, {
+      [theme.active]: active});
 
-    return (
-      <ReactCSSTransitionGroup
-        transitionName={popupTheme}
-        transitionAppear={true}
-        transitionAppearTimeout={500}
-        transitionEnter={false}
-        transitionLeave={false}>
-          {React.cloneElement(children, newProps)}
-      </ReactCSSTransitionGroup>
-    );
+    return <div className={classes}>{React.cloneElement(children, newProps)}</div>;
   }
 
   getPopupDomNode = () => {
@@ -64,11 +62,11 @@ class Popup extends React.Component {
 
   render () {
     return (
-      <div>
+      <Portal>
         {this.getMaskElement()}
         {this.getPopupElement()}
-      </div>
-    )
+      </Portal>
+    );
   }
 }
 

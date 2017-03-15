@@ -2,8 +2,10 @@ import Popup from './Popup';
 import theme from './theme.css';
 import { themr } from 'react-css-themr';
 import { POPUP } from '../identifiers';
+import activableRenderer from '../decorator/activableRenderer.js';
 
-const ThemedPopup = themr(POPUP, theme)(Popup);
+const ActivablePopup = activableRenderer()(Popup);
+const ThemedPopup = themr(POPUP, theme)(ActivablePopup);
 
 export default ThemedPopup;
-export {ThemedPopup};
+export {ThemedPopup as Popup};
