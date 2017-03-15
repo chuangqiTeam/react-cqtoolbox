@@ -75,7 +75,8 @@ const renderPopupComponent = (WrappedComponent) =>
             active={popupVisible}
             mask={mask}
             align={popupAlign}
-            getRootDomNode={this.getRootDomNode}>
+            getRootDomNode={this.getRootDomNode}
+            onRequestClose={this.setPopupVisible}>
             {typeof popup === 'function' ?
               popup() : popup}
           </Popup>

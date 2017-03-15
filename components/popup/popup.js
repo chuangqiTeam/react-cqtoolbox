@@ -15,6 +15,7 @@ class Popup extends React.Component {
     mask: PropTypes.bool,
     theme: PropTypes.object,
     getRootDomNode: PropTypes.func,
+    onRequestClose: PropTypes.func,
   }
 
   static defaultProps = {
@@ -26,7 +27,7 @@ class Popup extends React.Component {
     const target = this.props.getRootDomNode();
     const align = this.props.align;
     this.setPopupAlign(source, target, align);
-    console.log(this.props.active);
+
     if (this.props.active) {
       this.clickOutsideHandler = true;
       events.addEventsToDocument([{
@@ -69,11 +70,9 @@ class Popup extends React.Component {
     const rootNode = this.props.getRootDomNode();
     const popupNode = this.getPopupDomNode();
 
-    console.log(rootNode, popupNode);
-
     if (!events.targetIsDescendant(event, rootNode) &&
     !events.targetIsDescendant(event, popupNode)) {
-      this.props.setPopupVisible(false);
+      this.props.onRequestClose(false);
     }
   }
 
