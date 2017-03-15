@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { findDOMNode } from 'react-dom';
 import domAlign from 'dom-align';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import Overlay from '../overlay';
 
 class Popup extends React.Component {
 
@@ -26,20 +27,10 @@ class Popup extends React.Component {
   getMaskElement = () => {
     const {theme, mask} = this.props;
 
-    const maskTheme = {
-      appear: theme['mask-appear'],
-      appearActive: theme['mask-appear-active'],
-    };
-
     return mask ?
-    <ReactCSSTransitionGroup
-      transitionName={maskTheme}
-      transitionAppear={true}
-      transitionAppearTimeout={500}
-      transitionEnter={false}
-      transitionLeave={false}>
-        <div className={theme.mask}></div>
-    </ReactCSSTransitionGroup> : null;
+    <Overlay
+      active={true}
+      className={theme.overlay} /> : null;
   }
 
   getPopupElement = () => {

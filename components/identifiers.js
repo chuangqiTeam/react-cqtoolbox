@@ -1,7 +1,9 @@
-export const BUTTON = 'RTButton';
-export const RIPPLE = 'RTRIPPLE';
-export const ICON = 'RTICON';
-export const SELECT = 'SELECT';
-export const SELECT_INPUT = 'RTSELECTINPUT';
-export const MENU = 'RTMENU';
-export const POPUP = 'POPUP';
+export const BUTTON = 'CQButton';
+export const RIPPLE = 'CQRIPPLE';
+export const ICON = 'CQICON';
+export const SELECT = 'CQSELECT';
+export const SELECT_INPUT = 'CQSELECTINPUT';
+export const MENU = 'CQMENU';
+export const POPUP = 'CQPOPUP';
+export const OVERLAY = 'CQOVERLAY';
+export const DIALOG = 'CQDIALOG';

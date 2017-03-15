@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-import Modal from '../modal';
+import Portal from '../portal';
 
 const renderModalComponent = (WrappedComponent) =>
   class ModalComponent extends Component {
 
     state = {
-      open: false,
       component: null,
     }
 
@@ -25,7 +24,7 @@ const renderModalComponent = (WrappedComponent) =>
 
       return (
         <div>
-          {!!component && <Modal>{component}</Modal>}
+          <Portal>{component}</Portal>
           <WrappedComponent {...newProps} />
         </div>
       );
