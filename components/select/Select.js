@@ -34,11 +34,6 @@ const factory = (Trigger, SelectInput, Menu, MenuItem) => {
       }
     }
 
-    state = {
-      open: false,
-      value: this.props.data,
-    }
-
     componentWillReceiveProps(nextProps) {
       if ('value' in nextProps) {
         this.setState({ value: nextProps.value });

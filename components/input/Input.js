@@ -12,6 +12,8 @@ const factory = (FontIcon) => {
       prefix: PropTypes.node,
       suffix: PropTypes.node,
       onChange: PropTypes.func,
+      onPrefixClick: PropTypes.func,
+      onSuffixClick: PropTypes.func,
       placeholder: PropTypes.string,
       onBlur: PropTypes.func,
       onFocus: PropTypes.func,
@@ -32,6 +34,8 @@ const factory = (FontIcon) => {
       className: '',
       size: 'normal',
       type: 'input',
+      onPrefixClick: () => void 0,
+      onSuffixClick: () => void 0,
     }
 
     handleInputChange = (e) => {
@@ -49,6 +53,8 @@ const factory = (FontIcon) => {
         prefix,
         suffix,
         size,
+        onPrefixClick,
+        onSuffixClick,
         ...other,
       } = this.props;
 
@@ -68,10 +74,18 @@ const factory = (FontIcon) => {
       const classes = classnames(theme.input, theme[size], className);
 
       const prefixIcon = typeof prefix === 'string' ?
-          <FontIcon theme={theme} className={theme.prefix} value={prefix} /> : prefix;
+          <FontIcon
+            theme={theme}
+            onClick={onPrefixClick}
+            className={theme.prefix}
+            value={prefix} /> : prefix;
 
       const suffixIcon = typeof suffix === 'string' ?
-          <FontIcon theme={theme} className={theme.suffix} value={suffix} /> : suffix;
+          <FontIcon
+            theme={theme}
+            onClick={onSuffixClick}
+            className={theme.suffix}
+            value={suffix} /> : suffix;
 
       return (
         <div

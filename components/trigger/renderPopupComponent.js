@@ -15,6 +15,7 @@ const renderPopupComponent = (WrappedComponent) =>
       maskClosable: PropTypes.bool,
       popupAlign: PropTypes.object,
       popupVisible: PropTypes.bool,
+      matchTargetWidth: PropTypes.bool,
       onPopupVisibleChange: PropTypes.func,
     }
 
@@ -60,6 +61,7 @@ const renderPopupComponent = (WrappedComponent) =>
         mask,
         popup,
         popupAlign,
+        matchTargetWidth,
         maskClosable, // eslint-disable-line
         onPopupVisibleChange, // eslint-disable-line
         ...other,
@@ -75,6 +77,7 @@ const renderPopupComponent = (WrappedComponent) =>
             active={popupVisible}
             mask={mask}
             align={popupAlign}
+            matchTargetWidth={matchTargetWidth}
             getRootDomNode={this.getRootDomNode}
             onRequestClose={this.setPopupVisible}>
             {typeof popup === 'function' ?

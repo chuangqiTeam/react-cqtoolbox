@@ -14,21 +14,30 @@ class Popup extends React.Component {
     align: PropTypes.object,
     mask: PropTypes.bool,
     theme: PropTypes.object,
+    children: PropTypes.node,
+    matchTargetWidth: PropTypes.bool,
     getRootDomNode: PropTypes.func,
     onRequestClose: PropTypes.func,
   }
 
   static defaultProps = {
     active: false,
+    matchTargetWidth: false,
   }
 
   componentDidMount() {
     const source = this.getPopupDomNode();
     const target = this.props.getRootDomNode();
-    const align = this.props.align;
+    const { active, align, matchTargetWidth } = this.props;
+
+    // set popup position
     this.setPopupAlign(source, target, align);
 
-    if (this.props.active) {
+    // set popup width
+    const widthProp = matchTargetWidth ? 'width' : 'minWidth';
+    source.style[widthProp] = `${target.offsetWidth}px`;
+
+    if (active) {
       this.clickOutsideHandler = true;
       events.addEventsToDocument([{
         click: this.onDocumentClick,
@@ -42,8 +51,6 @@ class Popup extends React.Component {
       events.addEventsToDocument({
         click: this.onDocumentClick,
       });
-    } else {
-      this.removeEventsFromDocument();
     }
   }
 
@@ -63,6 +70,7 @@ class Popup extends React.Component {
   }
 
   onDocumentClick = (event) => {
+    console.log('click');
     if (this.props.mask && !this.props.maskClosable) {
       return;
     }
