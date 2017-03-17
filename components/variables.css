@@ -15,10 +15,9 @@
 
   --preferred-font: Microsoft Yahei,Helvetica Neue,\\5B8B\4F53,Helvetica,Arial,sans-serif;
   --font-size: calc(1.4 * var(--unit));
-  --font-size-tiny: calc(1.2 * var(--unit));
-  --font-size-small: calc(1.4 * var(--unit));
+  --font-size-small: calc(1.2 * var(--unit));
   --font-size-normal: var(--font-size);
-  --font-size-big: calc(1.8 * var(--unit));
+  --font-size-large: calc(1.8 * var(--unit));
   --font-weight-thin: 300;
   --font-weight-normal: 400;
   --font-weight-semi-bold: 500;

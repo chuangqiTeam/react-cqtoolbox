@@ -1,0 +1,18 @@
+:root {
+    --input-color: var(--palette-grey-900);
+    --input-border-color: var(--palette-grey-300);
+    --input-border-color-focus: var(--color-primary);
+    --input-line-height: 26px;
+    --input-small-line-height: 22px;
+    --input-large-line-height: 30px;
+    --input-width: 180px;
+
+
+    --input-icon-color: var(--palette-grey-900);
+    --input-icon-width: 28px;
+    --input-small-icon-width: 24px;
+    --input-large-icon-width: 32px;
+    --input-icon-close-color-hover: var(--palette-grey-500);
+
+    --textarea-width: 414px;
+}

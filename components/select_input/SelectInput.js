@@ -16,7 +16,7 @@ class SelectInput extends React.Component {
 
   static defaultProps = {
     isActive: false,
-    placeholder: '请选择...',
+    placeholder: '',
   }
 
   render () {

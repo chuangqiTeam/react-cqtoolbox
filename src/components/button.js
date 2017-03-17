@@ -50,7 +50,8 @@ const ButtonTest = () => (
       disabled />
 
     <Button
-      icon="loading spin"
+      icon="loading"
+      iconSpin
       label="Loading"
       raised
       primary

@@ -7,3 +7,5 @@ export const MENU = 'CQMENU';
 export const POPUP = 'CQPOPUP';
 export const OVERLAY = 'CQOVERLAY';
 export const DIALOG = 'CQDIALOG';
+export const INPUT = 'CQINPUT';
+export const SEARCH_INPUT = 'CQINPUT';

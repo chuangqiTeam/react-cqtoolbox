@@ -15,6 +15,7 @@ const factory = (ripple, FontIcon) => {
         PropTypes.string,
         PropTypes.element,
       ]),
+      iconSpin: PropTypes.bool,
       label: PropTypes.string,
       mini: PropTypes.bool,
       neutral: PropTypes.bool,
@@ -84,6 +85,7 @@ const factory = (ripple, FontIcon) => {
         label,
         mini,
         neutral,
+        iconSpin,
         primary,   // eslint-disable-line
         raised,    // eslint-disable-line
         theme,
@@ -112,7 +114,7 @@ const factory = (ripple, FontIcon) => {
       };
 
       return React.createElement(element, props,
-        icon ? <FontIcon className={theme.icon} value={icon} /> : null,
+        icon ? <FontIcon spin={iconSpin} className={theme.icon} value={icon} /> : null,
         label,
         children,
       );

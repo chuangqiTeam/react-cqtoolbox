@@ -7,6 +7,7 @@ import FontIcon from './components/font_icon';
 import Select from './components/select';
 import Menu from './components/menu';
 import Dialog from './components/dialog';
+import Input from './components/input';
 
 class Root extends Component {
   render() {
@@ -17,6 +18,7 @@ class Root extends Component {
         <Select />
         <Menu />
         <Dialog />
+        <Input />
       </div>
     );
   }
