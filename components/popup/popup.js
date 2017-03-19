@@ -18,6 +18,8 @@ class Popup extends React.Component {
     theme: PropTypes.object,
     children: PropTypes.node,
     matchTargetWidth: PropTypes.bool,
+    onMouseEnter: PropTypes.func,
+    onMouseLeave: PropTypes.func,
     getRootDomNode: PropTypes.func,
     onRequestClose: PropTypes.func,
   }
@@ -101,11 +103,13 @@ class Popup extends React.Component {
   }
 
   getPopupElement = () => {
-    const {children, theme, active} = this.props;
+    const {children, theme, active, onMouseEnter, onMouseLeave} = this.props;
 
     const newProps = {
       key: 'popup',
       ref: 'popup',
+      onMouseEnter,
+      onMouseLeave,
     };
 
     const classes = classnames(theme.popup, {

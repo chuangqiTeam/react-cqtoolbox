@@ -9,7 +9,6 @@
   line-height: var(--font-size-small);
   max-width: var(--tooltip-max-width);
   padding: var(--tooltip-margin);
-  pointer-events: none;
   position: absolute;
   text-align: center;
   z-index: var(--z-index-higher);

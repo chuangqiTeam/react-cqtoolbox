@@ -12,10 +12,14 @@ class Menu extends Component {
     const {
       children,
       theme,
+      ...other,
     } = this.props;
 
     return (
-      <ul className={theme.menu}>
+      <ul
+        data-react-toolbox="menu"
+        {...other}
+        className={theme.menu}>
         {children}
       </ul>
     );
