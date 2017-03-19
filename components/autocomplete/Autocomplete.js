@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-
+import pureRender from '../decorator/pureRender.js';
+import clamp from 'ramda/src/clamp';
 
 const factory = (Trigger, Input, Menu, MenuItem) => {
   class Autocomplete extends Component {
@@ -19,6 +20,11 @@ const factory = (Trigger, Input, Menu, MenuItem) => {
       onSelect: PropTypes.func,
       onChange: PropTypes.func,
       children: PropTypes.node,
+      theme: PropTypes.shape({
+        menu: PropTypes.string,
+        menuItem: PropTypes.string,
+        selected: PropTypes.string,
+      })
     }
 
     static defaultProps = {
@@ -36,15 +42,15 @@ const factory = (Trigger, Input, Menu, MenuItem) => {
 
       this.state = {
         open: false,
+        selectedItem: -1,
       }
     }
 
-    componentWillReceiveProps(nextProps) {
-      if (nextProps.dataSource.length > 0) {
-        this.setState({ open: true });
-      } else {
-        this.setState({ open: false });
-      }
+    componentWillReceiveProps(nextProps, nextState) {
+      this.setState({
+        open: nextProps.dataSource.length > 0 &&
+          nextProps.dataSource !== this.props.dataSource
+      });
     }
 
     getMenus = (list) => {
@@ -55,7 +61,7 @@ const factory = (Trigger, Input, Menu, MenuItem) => {
       );
     }
 
-    getMenu = (item) => {
+    getMenu = (item, index) => {
       const theme = this.props.theme;
 
       const itemTypes = {
@@ -65,6 +71,7 @@ const factory = (Trigger, Input, Menu, MenuItem) => {
 
       return (
           <MenuItem
+            selected={this.state.selectedItem === index}
             theme={theme}
             key={itemTypes[typeof item]}
             onClick={this.handleMenuItemClick(item)}>
@@ -73,13 +80,39 @@ const factory = (Trigger, Input, Menu, MenuItem) => {
       );
     }
 
+    handleInputKeyDown = event => {
+      const {dataSource} = this.props;
+      const {selectedItem} = this.state;
+
+      if (event.which === 13 && selectedItem !== -1) {
+        this.handleMenuItemClick(dataSource[selectedItem])();
+      }
+    }
+
+    handleInputKeyUp = event => {
+      const {dataSource} = this.props;
+
+      if ([40, 38].indexOf(event.which) !== -1) {
+        const selectRange = clamp(0, dataSource.length - 1);
+        const selectedItem = selectRange(this.state.selectedItem + (event.which === 40 ? +1 : -1));
+        this.setState({ selectedItem });
+      }
+    }
+
     handleMenuItemClick = item => () => {
       this.closeMenu();
       this.props.onSelect(item);
     }
 
     closeMenu = () => {
-      this.setState({ open: false });
+      this.setState({ open: false, selectedItem: -1 });
+    }
+
+    toggleMenu = () => {
+      this.setState({
+        open: this.props.dataSource.length > 0 && !this.state.open,
+        selectedItem: -1
+      });
     }
 
     render() {
@@ -100,6 +133,8 @@ const factory = (Trigger, Input, Menu, MenuItem) => {
         React.Children.only(children) : <Input />;
 
       const inputProps = {
+        onKeyDown: this.handleInputKeyDown,
+        onKeyUp: this.handleInputKeyUp,
         onChange,
         defaultValue,
         value,
@@ -115,7 +150,7 @@ const factory = (Trigger, Input, Menu, MenuItem) => {
           popupAlign={align}
           matchTargetWidth={true}
           popupVisible={state.open}
-          onPopupVisibleChange={this.closeMenu}
+          onPopupVisibleChange={this.toggleMenu}
           popup={menu}>
           {inputElement}
         </Trigger>
@@ -123,7 +158,8 @@ const factory = (Trigger, Input, Menu, MenuItem) => {
     }
   }
 
-  return Autocomplete;
+  // CHANGED : every time render will update prop of popup and children.
+  return pureRender(Autocomplete);
 };
 
 export {factory as autocompleteFactory};

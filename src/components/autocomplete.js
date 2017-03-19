@@ -6,11 +6,12 @@ class AutoCompleteTest extends Component {
   state = {
     dataSource1: [],
     dataSource2: [],
+    value2: '',
   }
 
-  onChange = (name) => (value) => {
+  onChange1 = (value) => {
     this.setState({
-      [name]: !value ? [] : [
+      dataSource1: !value ? [] : [
         value,
         value + value,
         value + value + value,
@@ -18,8 +19,23 @@ class AutoCompleteTest extends Component {
     });
   }
 
+  onChange2 = (value) => {
+    this.setState({
+      value2: value,
+      dataSource2: !value ? [] : [
+        value,
+        value + value,
+        value + value + value,
+      ],
+    });
+  }
+
+  onSelect2 = (item) => {
+    this.setState({ value2: item });
+  }
+
   render() {
-    const { dataSource1, dataSource2 } = this.state;
+    const { dataSource1, dataSource2, value2 } = this.state;
 
     return (
       <section>
@@ -28,14 +44,19 @@ class AutoCompleteTest extends Component {
         <div>
           <AutoComplete
             dataSource={dataSource1}
-            onChange={this.onChange('dataSource1')} />
+            onChange={this.onChange1} />
         </div>
 
         <div>
           <AutoComplete
+            value={value2}
             dataSource={dataSource2}
-            onChange={this.onChange('dataSource2')}>
-            <Input prefix="search" suffix="close-circle" />
+            onSelect={this.onSelect2}
+            onChange={this.onChange2}>
+            <Input
+              prefix="search"
+              suffix="close-circle"
+              onSuffixClick={this.onChange2.bind(this, '')} />
           </AutoComplete>
         </div>
       </section>

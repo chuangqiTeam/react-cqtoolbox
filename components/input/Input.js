@@ -12,6 +12,8 @@ const factory = (FontIcon) => {
       prefix: PropTypes.node,
       suffix: PropTypes.node,
       onChange: PropTypes.func,
+      onKeyDown: PropTypes.func,
+      onKeyUp: PropTypes.func,
       onPrefixClick: PropTypes.func,
       onSuffixClick: PropTypes.func,
       placeholder: PropTypes.string,

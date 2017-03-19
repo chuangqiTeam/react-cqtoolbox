@@ -15,6 +15,8 @@ function PureRender(Component) {
     Component.prototype.shouldComponentUpdate = function(nextProps, nextState) {
         return PureRender.shouldComponentUpdate(nextProps, nextState, this.props, this.state);
     };
+
+    return Component;
 }
 
 PureRender.shouldComponentUpdate = function (nextProps, nextState, preProps, preState) {

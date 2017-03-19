@@ -1,3 +1,5 @@
+process.env.BABEL_ENV = 'production';
+
 const webpack = require('webpack');
 const babelrc = require('./babel.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -8,7 +10,6 @@ const happyPackPlugin = require('./happypack.js');
 const path = require('path');
 const ROOT_PATH = process.cwd();
 
-process.env.BABEL_ENV = 'production';
 
 const plugins = [
     new HtmlWebpackPlugin({

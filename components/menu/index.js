@@ -7,7 +7,6 @@ import theme from './theme.css';
 import { themr } from 'react-css-themr';
 import { MENU } from '../identifiers';
 
-
 const applyTheme = Component => themr(MENU, theme)(Component);
 
 const ThemedMenu= applyTheme(Menu);

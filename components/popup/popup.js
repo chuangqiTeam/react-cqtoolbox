@@ -3,10 +3,12 @@ import { findDOMNode } from 'react-dom';
 import domAlign from 'dom-align';
 import classnames from 'classnames';
 import events from '../utils/events.js';
+import activableRenderer from '../decorator/activableRenderer.js';
 
 import Overlay from '../overlay';
 import Portal from '../portal';
 
+@activableRenderer()
 class Popup extends React.Component {
 
   static propTypes = {
@@ -30,12 +32,12 @@ class Popup extends React.Component {
     const target = this.props.getRootDomNode();
     const { active, align, matchTargetWidth } = this.props;
 
-    // set popup position
-    this.setPopupAlign(source, target, align);
-
     // set popup width
     const widthProp = matchTargetWidth ? 'width' : 'minWidth';
     source.style[widthProp] = `${target.offsetWidth}px`;
+
+    // set popup position
+    this.setPopupAlign(source, target, align);
 
     if (active) {
       this.clickOutsideHandler = true;
@@ -70,7 +72,6 @@ class Popup extends React.Component {
   }
 
   onDocumentClick = (event) => {
-    console.log('click');
     if (this.props.mask && !this.props.maskClosable) {
       return;
     }
