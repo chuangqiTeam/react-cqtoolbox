@@ -31,6 +31,7 @@ class AutoCompleteTest extends Component {
   }
 
   onSelect2 = (item) => {
+    console.log(item);
     this.setState({ value2: item });
   }
 

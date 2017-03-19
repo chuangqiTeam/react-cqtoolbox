@@ -1,0 +1,117 @@
+@import '../colors.css';
+@import '../variables.css';
+@import './config.css';
+
+.tooltip {
+  display: block;
+  font-size: var(--tooltip-font-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--font-size-small);
+  max-width: var(--tooltip-max-width);
+  padding: var(--tooltip-margin);
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  z-index: var(--z-index-higher);
+
+  @apply --reset;
+}
+
+.tooltipInner {
+  background: var(--tooltip-background);
+  border-radius: var(--tooltip-border-radius);
+  color: var(--tooltip-color);
+  display: block;
+  padding: var(--tooltip-padding);
+}
+
+.tooltipArrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+
+.top,.topLeft,.topRight {
+    bottom: 0px;
+    border-width: 5px 5px 0;
+    border-top-color: var(--tooltip-background);
+}
+
+.topLeft {
+    left: 16px;
+}
+
+.topRight {
+    right: 16px;
+}
+
+.right,.rightBottom,.rightTop {
+    left: 0px;
+    border-width: 5px 5px 5px 0;
+    border-right-color: var(--tooltip-background);
+}
+
+.right {
+    top: 50%;
+    margin-top: -5px;
+}
+
+.rightTop {
+    top: 8px;
+}
+
+.rightBottom {
+    bottom: 8px;
+}
+
+.left,.leftBottom,.leftTop {
+    right: 0px;
+    border-width: 5px 0 5px 5px;
+    border-left-color: var(--tooltip-background);
+}
+
+.left {
+    top: 50%;
+    margin-top: -5px;
+}
+
+.leftTop {
+    top: 8px;
+}
+
+.leftBottom {
+    bottom: 8px;
+}
+
+.bottom, .bottomLeft, .bottomRight {
+    top: 0px;
+    border-width: 0 5px 5px;
+    border-bottom-color: var(--tooltip-background);
+}
+
+.bottom {
+    left: 50%;
+    margin-left: -5px;
+}
+
+.bottomLeft {
+    left: 16px;
+}
+
+.bottomRight {
+    right: 16px;
+}
+
+.popup {
+    opacity: 0;
+    transform: translate(0, 0);
+    transition:
+      opacity var(--animation-duration) var(--animation-curve-default);
+    transition-delay: var(--animation-delay);
+
+    &.active {
+      opacity: 1;
+    }
+}

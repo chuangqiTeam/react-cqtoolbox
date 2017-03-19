@@ -30,8 +30,17 @@ class Trigger extends React.Component {
   onClick = (event) => {
     event.preventDefault();
     this.fireEvents('onClick', event);
-    const nextVisible = !this.props.popupVisible;
-    this.props.setPopupVisible(nextVisible);
+    this.props.setPopupVisible(!this.props.popupVisible);
+  }
+
+  onMouseEnter = (event) => {
+    this.fireEvents('onMouseEnter', event);
+    this.props.setPopupVisible(true);
+  }
+
+  onMouseLeave = (event) => {
+    this.fireEvents('onMouseLeave', event);
+    this.props.setPopupVisible(false);
   }
 
   render () {
@@ -47,6 +56,14 @@ class Trigger extends React.Component {
       newChildProps.onClick = this.onClick;
     } else {
       newChildProps.onClick = (e) => this.fireEvents('onClick', e);
+    }
+
+    if (this.isHoverAction()) {
+      newChildProps.onMouseEnter = this.onMouseEnter;
+      newChildProps.onMouseLeave = this.onMouseLeave;
+    } else {
+      newChildProps.onMouseEnter = (e) => this.fireEvents('onMouseEnter', e);
+      newChildProps.onMouseLeave = (e) => this.fireEvents('onMouseLeave', e);
     }
 
     return cloneElement(child, newChildProps);

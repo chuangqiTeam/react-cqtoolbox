@@ -13,6 +13,7 @@ const renderPopupComponent = (WrappedComponent) =>
       ]).isRequired,
       mask: PropTypes.bool,
       maskClosable: PropTypes.bool,
+      popupTheme: PropTypes.object,
       popupAlign: PropTypes.object,
       popupVisible: PropTypes.bool,
       matchTargetWidth: PropTypes.bool,
@@ -22,6 +23,7 @@ const renderPopupComponent = (WrappedComponent) =>
     static defaultProps = {
       action: ['click'],
       mask: false,
+      popupTheme: {},
       maskClosable: false,
       popupAlign: {
         points: ['tl', 'bl'], // align top left point of sourceNode with top right point of targetNode
@@ -61,6 +63,7 @@ const renderPopupComponent = (WrappedComponent) =>
         mask,
         popup,
         popupAlign,
+        popupTheme,
         matchTargetWidth,
         maskClosable, // eslint-disable-line
         onPopupVisibleChange, // eslint-disable-line
@@ -75,6 +78,7 @@ const renderPopupComponent = (WrappedComponent) =>
         <div>
           <Popup
             active={popupVisible}
+            theme={popupTheme}
             mask={mask}
             align={popupAlign}
             matchTargetWidth={matchTargetWidth}

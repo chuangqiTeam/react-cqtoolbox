@@ -67,6 +67,11 @@ class Popup extends React.Component {
     });
   }
 
+  isHoverAction() {
+    const {action} = this.props;
+    return action.indexOf('hover') !== -1;
+  }
+
   setPopupAlign = (sourceNode, targetNode, popupAlign) => {
     domAlign(sourceNode, targetNode, popupAlign);
   }

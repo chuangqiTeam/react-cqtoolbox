@@ -9,6 +9,7 @@ import Menu from './components/menu';
 import Dialog from './components/dialog';
 import Input from './components/input';
 import AutoComplete from './components/autocomplete';
+import Tooltip from './components/tooltip';
 
 class Root extends Component {
   render() {
@@ -21,6 +22,7 @@ class Root extends Component {
         <Dialog />
         <Input />
         <AutoComplete />
+        <Tooltip />
       </div>
     );
   }
