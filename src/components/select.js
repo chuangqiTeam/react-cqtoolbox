@@ -23,9 +23,7 @@ class SelectTest extends Component {
       <section>
         <h5>下拉框</h5>
 
-        <div>
-          <Select key="select" {...selectData} />
-        </div>
+        <Select key="select" {...selectData} />
 
       </section>
     )

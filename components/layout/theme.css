@@ -1,0 +1,53 @@
+@import '../colors.css';
+@import '../variables.css';
+@import './config.css';
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    overflow: auto;
+    background: var(--layout-background);
+}
+
+.hasSider {
+    flex-direction: row;
+}
+
+.header, .footer {
+    flex: 0 0 auto;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background: var(--header-background);
+    padding: var(--header-padding);
+    height: var(--header-height);
+    line-height: var(--header-height);
+}
+
+.footer {
+    padding: var(--footer-padding);
+    color: var(--color-text);
+    font-size: var(--font-size-normal);
+}
+
+.sider {
+    position: relative;
+    background: var(--sider-background);
+    flex: 0 0 var(--sider-width);
+    width: var(--sider-width);
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+}
+
+.content {
+    margin-top: var(--header-height);
+    margin-left: var(--sider-width);
+    flex: auto;
+}

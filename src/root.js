@@ -10,20 +10,31 @@ import Dialog from './components/dialog';
 import Input from './components/input';
 import AutoComplete from './components/autocomplete';
 import Tooltip from './components/tooltip';
+import {Layout, Header, Sider, Content} from '../components/layout';
 
 class Root extends Component {
   render() {
     return (
-      <div className="app">
-        <Button />
-        <FontIcon />
-        <Select />
-        <Menu />
-        <Dialog />
-        <Input />
-        <AutoComplete />
-        <Tooltip />
-      </div>
+      <Layout>
+        <Header></Header>
+        <Layout>
+          <Sider></Sider>
+          <Layout>
+            <Content>
+              <div className="app">
+                <Button />
+                <FontIcon />
+                <Select />
+                <Menu />
+                <Dialog />
+                <Input />
+                <AutoComplete />
+                <Tooltip />
+              </div>
+            </Content>
+          </Layout>
+        </Layout>
+      </Layout>
     );
   }
 }

@@ -1,0 +1,12 @@
+:root {
+    --layout-background: rgb(233, 240, 245);
+
+    --header-background: rgb(29, 71, 99);
+    --header-padding: 0;
+    --header-height: 56px;
+
+    --sider-background: linear-gradient(to bottom, rgb(33, 75, 104) 0%, rgb(64, 120, 139) 100%);
+    --sider-width: 14rem;
+
+    --footer-padding: calc(3 * var(--unit));
+}

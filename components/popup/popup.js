@@ -3,12 +3,9 @@ import { findDOMNode } from 'react-dom';
 import domAlign from 'dom-align';
 import classnames from 'classnames';
 import events from '../utils/events.js';
-import activableRenderer from '../decorator/activableRenderer.js';
 
 import Overlay from '../overlay';
-import Portal from '../portal';
 
-@activableRenderer()
 class Popup extends React.Component {
 
   static propTypes = {
@@ -69,11 +66,6 @@ class Popup extends React.Component {
     });
   }
 
-  isHoverAction() {
-    const {action} = this.props;
-    return action.indexOf('hover') !== -1;
-  }
-
   setPopupAlign = (sourceNode, targetNode, popupAlign) => {
     domAlign(sourceNode, targetNode, popupAlign);
   }
@@ -124,10 +116,10 @@ class Popup extends React.Component {
 
   render () {
     return (
-      <Portal>
+      <div>
         {this.getMaskElement()}
         {this.getPopupElement()}
-      </Portal>
+      </div>
     );
   }
 }

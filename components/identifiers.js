@@ -10,3 +10,4 @@ export const DIALOG = 'CQDIALOG';
 export const INPUT = 'CQINPUT';
 export const AUTOCOMPLETE = 'CQAUTOCOMPLETE';
 export const TOOLTIP = 'CQTOOLTIP';
+export const LAYOUT = 'CQLAYOUT';

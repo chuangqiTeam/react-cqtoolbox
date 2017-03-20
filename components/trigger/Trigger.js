@@ -1,8 +1,10 @@
 import React, {cloneElement, PropTypes, Component} from 'react';
 import { findDOMNode } from 'react-dom';
-import pureRender from '../decorator/pureRender.js';
 import Popup from '../popup';
+import pureRender from '../decorator/pureRender.js';
+import popupRenderFactory from './popupRender.js';
 
+@popupRenderFactory()
 @pureRender
 class Trigger extends Component {
   static propTypes = {
@@ -83,6 +85,39 @@ class Trigger extends Component {
     return findDOMNode(this.refs._rootComponent);
   }
 
+  getPopupElement = () => {
+    const {
+      mask,
+      popup,
+      popupAlign,
+      popupTheme,
+      popupVisible,
+      matchTargetWidth,
+    } = this.props;
+
+    const popupProps = {};
+
+    if (this.isHoverAction()) {
+      popupProps.onMouseEnter = this.onPopupMouseEnter;
+      popupProps.onMouseLeave = this.onPopupMouseLeave;
+    }
+
+    return (
+      <Popup
+        active={popupVisible}
+        theme={popupTheme}
+        mask={mask}
+        align={popupAlign}
+        {...popupProps}
+        matchTargetWidth={matchTargetWidth}
+        getRootDomNode={this.getRootDomNode}
+        onRequestClose={this.setPopupVisible}>
+        {typeof popup === 'function' ?
+          popup() : popup}
+      </Popup>
+    );
+  }
+
   isClickAction() {
     const {action} = this.props;
     return action.indexOf('click') !== -1;
@@ -129,19 +164,10 @@ class Trigger extends Component {
   }
 
   render() {
-    const {
-      mask,
-      popup,
-      children,
-      popupAlign,
-      popupTheme,
-      popupVisible,
-      matchTargetWidth,
-    } = this.props;
+    const {children,} = this.props;
 
     const child = React.Children.only(children);
 
-    const popupProps = {};
     const newChildProps = {
       ref: "_rootComponent"
     };
@@ -155,31 +181,12 @@ class Trigger extends Component {
     if (this.isHoverAction()) {
       newChildProps.onMouseEnter = this.onMouseEnter;
       newChildProps.onMouseLeave = this.onMouseLeave;
-      popupProps.onMouseEnter = this.onPopupMouseEnter;
-      popupProps.onMouseLeave = this.onPopupMouseLeave;
     } else {
       newChildProps.onMouseEnter = (e) => this.fireEvents('onMouseEnter', e);
       newChildProps.onMouseLeave = (e) => this.fireEvents('onMouseLeave', e);
     }
 
-    return (
-      <div>
-        <Popup
-          active={popupVisible}
-          theme={popupTheme}
-          mask={mask}
-          align={popupAlign}
-          {...popupProps}
-          matchTargetWidth={matchTargetWidth}
-          getRootDomNode={this.getRootDomNode}
-          onRequestClose={this.setPopupVisible}>
-          {typeof popup === 'function' ?
-            popup() : popup}
-        </Popup>
-
-        {cloneElement(child, newChildProps)}
-      </div>
-    );
+    return cloneElement(child, newChildProps);
   }
 }
 
