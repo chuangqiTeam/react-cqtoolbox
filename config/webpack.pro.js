@@ -96,7 +96,7 @@ module.exports = {
     path: ROOT_PATH + '/docs',
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].min.js',
-    publicPath: '/'
+    publicPath: './'
   },
 
   resolve: {
