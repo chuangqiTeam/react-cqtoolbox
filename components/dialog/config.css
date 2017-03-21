@@ -4,5 +4,6 @@
   --dialog-color-white: var(--color-white);
   --dialog-content-padding: calc(2.4 * var(--unit));
   --dialog-navigation-padding: calc(0.8 * var(--unit));
+  --dialog-navigation-button-width: calc(10 * var(--unit));
   --dialog-translate-y: calc(4 * var(--unit));
 }

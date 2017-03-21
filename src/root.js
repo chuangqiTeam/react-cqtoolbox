@@ -18,7 +18,9 @@ class Root extends Component {
   render() {
     return (
       <Layout>
-        <Header></Header>
+        <Header>
+          <h1 className="title">CQ前端组件库</h1>
+        </Header>
         <Layout hasSider>
           <Sider />
           <Content>

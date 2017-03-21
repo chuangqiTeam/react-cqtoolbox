@@ -17,6 +17,10 @@ const ActivableRendererFactory = (options = { delay: 500 }) =>
       rendered: this.props.active,
     };
 
+    componentWillMount() {
+      if (this.props.active) this.renderAndActivate();
+    }
+
     componentWillReceiveProps(nextProps) {
       if (nextProps.active && !this.props.active) this.renderAndActivate();
       if (!nextProps.active && this.props.active) this.deactivateAndUnrender();

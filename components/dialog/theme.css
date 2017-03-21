@@ -34,57 +34,76 @@
     opacity: 1;
     transform: translateY(0%);
   }
-}
 
-.small {
-  width: 30vw;
-}
+  .title {
+    color: var(--dialog-color-title);
+    flex-grow: 0;
+    font-size: calc(2 * var(--unit));
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin: 0 0 calc(1.6 * var(--unit));
+  }
 
-.normal {
-  width: 50vw;
-}
-
-.large {
-  width: 96vw;
-}
-
-.fullscreen {
-  width: 96vw;
-}
-
-.title {
-  color: var(--dialog-color-title);
-  flex-grow: 0;
-  font-size: calc(2 * var(--unit));
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  line-height: 1;
-  margin: 0 0 calc(1.6 * var(--unit));
-}
-
-.body {
-  color: var(--color-text-secondary);
-  flex-grow: 2;
-  padding: var(--dialog-content-padding);
-
-  & p {
+  .body {
+    color: var(--color-text-secondary);
+    flex-grow: 2;
+    padding: var(--dialog-content-padding);
     font-size: calc(1.4 * var(--unit));
     font-weight: 400;
-    letter-spacing: 0;
     line-height: calc(2.4 * var(--unit));
-    margin: 0;
+  }
+
+  .navigation {
+    flex-grow: 0;
+    padding: var(--dialog-navigation-padding);
+    text-align: right;
+  }
+
+  .small {
+    width: 30vw;
+  }
+
+  .normal {
+    width: 50vw;
+  }
+
+  .large {
+    width: 96vw;
+  }
+
+  .fullscreen {
+    width: 96vw;
+  }
+
+  .button {
+      padding: 0 32px;
+      font-size: 17px;
+      width: var(--dialog-navigation-button-width);
+  }
+
+  .button:not(:only-child) {
+    margin-left: var(--dialog-navigation-padding);
   }
 }
 
-.navigation {
-  flex-grow: 0;
-  padding: var(--dialog-navigation-padding);
-  text-align: right;
+.confirm, .success, .warning, .error {
+    width: 416px;
+    text-align: center;
+    .icon {
+        font-size: calc(4 * var(--unit));;
+    }
+    .content {
+        margin: var(--dialog-navigation-padding) 0;
+        font-size: calc(1.6 * var(--unit));
+    }
+    .navigation {
+        text-align: center;
+    }
 }
 
-.button {
-  margin-left: var(--dialog-navigation-padding);
-  min-width: 0;
-  padding-left: var(--dialog-navigation-padding);
-  padding-right: var(--dialog-navigation-padding);
-}
+
+.confirm .icon {color: var(--palette-yellow-700)}
+.success .icon {color: var(--palette-green-a700)}
+.warning .icon {color: var(--palette-yellow-a700)}
+.error .icon {color: var(--palette-red-a700)}

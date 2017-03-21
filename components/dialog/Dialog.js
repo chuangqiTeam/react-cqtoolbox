@@ -26,7 +26,7 @@ const factory = (Overlay, Portal, Button) => {
         title: PropTypes.string,
         wrapper: PropTypes.string,
       }),
-      type: PropTypes.string,
+      type: PropTypes.oneOf(['small', 'normal', 'large', 'fullscreen']),
     }
 
     static defaultProps = {
