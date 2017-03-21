@@ -6,11 +6,9 @@ const factory = (name) => {
     static propTypes = {
       children: PropTypes.node,
       className: PropTypes.string,
-      name: PropTypes.string,
       theme: PropTypes.shape({
         layout: PropTypes.string,
         header: PropTypes.string,
-        sider: PropTypes.string,
         hasSider: PropTypes.string,
         content: PropTypes.string,
         footer: PropTypes.string,
@@ -18,7 +16,7 @@ const factory = (name) => {
     }
 
     static defaultProps = {
-      name: name,
+      hasSider: false,
     }
 
     render() {
@@ -26,16 +24,9 @@ const factory = (name) => {
         theme,
         children,
         className,
+        hasSider,
         ...others,
       } = this.props;
-
-      let hasSider;
-
-      React.Children.forEach(children, (element) => {
-        if (element && element.props && element.props.name === 'sider') {
-          hasSider = true;
-        }
-      });
 
       const classes = classNames(theme[name], className, {
         [theme.hasSider]: hasSider,

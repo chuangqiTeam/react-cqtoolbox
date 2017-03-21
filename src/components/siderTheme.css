@@ -1,0 +1,9 @@
+.collapsed {
+    .subMenuItem .icon {
+        font-size: 20px;
+    }
+
+    .subMenuItem .caption {
+        display: none;
+    }
+}

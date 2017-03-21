@@ -1,15 +1,40 @@
 :root {
   --menu-expand-duration: 0.2s;
   --menu-expand-curve: cubic-bezier(.215,.61,.355,1);
-  --animation-curve-default
-  --menu-background-color: var(--color-white);
+  --menu-background-color: rgb(33, 75, 104);
   --menu-padding: calc(0.8 * var(--unit)) 0;
-  --menu-item-hover-background: var(--palette-grey-200);
+  --menu-item-color: rgb(175, 200, 215);
+  --menu-item-hover-background: rgba(0,0,0,.0980392);
   --menu-item-selected-background: color(var(--color-primary) a(10%));
-  --menu-item-icon-font-size: calc(2.4 * var(--unit));
-  --menu-item-icon-size: calc(1.6 * var(--menu-item-icon-font-size));
+  --menu-item-selected-color: var(--color-white);
+  --menu-item-icon-font-size: calc(1.6 * var(--unit));
+  --menu-item-icon-size: calc(2 * var(--menu-item-icon-font-size));
   --menu-item-height: calc(4.2 * var(--unit));
   --menu-item-padding: calc(1.6 * var(--unit));
   --menu-item-font-size: calc(1.4 * var(--unit));
   --menu-icon-size: calc(2.3 * var(--unit));
+}
+
+@keyframes ani-ZoomBigIn {
+    0% {
+        opacity: 0;
+        transform: scale(.8);
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes ani-ZoomBigOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(.8);
+    }
 }

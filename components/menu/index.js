@@ -9,13 +9,12 @@ import { MENU } from '../identifiers';
 
 const applyTheme = Component => themr(MENU, theme)(Component);
 
+const subMenuCaption= subMenuCaptionFactory(themedRippleFactory({}));
 const ThemedMenu= applyTheme(Menu);
-const ThemedSubMenuCaption= applyTheme(subMenuCaptionFactory(themedRippleFactory({})));
-const ThemedSubMenu= applyTheme(subMenuFactory(ThemedSubMenuCaption));
+const ThemedSubMenu= applyTheme(subMenuFactory(subMenuCaption));
 const ThemedMenuItem= applyTheme(menuItemFactory(themedRippleFactory({})));
 
 export default ThemedMenu;
 export {ThemedMenu as Menu};
 export {ThemedSubMenu as SubMenu};
 export {ThemedMenuItem as MenuItem};
-export {ThemedSubMenuCaption as SubMenuCaption};

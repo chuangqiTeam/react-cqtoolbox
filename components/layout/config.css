@@ -6,7 +6,6 @@
     --header-height: 56px;
 
     --sider-background: linear-gradient(to bottom, rgb(33, 75, 104) 0%, rgb(64, 120, 139) 100%);
-    --sider-width: 14rem;
 
     --footer-padding: calc(3 * var(--unit));
 }
