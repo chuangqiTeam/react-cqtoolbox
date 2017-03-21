@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./scripts/start.js",
-    "build": "webpack --config ./config/webpack.pro.js"
+    "clear": "rm -rf ./docs",
+    "build": "npm run clear && webpack --config ./config/webpack.pro.js"
   },
   "devDependencies": {
     "autoprefixer": "^6.6.0",

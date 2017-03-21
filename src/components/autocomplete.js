@@ -40,7 +40,7 @@ class AutoCompleteTest extends Component {
 
     return (
       <section>
-        <h5>AutoComplete自动完成</h5>
+        <h5>自动补全</h5>
 
         <div>
           <AutoComplete
