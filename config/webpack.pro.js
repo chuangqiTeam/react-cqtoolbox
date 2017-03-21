@@ -53,7 +53,7 @@ const plugins = [
 
   happyPackPlugin({
     name: 'happypack-component-css',
-    loaders: ['style', 'css?modules&localIdentName=[name]__[local]___[hash:base64:5]', 'postcss']
+    loaders: ['style', 'css?modules&localIdentName=[hash:base64:5]', 'postcss']
   }),
 
   happyPackPlugin({
@@ -74,7 +74,7 @@ const plugins = [
     minChunks: Infinity
   }),
   new webpack.HashedModuleIdsPlugin(),
-  new WebpackChunkHash()
+  // new WebpackChunkHash()
 ];
 
 module.exports = {
