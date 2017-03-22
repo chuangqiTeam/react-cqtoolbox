@@ -3,6 +3,7 @@ export const RIPPLE = 'CQRIPPLE';
 export const ICON = 'CQICON';
 export const SELECT = 'CQSELECT';
 export const SELECT_INPUT = 'CQSELECTINPUT';
+export const DATESELECT = 'CQDATESELECT';
 export const MENU = 'CQMENU';
 export const POPUP = 'CQPOPUP';
 export const OVERLAY = 'CQOVERLAY';

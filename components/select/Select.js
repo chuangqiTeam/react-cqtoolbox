@@ -62,7 +62,10 @@ const factory = (Trigger, SelectInput, Menu, MenuItem) => {
 
     handleMenuItemClick = item => () => {
       this.handleSelectToggle();
-      this.setState({ value: item.value });
+      if (!('value' in this.props)) {
+        this.setState({ value: item.value });
+      }
+
       this.props.onChange(item);
     }
 

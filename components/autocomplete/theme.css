@@ -3,7 +3,6 @@
 @import './config.css';
 
 .menu {
-    box-shadow: 0 1px 6px rgba(0,0,0,.2);
     border-radius: 4px;
     z-index: 1050;
     float: left;
@@ -15,8 +14,7 @@
     color: rgba(0,0,0,.65);
     background: #fff;
     overflow: hidden;
-    min-width: 120px;
-    position: absolute;
+    width: 100%;
 }
 
 .menuItem {

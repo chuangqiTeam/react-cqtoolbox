@@ -11,6 +11,7 @@ import Input from './components/input';
 import AutoComplete from './components/autocomplete';
 import Tooltip from './components/tooltip';
 import Sider from './components/sider';
+import Datepicker from './components/datepicker';
 import {Layout, Header, Content} from '../components/layout';
 
 
@@ -28,6 +29,7 @@ class Root extends Component {
               <Button />
               <FontIcon />
               <Select />
+              <Datepicker />
               <Dialog />
               <Input />
               <AutoComplete />

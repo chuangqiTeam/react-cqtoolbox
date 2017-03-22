@@ -33,7 +33,7 @@ class DialogTest extends React.Component {
   }
   handleWarning = () => {
     Dialog.warning({
-      content: '警告⚠️!',
+      content: '警告!',
     });
   }
 

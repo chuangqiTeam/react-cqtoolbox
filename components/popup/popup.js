@@ -98,8 +98,6 @@ class Popup extends React.Component {
     const {children, theme, active, onMouseEnter, onMouseLeave} = this.props;
 
     const newProps = {
-      key: 'popup',
-      ref: 'popup',
       onMouseEnter,
       onMouseLeave,
     };
@@ -107,7 +105,7 @@ class Popup extends React.Component {
     const classes = classnames(theme.popup, {
       [theme.active]: active});
 
-    return <div className={classes}>{React.cloneElement(children, newProps)}</div>;
+    return <div ref="popup" className={classes}>{React.cloneElement(children, newProps)}</div>;
   }
 
   getPopupDomNode = () => {
