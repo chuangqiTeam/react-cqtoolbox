@@ -4,6 +4,9 @@ docs
 scripts
 src
 build
+webpack_cache
 .eslintignore
 .editorconfig
 .*.yml
+yarn.lock
+docs.json

@@ -43,4 +43,14 @@ gulp.task('css', function () {
     .pipe(gulp.dest('./lib'));
 });
 
-gulp.task('default', ['js', 'css']);
+gulp.task('fonts', function () {
+    return gulp.src([
+      './components/**/*.eot',
+      './components/**/*.svg',
+      './components/**/*.ttf',
+      './components/**/*.woff',
+    ])
+    .pipe(gulp.dest('./lib'));
+});
+
+gulp.task('default', ['js', 'css', 'fonts']);

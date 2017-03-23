@@ -4,9 +4,8 @@
   "main": "lib",
   "scripts": {
     "start": "node ./scripts/start.js",
-    "build": "gulp",
-    "clear": "rm -rf ./docs",
-    "doc": "npm run clear && webpack --config ./config/webpack.pro.js"
+    "build": "rm -rf ./lib && gulp",
+    "doc": "rm -rf ./docs && webpack --config ./config/webpack.pro.js"
   },
   "devDependencies": {
     "autoprefixer": "^6.6.0",
