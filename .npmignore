@@ -4,9 +4,13 @@ docs
 scripts
 src
 build
+node_modules
 webpack_cache
 .eslintignore
 .editorconfig
+.happypack
 .*.yml
+.eslintrc
 yarn.lock
 docs.json
+gulpfile.js
