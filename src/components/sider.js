@@ -26,18 +26,18 @@ class SiderTest extends Component {
         onCollapse={this.onCollapse}
         collapsed={collapsed}
         theme={theme}>
-        <Menu>
-          <SubMenu mode={this.getMode()} theme={theme} icon="user" title="导航一">
+        <Menu mode={this.getMode()}>
+          <SubMenu theme={theme} icon="user" title="导航一">
             <MenuItem>实时排名</MenuItem>
             <MenuItem>基本信息</MenuItem>
             <MenuItem selected>版本记录</MenuItem>
           </SubMenu>
-          <SubMenu mode={this.getMode()} theme={theme} icon="team" title="导航二">
+          <SubMenu theme={theme} icon="team" title="导航二">
             <MenuItem>实时排名</MenuItem>
             <MenuItem>基本信息</MenuItem>
             <MenuItem selected>版本记录</MenuItem>
           </SubMenu>
-          <SubMenu mode={this.getMode()} theme={theme} icon="file" title="导航三">
+          <SubMenu theme={theme} icon="file" title="导航三">
             <MenuItem>实时排名</MenuItem>
             <MenuItem>基本信息</MenuItem>
             <MenuItem selected>版本记录</MenuItem>

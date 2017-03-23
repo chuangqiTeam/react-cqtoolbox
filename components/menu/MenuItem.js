@@ -5,6 +5,7 @@ import FontIcon from '../font_icon';
 const factory = (ripple) => {
   class MenuItem extends Component {
     static propTypes = {
+      icon: PropTypes.string,
       value: PropTypes.string,
       children: PropTypes.node,
       className: PropTypes.string,
@@ -53,7 +54,7 @@ const factory = (ripple) => {
           data-react-toolbox="menu-item"
           className={className}
           onClick={this.handleClick}>
-          <FontIcon value={icon} className={theme.icon} />
+          {icon && <FontIcon value={icon} className={theme.icon} />}
           <span className={theme.caption}>{value || children}</span>
         </li>
       );

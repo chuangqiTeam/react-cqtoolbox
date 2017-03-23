@@ -10,18 +10,17 @@ import Dialog from './components/dialog';
 import Input from './components/input';
 import AutoComplete from './components/autocomplete';
 import Tooltip from './components/tooltip';
+import Header from './components/header';
 import Sider from './components/sider';
 import Datepicker from './components/datepicker';
-import {Layout, Header, Content} from '../components/layout';
+import {Layout, Content} from '../components/layout';
 
 
 class Root extends Component {
   render() {
     return (
       <Layout>
-        <Header>
-          <h1 className="title">CQ前端组件库</h1>
-        </Header>
+        <Header />
         <Layout hasSider>
           <Sider />
           <Content>

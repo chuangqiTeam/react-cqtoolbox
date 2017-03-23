@@ -2,17 +2,18 @@
   --menu-expand-duration: 0.2s;
   --menu-expand-curve: cubic-bezier(.215,.61,.355,1);
   --menu-background-color: rgb(33, 75, 104);
-  --menu-padding: calc(0.8 * var(--unit)) 0;
   --menu-item-color: rgb(175, 200, 215);
   --menu-item-hover-background: rgba(0,0,0,.0980392);
   --menu-item-selected-background: color(var(--color-primary) a(10%));
   --menu-item-selected-color: var(--color-white);
   --menu-item-icon-font-size: calc(1.6 * var(--unit));
-  --menu-item-icon-size: calc(2 * var(--menu-item-icon-font-size));
+  --menu-item-icon-margin-right: calc(1 * var(--menu-item-icon-font-size));
   --menu-item-height: calc(4.2 * var(--unit));
   --menu-item-padding: calc(1.6 * var(--unit));
   --menu-item-font-size: calc(1.4 * var(--unit));
-  --menu-icon-size: calc(2.3 * var(--unit));
+  --submenu-item-horizontal-height: calc(5.6 * var(--unit));
+  --submenu-item-horizontal-padding: 0 calc(1 * var(--unit));
+  --popupmenu-background-color: rgba(33, 75, 104, .9);
 }
 
 @keyframes ani-ZoomBigIn {

@@ -7,7 +7,8 @@ const factory = (SubMenuCaption) => {
   class SubMenu extends Component {
     static propTypes = {
       title: PropTypes.string,
-      mode: PropTypes.oneOf(['inline', 'vertical']),
+      placement: PropTypes.oneOf(['left', 'middle', 'right']),
+      mode: PropTypes.oneOf(['inline', 'vertical', 'horizontal']),
       children: PropTypes.node,
       className: PropTypes.string,
       onTitleClick: PropTypes.func,
@@ -21,6 +22,7 @@ const factory = (SubMenuCaption) => {
     };
 
     static defaultProps = {
+      placement: 'left',
       mode: 'inline',
       className: '',
       open: false,
@@ -82,16 +84,17 @@ const factory = (SubMenuCaption) => {
         mode,
         theme,
         className,
+        placement,
         ...others
       } = this.props;
 
       const state = this.state;
 
-      const classes = classnames(className, theme.submenu, theme[mode]);
+      const classes = classnames(className, theme.submenu);
 
       const animProps = {};
 
-      if (mode === 'vertical') {
+      if (mode === 'vertical' || mode === 'horizontal') {
         animProps.transitionName = {
             enter: theme.verticalAnimEnter,
             leave: theme.verticalAnimLeave,
@@ -122,7 +125,7 @@ const factory = (SubMenuCaption) => {
             {...animProps}>
             {state.open ?
               <ul
-                className={theme.menu}>
+                className={classnames(theme.popupMenu, theme[placement])}>
                 {children}
               </ul> : null}
           </Animate>
