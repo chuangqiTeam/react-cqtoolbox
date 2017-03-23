@@ -63,7 +63,7 @@ const plugins = [
       name: 'happypack-javascript',
       loaders: [{
           path: 'babel',
-          query: babelrc,
+          query: babelrc.development,
       }]
   }),
 

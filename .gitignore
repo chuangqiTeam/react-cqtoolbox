@@ -1,4 +1,5 @@
 node_modules
 build
+lib
 webpack_cache
 .happypack

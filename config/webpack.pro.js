@@ -3,7 +3,7 @@ process.env.BABEL_ENV = 'production';
 const webpack = require('webpack');
 const babelrc = require('./babel.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-var WebpackChunkHash = require('webpack-chunk-hash');
+// var WebpackChunkHash = require('webpack-chunk-hash');
 const mixins = require('../src/style/mixins.js');
 const happyPackPlugin = require('./happypack.js');
 const path = require('path');
@@ -46,7 +46,7 @@ const plugins = [
     loaders: [
       {
         path: 'babel',
-        query: babelrc
+        query: babelrc.development
       }
     ]
   }),
