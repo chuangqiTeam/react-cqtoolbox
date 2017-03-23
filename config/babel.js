@@ -1,7 +1,7 @@
 module.exports = {
   'development': {
     "babelrc": false,
-    "presets": ["cqaso-kit"],
+    "presets": ['cq'],
     "plugins": [
       "transform-decorators-legacy"
     ],

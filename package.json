@@ -41,6 +41,8 @@
     "postcss-nested": "^1.0.0",
     "postcss-smart-import": "^0.6.6",
     "postcss-url": "^5.1.2",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
     "react-dev-utils": "^0.4.2",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
@@ -58,9 +60,11 @@
     "promise": "^7.1.1",
     "ramda": "^0.23.0",
     "rc-animate": "^2.3.3",
-    "react": "^15.4.1",
     "react-css-themr": "^2.0.0",
-    "react-date-range": "^0.9.3",
-    "react-dom": "^15.4.1"
+    "react-date-range": "^0.9.3"
+  },
+  "peerDependencies": {
+    "react": "^0.14 || ~15.4.0",
+    "react-dom": "^0.14.0 || ~15.4.0"
   }
 }

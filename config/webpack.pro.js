@@ -88,7 +88,6 @@ module.exports = {
   devtool: 'hidden-source-map',
 
   entry: {
-    vendor: require.resolve('./polyfills.js'),
     main: './index.js'
   },
 

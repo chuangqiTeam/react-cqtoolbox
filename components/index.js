@@ -1,3 +1,5 @@
+import './utils/polyfills';
+
 export {default as Autocomplete} from './autocomplete';
 export {default as Button} from './button';
 export * from './date_select';

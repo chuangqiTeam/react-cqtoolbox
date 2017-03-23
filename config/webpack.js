@@ -97,7 +97,6 @@ module.exports = {
   // devtool: 'cheap-module-eval-source-map',
 
   entry: {
-    vendor: require.resolve('./polyfills.js'),
     main: [
       // Include an alternative client for WebpackDevServer. A client's job is to
       // connect to WebpackDevServer by a socket and get notified about changes.
