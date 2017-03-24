@@ -1,25 +1,29 @@
 import React, { Component, PropTypes } from 'react';
 
+const isArray = (arr) => Object.prototype.toString.apply(arr) === '[object Array]';
+
 const popupAlign = {
   points: ['tl', 'bl'],
   offset: [0, 10],
-  theme: PropTypes.shape({
-    menu: PropTypes.string,
-    menuItem: PropTypes.string,
-  }),
 };
 
-const factory = (Trigger, SelectInput, Menu, MenuItem) => {
-  class Select extends Component {
+const factory = (Trigger, SelectInput, Menu, SubMenu, MenuItem) => {
+  class CascadeSelect extends Component {
 
     static propTypes = {
       value: PropTypes.any,
+      cascadeAction: PropTypes.oneOf(['click', 'hover']),
       data: PropTypes.array,
       onChange: PropTypes.func,
+      theme: PropTypes.shape({
+        menu: PropTypes.string,
+        menuItem: PropTypes.string,
+      }),
     }
 
     static defaultProps = {
       onChange: () => void 0,
+      cascadeAction: 'hover',
     }
 
     constructor(props) {
@@ -46,6 +50,7 @@ const factory = (Trigger, SelectInput, Menu, MenuItem) => {
 
     getMenus = (list) => {
       const theme = this.props.theme;
+
       return (
         <Menu
           mode="vertical"
@@ -57,6 +62,19 @@ const factory = (Trigger, SelectInput, Menu, MenuItem) => {
 
     getMenu = (item) => {
       const theme = this.props.theme;
+      const children = item.children;
+
+      if (children && typeof isArray(item.children)) {
+        return (
+          <SubMenu
+            title={item.label}
+            key={item.value}
+            theme={theme}>
+            {children.map(this.getMenu)}
+          </SubMenu>
+        );
+      }
+
       return (
           <MenuItem
             theme={theme}
@@ -84,8 +102,15 @@ const factory = (Trigger, SelectInput, Menu, MenuItem) => {
       const props = this.props;
       const state = this.state;
       const menu = this.getMenus(props.data);
+
+
       const selectedItem =
-        props.data.find(item => item.value === state.value) ||
+        props.data.reduce((array, b) => {
+              array.push(b);
+              if (b.children && isArray(b.children)) array.push(...b.children);
+              return array;
+          }, [])
+        .find(item => item.value === state.value) ||
         props.data[0];
 
       return (
@@ -104,7 +129,7 @@ const factory = (Trigger, SelectInput, Menu, MenuItem) => {
     }
   }
 
-  return Select;
+  return CascadeSelect;
 };
 
-export {factory as selectFactory};
+export {factory as cascadeSelectFactory};

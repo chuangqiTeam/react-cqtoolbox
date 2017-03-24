@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import Button from '../button';
-import FontIcon from '../font_icon';
+import {CaretDownIcon} from '../font_icon';
 import classnames from 'classnames';
 
 class SelectInput extends React.Component {
@@ -32,12 +32,14 @@ class SelectInput extends React.Component {
       [theme.open]: isActive,
     }, theme.arrow);
 
+
+
     return (
       <Button
         onClick={onClick}
         className={theme.select_input}>
         <div className={theme.value}>{selectedItem.label || placeholder}</div>
-        <FontIcon className={iconClasses} value="down" />
+        <CaretDownIcon className={iconClasses} />
       </Button>
     );
   }

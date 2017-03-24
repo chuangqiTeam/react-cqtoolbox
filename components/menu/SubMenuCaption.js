@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import FontIcon from '../font_icon';
+import {FontIcon} from '../font_icon';
 
 const factory = (ripple) => {
   class SubMenuCaption extends Component {

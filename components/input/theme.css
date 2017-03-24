@@ -41,8 +41,12 @@
         line-height: var(--input-icon-width);
     }
 
-    .prefix ~ .inputElement, .suffix ~ .inputElement {
+    .prefix ~ .inputElement {
         padding-left: var(--input-icon-width);
+    }
+
+    .suffix ~ .inputElement {
+        padding-right: var(--input-icon-width);
     }
 }
 
@@ -55,8 +59,12 @@
         line-height: var(--input-small-icon-width);
     }
 
-    .prefix ~ .inputElement, .suffix ~ .inputElement {
+    .prefix ~ .inputElement {
         padding-left: var(--input-small-icon-width);
+    }
+
+    .suffix ~ .inputElement {
+        padding-right: var(--input-small-icon-width);
     }
 }
 
@@ -69,8 +77,12 @@
         line-height: var(--input-large-icon-width);
     }
 
-    .prefix ~ .inputElement, .suffix ~ .inputElement {
+    .prefix ~ .inputElement {
         padding-left: var(--input-large-icon-width);
+    }
+
+    .suffix ~ .inputElement {
+        padding-right: var(--input-large-icon-width);
     }
 }
 

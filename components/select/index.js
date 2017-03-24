@@ -1,18 +1,17 @@
 import {selectFactory} from './Select';
+import {cascadeSelectFactory} from './CascadeSelect';
 import theme from './theme.css';
 import { themr } from 'react-css-themr';
-import { SELECT, MENU } from '../identifiers';
+import { SELECT } from '../identifiers';
 import Trigger from '../trigger';
-import Menu from '../menu/Menu';
-import {menuItemFactory} from '../menu/MenuItem';
-import themedRippleFactory from '../ripple';
-
+import {Menu, SubMenu, MenuItem} from '../menu';
 import SelectInput from '../select_input';
-const ThemedMenuItem= themr(MENU, theme)(menuItemFactory(themedRippleFactory({})));
-const ThemedMenu= themr(MENU, theme)(Menu);
 
-const Select = selectFactory(Trigger, SelectInput, ThemedMenu, ThemedMenuItem);
+const Select = selectFactory(Trigger, SelectInput, Menu, MenuItem);
+const CascadeSelect = cascadeSelectFactory(Trigger, SelectInput, Menu, SubMenu, MenuItem);
 const ThemedSelect = themr(SELECT, theme)(Select);
+const ThemedCascadeSelect = themr(SELECT, theme)(CascadeSelect);
 
 export default ThemedSelect;
 export {ThemedSelect as Select};
+export {ThemedCascadeSelect as CascadeSelect};
