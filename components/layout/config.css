@@ -2,7 +2,7 @@
     --layout-background: rgb(233, 240, 245);
 
     --header-background: rgb(29, 71, 99);
-    --header-padding: 0;
+    --header-padding: 0 calc(5 * var(--unit));
     --header-height: 56px;
 
     --sider-background: linear-gradient(to bottom, rgb(33, 75, 104) 0%, rgb(64, 120, 139) 100%);

@@ -10,6 +10,7 @@ import Dialog from './components/dialog';
 import Input from './components/input';
 import AutoComplete from './components/autocomplete';
 import Tooltip from './components/tooltip';
+import Badge from './components/badge';
 import Header from './components/header';
 import Sider from './components/sider';
 import Datepicker from './components/datepicker';
@@ -33,6 +34,7 @@ class Root extends Component {
               <Input />
               <AutoComplete />
               <Tooltip />
+              <Badge />
             </div>
           </Content>
         </Layout>

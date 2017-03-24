@@ -12,4 +12,5 @@ export {default as overlay} from './overlay';
 export {default as popup} from './popup';
 export {default as Select} from './select';
 export {default as tooltip} from './tooltip';
+export {default as badge} from './badge';
 export {default as Trigger} from './trigger';

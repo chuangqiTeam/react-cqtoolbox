@@ -10,6 +10,7 @@
   --menu-item-icon-margin-right: calc(1 * var(--menu-item-icon-font-size));
   --menu-item-height: calc(4.2 * var(--unit));
   --menu-item-padding: calc(1.6 * var(--unit));
+  --menu-item-horizontal-padding: 0 calc(3 * var(--unit));
   --menu-item-font-size: calc(1.4 * var(--unit));
   --submenu-item-horizontal-height: calc(5.6 * var(--unit));
   --submenu-item-horizontal-padding: 0 calc(1 * var(--unit));

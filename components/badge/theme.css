@@ -1,0 +1,51 @@
+@import '../colors.css';
+@import '../variables.css';
+
+:root {
+    --badge-background-color: var(--palette-red-500);
+    --badge-color: var(--color-white);
+    --badge-font-size: var(--font-size-small);
+}
+
+.badge {
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+
+    @apply --reset;
+}
+
+.count, .text {
+    position: absolute;
+    transform: translateX(-50%);
+    top: -10px;
+    height: 20px;
+    border-radius: 10px;
+    min-width: 20px;
+    background: var(--badge-background-color);
+    color: var(--badge-color);
+    line-height: 20px;
+    text-align: center;
+    padding: 0 6px;
+    font-size: var(--badge-font-size);
+    white-space: nowrap;
+    font-family: tahoma;
+    font-weight: 600;
+    z-index: 10;
+}
+
+.dot {
+    position: absolute;
+    transform: translateX(-50%);
+    top: -4px;
+    height: 8px;
+    width: 8px;
+    border-radius: 100%;
+    background: var(--badge-background-color);
+    z-index: 10;
+}
+
+.text {
+    margin-left: 8px;
+}

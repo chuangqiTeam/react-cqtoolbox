@@ -95,6 +95,7 @@
 
         .menuItem {
             color: var(--color-white);
+            padding: var(--menu-item-horizontal-padding);
         }
 
         .arrow {
