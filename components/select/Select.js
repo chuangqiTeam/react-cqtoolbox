@@ -1,12 +1,12 @@
 import React, { Component, PropTypes } from 'react';
+import splitEvery from 'ramda/src/splitEvery';
+import addIndex from 'ramda/src/addIndex';
+import map from 'ramda/src/map';
+import pipe from 'ramda/src/pipe';
 
 const popupAlign = {
   points: ['tl', 'bl'],
   offset: [0, 10],
-  theme: PropTypes.shape({
-    menu: PropTypes.string,
-    menuItem: PropTypes.string,
-  }),
 };
 
 const factory = (Trigger, SelectInput, Menu, MenuItem) => {
@@ -15,10 +15,16 @@ const factory = (Trigger, SelectInput, Menu, MenuItem) => {
     static propTypes = {
       value: PropTypes.any,
       data: PropTypes.array,
+      maxRowNum: PropTypes.number,
       onChange: PropTypes.func,
+      theme: PropTypes.shape({
+        menu: PropTypes.string,
+        menuItem: PropTypes.string,
+      }),
     }
 
     static defaultProps = {
+      maxRowNum: 10,
       onChange: () => void 0,
     }
 
@@ -45,17 +51,40 @@ const factory = (Trigger, SelectInput, Menu, MenuItem) => {
     }
 
     getMenus = (list) => {
+      const {
+        data,
+        theme,
+        maxRowNum,
+      } = this.props;
+
+      const mapIndexed = addIndex(map);
+
+      const menus =
+        pipe(
+          splitEvery(maxRowNum),
+          mapIndexed(this.getMenu)
+        )(data);
+
+      return (
+        <div className={theme.menuOutter}>
+          {menus}
+        </div>
+      );
+    }
+
+    getMenu = (list, index) => {
       const theme = this.props.theme;
       return (
         <Menu
+          key={index}
           mode="vertical"
           theme={theme}>
-          {list.map(this.getMenu)}
+          {list.map(this.getMenuItem)}
         </Menu>
       );
     }
 
-    getMenu = (item) => {
+    getMenuItem = (item) => {
       const theme = this.props.theme;
       return (
           <MenuItem

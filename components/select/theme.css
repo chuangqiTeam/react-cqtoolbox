@@ -2,6 +2,10 @@
 @import '../variables.css';
 @import './config.css';
 
+.menuOutter, .popupMenuInner {
+    display: flex;
+}
+
 .popup {
     .vertical {
         &.menu {

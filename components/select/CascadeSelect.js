@@ -1,5 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-
+import splitEvery from 'ramda/src/splitEvery';
+import addIndex from 'ramda/src/addIndex';
+import map from 'ramda/src/map';
+import pipe from 'ramda/src/pipe';
 const isArray = (arr) => Object.prototype.toString.apply(arr) === '[object Array]';
 
 const popupAlign = {
@@ -12,8 +15,10 @@ const factory = (Trigger, SelectInput, Menu, SubMenu, MenuItem) => {
 
     static propTypes = {
       value: PropTypes.any,
-      cascadeAction: PropTypes.oneOf(['click', 'hover']),
       data: PropTypes.array,
+      maxRowNum: PropTypes.number,
+      maxCascadeRowNum: PropTypes.number,
+      cascadeAction: PropTypes.oneOf(['click', 'hover']),
       onChange: PropTypes.func,
       theme: PropTypes.shape({
         menu: PropTypes.string,
@@ -22,8 +27,10 @@ const factory = (Trigger, SelectInput, Menu, SubMenu, MenuItem) => {
     }
 
     static defaultProps = {
-      onChange: () => void 0,
+      maxRowNum: 10,
+      maxCascadeRowNum: 5,
       cascadeAction: 'hover',
+      onChange: () => void 0,
     }
 
     constructor(props) {
@@ -49,40 +56,80 @@ const factory = (Trigger, SelectInput, Menu, SubMenu, MenuItem) => {
     }
 
     getMenus = (list) => {
-      const theme = this.props.theme;
+      const {
+        data,
+        theme,
+        maxRowNum,
+      } = this.props;
+
+      const mapIndexed = addIndex(map);
+
+      const menus =
+        pipe(
+          splitEvery(maxRowNum),
+          mapIndexed(this.getMenu)
+        )(data);
 
       return (
+        <div className={theme.menuOutter}>
+          {menus}
+        </div>
+      );
+    }
+
+    getMenu = (list, index) => {
+      const theme = this.props.theme;
+      return (
         <Menu
+          key={index}
           mode="vertical"
           theme={theme}>
-          {list.map(this.getMenu)}
+          {list.map(this.getMenuItem)}
         </Menu>
       );
     }
 
-    getMenu = (item) => {
-      const theme = this.props.theme;
+    getMenuItem = (item) => {
+      const {
+        theme,
+        maxCascadeRowNum,
+      } = this.props;
       const children = item.children;
 
       if (children && typeof isArray(item.children)) {
+
+        const mapIndexed = addIndex(map);
+
+        const menuItems =
+          pipe(
+            splitEvery(maxCascadeRowNum),
+            mapIndexed(this.getMenuItemGroup)
+          )(children);
+
         return (
           <SubMenu
-            title={item.label}
             key={item.value}
+            title={item.label}
             theme={theme}>
-            {children.map(this.getMenu)}
+            <div className={theme.popupMenuInner}>
+              {menuItems}
+            </div>
           </SubMenu>
         );
       }
 
       return (
           <MenuItem
-            theme={theme}
             key={item.label}
+            theme={theme}
             onClick={this.handleMenuItemClick(item)}>
             {item.label}
           </MenuItem>
       );
+    }
+
+    getMenuItemGroup = (list, index) => {
+      return <div key={index}>{list.map(this.getMenuItem)}</div>;
     }
 
     handleMenuItemClick = item => () => {
