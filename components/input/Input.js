@@ -99,6 +99,7 @@ const factory = (FontIcon) => {
             {...other}
             className={theme.inputElement}
             onChange={this.handleInputChange} />
+          <span className={theme.bar}></span>
         </div>
       );
     }

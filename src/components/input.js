@@ -5,7 +5,7 @@ const InputTest = () => (
   <section>
     <h5>输入框</h5>
 
-    <div><Input defaultValue="你好" /></div>
+    <div><Input placeholder="请输入内容..." /></div>
 
     <div><Input prefix="search" defaultValue="你好" /></div>
 

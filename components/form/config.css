@@ -1,0 +1,9 @@
+:root {
+    --input-padding: calc(2 * var(--unit));
+    --input-text-label-color: color(var(--color-black) a(26%));
+    --input-field-font-size: calc(1 * var(--unit));
+    --input-label-font-size: calc(1.2 * var(--unit));
+    --input-field-padding: calc(0.8 * var(--unit));
+    --input-text-error-color: rgb(222, 50, 38);
+    --input-underline-height: calc(2 * var(--unit));
+}

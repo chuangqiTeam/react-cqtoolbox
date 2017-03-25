@@ -12,3 +12,4 @@ export const INPUT = 'CQINPUT';
 export const AUTOCOMPLETE = 'CQAUTOCOMPLETE';
 export const TOOLTIP = 'CQTOOLTIP';
 export const LAYOUT = 'CQLAYOUT';
+export const FORM = 'CQFORM';

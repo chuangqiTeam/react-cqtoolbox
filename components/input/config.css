@@ -1,11 +1,13 @@
 :root {
     --input-color: var(--palette-grey-900);
-    --input-border-color: var(--palette-grey-300);
+    --input-text-background-color: transparent;
+    --input-text-bottom-border-color: color(var(--color-black) a(12%));
+    --input-text-highlight-color: var(--color-primary);
+    --input-field-padding: calc(0.8 * var(--unit));
     --input-border-color-focus: var(--color-primary);
     --input-line-height: 26px;
     --input-small-line-height: 22px;
     --input-large-line-height: 30px;
-    --input-width: 180px;
 
 
     --input-icon-color: var(--palette-grey-900);

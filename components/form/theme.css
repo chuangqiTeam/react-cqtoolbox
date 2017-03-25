@@ -1,0 +1,49 @@
+@import "../colors.css";
+@import "../variables.css";
+@import "./config.css";
+
+.formItem {
+  position: relative;
+
+  padding: var(--input-padding) 0;
+}
+
+.label {
+  font-size: var(--input-field-font-size);
+  line-height: var(--input-field-font-size);
+
+  position: absolute;
+  top: calc(.6 * var(--unit));
+  left: 0;
+
+  transition-duration: var(--animation-duration);
+  pointer-events: none;
+
+  color: var(--input-text-label-color);
+}
+
+.error {
+  font-size: var(--input-label-font-size);
+  line-height: var(--input-underline-height);
+
+  margin-bottom: calc(-1 * var(--input-underline-height));
+
+  color: var(--input-text-error-color);
+}
+
+.errored {
+  padding-bottom: 0;
+
+  & .label {
+    color: var(--input-text-error-color);
+  }
+
+  & .bar {
+    &::after,
+    &::before {
+      width: 50%;
+
+      background-color: var(--input-text-error-color);
+    }
+  }
+}

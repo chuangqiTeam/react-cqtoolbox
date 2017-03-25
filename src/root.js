@@ -8,6 +8,7 @@ import FontIcon from './components/font_icon';
 import Select from './components/select';
 import Dialog from './components/dialog';
 import Input from './components/input';
+import Form from './components/form';
 import AutoComplete from './components/autocomplete';
 import Tooltip from './components/tooltip';
 import Badge from './components/badge';
@@ -32,6 +33,7 @@ class Root extends Component {
               <Datepicker />
               <Dialog />
               <Input />
+              <Form />
               <AutoComplete />
               <Tooltip />
               <Badge />
