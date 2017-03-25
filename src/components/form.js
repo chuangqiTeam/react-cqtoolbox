@@ -1,10 +1,10 @@
 import React from 'react';
 import Input from '../../components/input';
 import FormItem from '../../components/form';
+import Section from '../../components/section';
 
 const InputTest = () => (
-  <section>
-    <h5>表单</h5>
+  <Section title="表单">
 
     <form style={{ width: 400 }}>
       <FormItem label="手机号">
@@ -15,7 +15,7 @@ const InputTest = () => (
       </FormItem>
     </form>
 
-  </section>
+  </Section>
 );
 
 export default InputTest;

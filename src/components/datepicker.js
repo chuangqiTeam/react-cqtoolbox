@@ -1,13 +1,13 @@
 import React from 'react';
 import {DateSelect, DateRangeSelect} from '../../components/date_select';
+import Section from '../../components/section';
 
 const DatepickerTest = () => (
-  <section>
-    <h5>时间选择器</h5>
+  <Section title="时间选择器">
 
     <DateSelect />
     <DateRangeSelect />
-  </section>
+  </Section>
 );
 
 export default DatepickerTest;

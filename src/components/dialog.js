@@ -1,6 +1,7 @@
 import React from 'react';
 import Dialog from '../../components/dialog';
 import { Button } from '../../components/button';
+import Section from '../../components/section';
 
 class DialogTest extends React.Component {
   state = {
@@ -50,8 +51,7 @@ class DialogTest extends React.Component {
 
   render () {
     return (
-      <section>
-        <h5>对话框</h5>
+      <Section title="对话框">
         <div>
           <Button label='对话框' onClick={this.handleDialog} />
           <Button label='验证框' onClick={this.handleConfirm} />
@@ -69,7 +69,7 @@ class DialogTest extends React.Component {
             <p>在这里您可以添加任意内容。像Pickers这样的组件现在使用对话框。</p>
           </Dialog>
         </div>
-      </section>
+      </Section>
     );
   }
 }

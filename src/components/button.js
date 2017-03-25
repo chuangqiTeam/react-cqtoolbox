@@ -1,13 +1,18 @@
 import React from 'react';
 import { Button } from '../../components/button';
+import Section from '../../components/section';
+
+const GithubIcon = (
+  <Button
+    icon="github"
+    label="Github"
+    href="http://github.com/lanjingling0510" />
+);
 
 const ButtonTest = () => (
-  <section>
-    <h5>按钮</h5>
-    <Button
-      icon="github"
-      label="Github"
-      href="http://github.com/lanjingling0510" />
+  <Section
+    title="按钮"
+    rightTitle={GithubIcon}>
 
     <Button
       icon="book"
@@ -64,7 +69,7 @@ const ButtonTest = () => (
     <Button icon="plus" floating primary disabled />
     <Button icon="plus" floating accent mini />
 
-  </section>
+  </Section>
 );
 
 function rippleEnded() {

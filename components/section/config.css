@@ -1,0 +1,8 @@
+:root {
+  --section-background-color: var(--color-background);
+  --section-padding: calc(1.5 * var(--unit));
+  --section-subtitle-font-size: calc(1.5 * var(--unit));
+  --section-title-color: #334e69;
+  --section-title-font-size: var(--font-size-large);
+  --section-title-margin-bottom: calc(2 * var(--unit));
+}

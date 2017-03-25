@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import AutoComplete from '../../components/autocomplete';
 import Input from '../../components/input';
+import Section from '../../components/section';
 
 class AutoCompleteTest extends Component {
   state = {
@@ -39,16 +40,15 @@ class AutoCompleteTest extends Component {
     const { dataSource1, dataSource2, value2 } = this.state;
 
     return (
-      <section>
-        <h5>自动补全</h5>
+      <Section title="自动补全">
 
-        <div>
+        <div style={{ width: 300 }}>
           <AutoComplete
             dataSource={dataSource1}
             onChange={this.onChange1} />
-        </div>
 
-        <div>
+          <br/>
+
           <AutoComplete
             value={value2}
             dataSource={dataSource2}
@@ -60,7 +60,7 @@ class AutoCompleteTest extends Component {
               onSuffixClick={this.onChange2.bind(this, '')} />
           </AutoComplete>
         </div>
-      </section>
+      </Section>
     )
   }
 }

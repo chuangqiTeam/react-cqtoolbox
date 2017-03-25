@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Select, CascadeSelect} from '../../components/select';
+import Section from '../../components/section';
 
 const genres = [
   {
@@ -226,12 +227,11 @@ class SelectTest extends Component {
     };
 
     return (
-      <section>
-        <h5>下拉框</h5>
+      <Section title="下拉框">
 
         <Select {...selectData} />
         <CascadeSelect {...cascadeSelectData} />
-      </section>
+      </Section>
     )
   }
 }
