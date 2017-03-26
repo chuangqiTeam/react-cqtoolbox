@@ -3,26 +3,27 @@
 @import './config.css';
 
 .input {
-    display: block;
+    display: flex;
+    align-items: center;
     position: relative;
     @apply --reset;
     font-size: var(--font-size);
+    padding: var(--input-field-padding) 0;
+    border-bottom: 1px solid var(--input-text-bottom-border-color);
 }
 
 .inputElement {
     appearance: none;
     background-image: none;
     background-color: var(--input-text-background-color);
-    border-bottom: 1px solid var(--input-text-bottom-border-color);
-    border-left: 0;
-    border-right: 0;
-    border-top: 0;
     color: var(--input-color);
     box-sizing: border-box;
     font-size: inherit;
     line-height: inherit;
+    border: 0;
     outline: none;
     width: 100%;
+    flex: 1;
 
     &:focus:not([disabled]):not([readonly]) {
         & ~ .bar::before,
@@ -34,7 +35,9 @@
 
 .bar {
   display: block;
-  position: relative;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   width: 100%;
 
   &::before,
@@ -67,14 +70,6 @@
         height: var(--input-icon-width);
         line-height: var(--input-icon-width);
     }
-
-    .prefix ~ .inputElement {
-        padding-left: var(--input-icon-width);
-    }
-
-    .suffix ~ .inputElement {
-        padding-right: var(--input-icon-width);
-    }
 }
 
 .small {
@@ -84,14 +79,6 @@
         width: var(--input-small-icon-width);
         height: var(--input-small-icon-width);
         line-height: var(--input-small-icon-width);
-    }
-
-    .prefix ~ .inputElement {
-        padding-left: var(--input-small-icon-width);
-    }
-
-    .suffix ~ .inputElement {
-        padding-right: var(--input-small-icon-width);
     }
 }
 
@@ -103,23 +90,12 @@
         height: var(--input-large-icon-width);
         line-height: var(--input-large-icon-width);
     }
-
-    .prefix ~ .inputElement {
-        padding-left: var(--input-large-icon-width);
-    }
-
-    .suffix ~ .inputElement {
-        padding-right: var(--input-large-icon-width);
-    }
 }
 
 .prefix, .suffix {
     color: var(--input-icon-color);
-    position: absolute;
-    top: 0;
     transition: color 0.2s var(--animation-curve-default);
     cursor: pointer;
-
 
     &.search:hover {
         color: var(--input-border-color-focus);
@@ -134,14 +110,6 @@
     }
 }
 
-
-.prefix {
-    left: 0;
-}
-
-.suffix {
-    right: 0;
-}
 
 
 .textarea {

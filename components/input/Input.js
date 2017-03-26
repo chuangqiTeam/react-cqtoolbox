@@ -93,12 +93,13 @@ const factory = (FontIcon) => {
         <div
           className={classes}>
           {prefixIcon}
-          {suffixIcon}
           <input
             data-react-toolbox="Input"
             {...other}
+            type={type}
             className={theme.inputElement}
             onChange={this.handleInputChange} />
+          {suffixIcon}
           <span className={theme.bar}></span>
         </div>
       );
