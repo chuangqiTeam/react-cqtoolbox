@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import Animate from 'rc-animate';
-import animationFactory from './animationFactory.js';
+import animationFactory from '../utils/animationHeightFactory.js';
 
 const factory = (SubMenuCaption) => {
   class SubMenu extends Component {

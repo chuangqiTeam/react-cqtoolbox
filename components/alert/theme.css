@@ -1,0 +1,132 @@
+@import "../colors.css";
+@import "../variables.css";
+
+:root {
+  --alert-hasDscription-icon-font-size: calc(2.4 * var(--unit));
+  --alert-hasDscription-padding: var(--pd) var(--pd) var(--pd) calc(6 * var(--unit));
+  --alert-noIocn-padding: var(--pd) calc(4.8 * var(--unit)) var(--pd) calc(1.6 * var(--unit));
+  --alert-padding: var(--pd) calc(4.8 * var(--unit)) var(--pd) calc(3.8 * var(--unit));
+  --lpd: calc(1.6 * var(--unit));
+  --pd: calc(.8 * var(--unit));
+}
+
+.alert {
+  font-size: var(--font-size);
+
+  position: relative;
+
+  overflow: hidden;
+
+  opacity: 1;
+  border-radius: 4px;
+  @apply --reset;
+}
+
+.hasDscription {
+  .alertInner {
+    padding: var(--alert-hasDscription-padding);
+  }
+  .icon {
+    font-size: var(--alert-hasDscription-icon-font-size);
+
+    top: var(--pd);
+    left: var(--lpd);
+  }
+
+  .message {
+    margin-bottom: var(--pd);
+  }
+}
+
+.noIcon {
+  .alertInner {
+    padding: var(--alert-noIocn-padding);
+  }
+}
+
+.success {
+  border: 1px solid var(--palette-green-100);
+  background-color: var(--palette-green-50);
+
+  .message {
+    color: var(--palette-green-800);
+  }
+
+  .icon {
+    color: var(--palette-green-600);
+  }
+}
+
+.info {
+  border: 1px solid var(--palette-cyan-100);
+  background-color: var(--palette-cyan-50);
+
+  .message {
+    color: var(--palette-cyan-800);
+  }
+
+  .icon {
+    color: var(--palette-cyan-600);
+  }
+}
+
+.warning {
+  border: 1px solid var(--palette-amber-100);
+  background-color: var(--palette-amber-50);
+
+  .message {
+    color: var(--palette-amber-800);
+  }
+
+  .icon {
+    color: var(--palette-amber-600);
+  }
+}
+
+.error {
+  border: 1px solid var(--palette-red-100);
+  background-color: var(--palette-red-50);
+
+  .message {
+    color: var(--palette-red-800);
+  }
+
+  .icon {
+    color: var(--palette-red-600);
+  }
+}
+
+.alertInner {
+  padding: var(--alert-padding);
+}
+
+.message {
+  display: block;
+}
+
+.description {
+  font-size: var(--font-size-small);
+  line-height: 1.75;
+
+  color: var(--palette-grey-600);
+}
+
+.icon {
+  position: absolute;
+  top: calc(.9 * var(--unit));
+  left: 16px;
+}
+
+.closeIcon {
+  position: absolute;
+  top: var(--pd);
+  right: var(--lpd);
+
+  cursor: pointer;
+}
+
+.anim {
+  transition: all var(--animation-duration) var(--animation-curve-linear-out-slow-in);
+
+  opacity: 0;
+}

@@ -16,6 +16,7 @@ import Header from './components/header';
 import Sider from './components/sider';
 import Datepicker from './components/datepicker';
 import LazyImage from './components/lazyImage';
+import Alert from './components/alert';
 import {Layout, Content} from '../components/layout';
 
 
@@ -39,6 +40,7 @@ class Root extends Component {
               <Tooltip />
               <Badge />
               <LazyImage />
+              <Alert />
             </div>
           </Content>
         </Layout>
