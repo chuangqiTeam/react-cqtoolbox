@@ -1,3 +1,6 @@
 {
-  "extends": "cqaso-kit"
+  "extends": "cqaso-kit",
+  "globals": {
+    "warning": true
+  }
 }

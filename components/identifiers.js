@@ -15,3 +15,4 @@ export const LAYOUT = 'CQLAYOUT';
 export const FORM = 'CQFORM';
 export const SECTION = 'CQSECTION';
 export const CHECKBOX = 'CQCHECKBOX';
+export const LAZYIMAGE = 'CQLAZYIMAGE';

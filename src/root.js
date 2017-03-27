@@ -15,6 +15,7 @@ import Badge from './components/badge';
 import Header from './components/header';
 import Sider from './components/sider';
 import Datepicker from './components/datepicker';
+import LazyImage from './components/lazyImage';
 import {Layout, Content} from '../components/layout';
 
 
@@ -37,6 +38,7 @@ class Root extends Component {
               <AutoComplete />
               <Tooltip />
               <Badge />
+              <LazyImage />
             </div>
           </Content>
         </Layout>

@@ -46,7 +46,7 @@ const plugins = [
     loaders: [
       {
         path: 'babel',
-        query: babelrc.development
+        query: babelrc.doc
       }
     ]
   }),

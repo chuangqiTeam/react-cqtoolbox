@@ -176,6 +176,10 @@ module.exports = {
     ]
   },
 
+  externals: {
+    warning: 'warning',
+  },
+
   // Ensure that webpack polyfills the following node features for use
   // within any bundles that are targetting node as a runtime. This will be
   // ignored otherwise.
