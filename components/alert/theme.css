@@ -3,7 +3,7 @@
 
 :root {
   --alert-hasDscription-icon-font-size: calc(2.4 * var(--unit));
-  --alert-hasDscription-padding: var(--pd) var(--pd) var(--pd) calc(6 * var(--unit));
+  --alert-hasDscription-padding: var(--pd) calc(4.8 * var(--unit)) var(--pd) calc(6 * var(--unit));
   --alert-noIocn-padding: var(--pd) calc(4.8 * var(--unit)) var(--pd) calc(1.6 * var(--unit));
   --alert-padding: var(--pd) calc(4.8 * var(--unit)) var(--pd) calc(3.8 * var(--unit));
   --lpd: calc(1.6 * var(--unit));
@@ -28,8 +28,6 @@
   }
   .icon {
     font-size: var(--alert-hasDscription-icon-font-size);
-
-    top: var(--pd);
     left: var(--lpd);
   }
 
@@ -113,15 +111,16 @@
 
 .icon {
   position: absolute;
-  top: calc(.9 * var(--unit));
-  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: var(--lpd);
 }
 
 .closeIcon {
   position: absolute;
-  top: var(--pd);
+  top: 50%;
+  transform: translateY(-50%);
   right: var(--lpd);
-
   cursor: pointer;
 }
 
