@@ -1,4 +1,3 @@
-
 import { themr } from 'react-css-themr';
 import { OVERLAY } from '../identifiers';
 import Overlay from './Overlay';

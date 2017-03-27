@@ -1,3 +1,21 @@
+[1.0.4](../../releases/tag/1.0.4)     2017-03-27 19:30:37
+---------------------------------------------------------
+
+- [e431ee9](../../commit/e431ee9) ✨  [feature] add Alert Component.
+- [3ed8886](../../commit/3ed8886) ✨  [feature] add LazyImage Component.
+- [2e045ed](../../commit/2e045ed) 📚  [document] update document.
+- [9371dcf](../../commit/9371dcf) ✨  [feature] add Checkbox Component.
+- [d7d7b21](../../commit/d7d7b21) 📦  [refact] update Input suffix style.
+- [49a05d0](../../commit/49a05d0) ✨  [feature] add Section Component.
+- [1ea74bb](../../commit/1ea74bb) ✨  [feature] add FormItem Component.
+- [2b6ee83](../../commit/2b6ee83) 📚  [document] update document.
+- [09eb99f](../../commit/09eb99f) ✨  [feature] add maxRowNumber property for Select and CascadeSelect Component.
+- [a11f603](../../commit/a11f603) ✨  [feature] add CascadeSelect Component.
+- [ea18f21](../../commit/ea18f21) ✨  [feature] add Badge Component.
+- [dbbb361](../../commit/dbbb361) ✨  [feature] add Menu horizontal of mode for Navbar header.
+- [f89d4c3](../../commit/f89d4c3) ✨  [feature] npm run docs
+
+
 [1.0.3](../../releases/tag/1.0.3)     2017-03-23 14:08:07
 ---------------------------------------------------------
 
