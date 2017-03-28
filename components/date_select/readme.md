@@ -33,18 +33,22 @@ export default DatepickerTest;
 ```
 
 
-## (DateSelect)Properties
+## DateSelect组件
+
+### 属性
 
 | 值            | 值类型        | 默认     | 描述|
 |:-----         |:-----       |:-----         |:-----|
 | `date`        | `Object`    |               | `接受一个moment对象`             |
-| `minDate`     | `Object`    | `2016-03-01`  | `最小选择日期`                   |
-| `maxDate`     | `Object`    |               | `最大选择日期`                   |
+| `minDate`     | `Object`    | `2016-03-01`  | `最小选择日期,接受一个moment对象`                   |
+| `maxDate`     | `Object`    |               | `最大选择日期,接受一个moment对象`                   |
 | `onChange`    | `Function`  |               | `当值变化触发onChange函数`       |
 
 
 
-## (DateRangeSelect)Properties
+## DateRangeSelect组件
+
+### 属性
 
 | 值            | 值类型        | 默认     | 描述|
 |:-----         |:-----       |:-----         |:-----|
@@ -52,4 +56,5 @@ export default DatepickerTest;
 | `endDate`     | `Object`    |               | `DateRangeSelect独有，结束日期,接受一个moment对象`  |
 | `minDate`     | `Object`    | `2016-03-01`  | `最小选择日期,接受一个moment对象`                   |
 | `maxDate`     | `Object`    |               | `最大选择日期,接受一个moment对象`                   |
+| `ranges`      | `Array`     |  ['今日', '昨日', '近7日', '近30日', '近三个月', '近一年']           | `可选的时间段范围`         |
 | `onChange`    | `Function`  |               | `当值变化触发onChange函数`                         |
