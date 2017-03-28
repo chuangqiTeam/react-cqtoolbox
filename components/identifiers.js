@@ -17,3 +17,4 @@ export const SECTION = 'CQSECTION';
 export const CHECKBOX = 'CQCHECKBOX';
 export const LAZYIMAGE = 'CQLAZYIMAGE';
 export const ALERT = 'CQALERT';
+export const TABS = 'CQTABS';

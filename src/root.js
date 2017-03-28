@@ -18,7 +18,7 @@ import Datepicker from './components/datepicker';
 import LazyImage from './components/lazyImage';
 import Alert from './components/alert';
 import {Layout, Content} from '../components/layout';
-
+import Tabs from './components/tabs';
 
 class Root extends Component {
   render() {
@@ -41,6 +41,7 @@ class Root extends Component {
               <Badge />
               <LazyImage />
               <Alert />
+              <Tabs />
             </div>
           </Content>
         </Layout>
