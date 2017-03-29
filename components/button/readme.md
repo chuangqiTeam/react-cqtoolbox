@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Button
 
 [cqaso](http://cqaso.com/) Button组件在html按钮模型的基础之上，重新对按钮表单元素进行审视和设计，它在包含文字，图标字体，颜色主题，行为样式之外，添加**水波纹过渡动画**，额外让按钮的行为样式在页面展示中别具一格。让我们一起来学习cqaso Button组件吧。
@@ -56,6 +57,68 @@
       <Button icon="plus" floating accent mini />
   </div>);
   
+=======
+
+## Button
+***
+
+[cqaso](http://cqaso.com/) Button组件在html按钮模型的基础之上，重新对按钮表单元素进行审视和设计，它在包含文字，图标字体，颜色主题，行为样式之外，添加**水波纹过渡动画**，额外让按钮的行为样式在页面展示中别具一格。让我们一起来学习cqaso Button组件吧。
+
+### 例子
+
+```javascript
+	import { Button } from 'react-cqtoolbox/lib/button';
+  
+	const ButtonTest = () => (
+	<div>
+    	<Button
+      	icon="book"
+      	label="书签"
+      	className="coco"
+      	iconSpin
+      	onRippleEnded={rippleEnded} />
+
+    	<Button
+      	icon="book"
+      	label="书签"
+      	primary
+      	onRippleEnded={rippleEnded} />
+
+    	<Button
+      	icon="book"
+      	label="书签"
+      	raised />
+
+    	<Button
+      	icon="book"
+      	label="书签"
+      	primary />
+
+    	<Button
+      	icon="book"
+      	label="书签"
+      	type="text"
+      	raised
+      	accent />
+
+    	<Button
+      	icon="loading"
+      	iconSpin
+      	label="Loading"
+      	raised
+      	primary
+      	rippleMultiple={false}
+      	onRippleEnded={rippleEnded} />
+    	<Button icon="plus" floating />
+    	<Button icon="plus" floating primary />
+    	<Button icon="plus" floating accent />
+    	<Button icon="plus" floating primary disabled />
+    	<Button icon="plus" floating accent mini />
+    </div>
+    );
+
+```
+>>>>>>> 831b0e2e56696c62908f6fcc0519e8c0a511c0c2
 ### 属性
 
 | 属性名             | 属性名                 | 默认值       | 描述|
@@ -80,7 +143,11 @@
 | `theme`           | `Object`              |             | theme对象属性，用于对Button元素的样式颜色属性集中设置.|
 | `type`            | `String`              | `button`    | 用于设置Button元素的表单类型|
 
+<<<<<<< HEAD
 注意：***theme***属性可对Button元素的样式颜色集中设置，Button元素的某些属性的应用具有顺序性和对立性，Button元素属性的魔性由你来发现！
+=======
+注意：**theme**属性可对Button元素的样式颜色集中设置，Button元素的某些属性的应用具有顺序性和对立性。
+>>>>>>> 831b0e2e56696c62908f6fcc0519e8c0a511c0c2
 
 ### Theme对象属性
 
