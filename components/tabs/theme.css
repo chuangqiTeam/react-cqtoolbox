@@ -22,7 +22,6 @@
   transition-timing-function: var(--animation-curve-default);
   transition-duration: var(--animation-duration);
   transition-property: box-shadow, color;
-  text-transform: uppercase;
 
   color: var(--tab-text-inactive-color);
 

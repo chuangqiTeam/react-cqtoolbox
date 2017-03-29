@@ -9,6 +9,7 @@ export const POPUP = 'CQPOPUP';
 export const OVERLAY = 'CQOVERLAY';
 export const DIALOG = 'CQDIALOG';
 export const INPUT = 'CQINPUT';
+export const INPUTGROUP = 'CQINPUTGROUP';
 export const AUTOCOMPLETE = 'CQAUTOCOMPLETE';
 export const TOOLTIP = 'CQTOOLTIP';
 export const LAYOUT = 'CQLAYOUT';

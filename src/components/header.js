@@ -1,10 +1,28 @@
 import React, {Component} from 'react';
 import theme from './siderTheme.css';
 import Badge from '../../components/badge';
+// import Input from '../../components/input';
+// import Select from '../../components/select';
+// import InputGroup from '../../components/input_group';
 import {Header} from '../../components/layout';
 import {Menu, MenuItem, SubMenu} from '../../components/menu';
 
 const BadgeText = Badge(({children}) => <span>{children}</span>);
+
+// const countrys = [
+//   {value: 'RU', label: '俄罗斯'},
+//   {value: 'BR', label: '巴西'},
+//   {value: 'VN', label: '越南'},
+//   {value: 'KH', label: '柬埔寨'},
+//   {value: 'PH', label: '菲律宾'}
+// ];
+//
+// const selectData = {
+//   value: 1,
+//   data: countrys,
+//   maxRowNum: 8,
+//   onChange: console.log.bind(console),
+// };
 
 class HeaderTest extends Component {
   render() {
@@ -44,6 +62,10 @@ class HeaderTest extends Component {
           <MenuItem>服务</MenuItem>
           <MenuItem>专栏</MenuItem>
         </Menu>
+        {/* <InputGroup>
+          <Select {...selectData} />
+          <Input placeholder="请输入内容..." suffix="search" />
+        </InputGroup> */}
       </Header>
     );
   }

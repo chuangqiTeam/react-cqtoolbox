@@ -125,6 +125,7 @@ const factory = (Trigger, SelectInput, Menu, MenuItem) => {
           popupTheme={props.theme}
           popup={menu}>
           <SelectInput
+            theme={props.theme}
             selectedItem={selectedItem}
             isActive={state.open}
             onClick={this.handleSelectToggle} />
