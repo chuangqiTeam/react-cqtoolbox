@@ -11,6 +11,7 @@ const factory = (ripple, FontIcon) => {
       flat: PropTypes.bool,
       floating: PropTypes.bool,
       href: PropTypes.string,
+      size: PropTypes.oneOf(['small', 'normal', 'large']),
       icon: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.element,
@@ -48,6 +49,7 @@ const factory = (ripple, FontIcon) => {
       neutral: true,
       primary: false,
       raised: false,
+      size: 'normal',
       type: 'button',
     }
 
@@ -90,13 +92,14 @@ const factory = (ripple, FontIcon) => {
         raised,    // eslint-disable-line
         theme,
         type,
+        size,
         ...others
       } = this.props;
       const element = href ? 'a' : 'button';
       const level = this.getLevel();
       const shape = this.getShape();
 
-      const classes = classnames(theme.button, [theme[shape]], {
+      const classes = classnames(theme.button, [theme[shape]], [theme[size]], {
         [theme[level]]: neutral,
         [theme.mini]: mini,
       }, className);

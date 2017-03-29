@@ -1,4 +1,5 @@
 export const BUTTON = 'CQButton';
+export const BUTTONGROUP = 'CQBUTTONGROUP';
 export const RIPPLE = 'CQRIPPLE';
 export const ICON = 'CQICON';
 export const SELECT = 'CQSELECT';

@@ -1,6 +1,11 @@
 :root {
   --button-border-radius: calc(0.2 * var(--unit));
-  --button-line-height: 1.9;
+
+
+  --button-normal-line-height: calc(2.8 * var(--unit));
+  --button-small-line-height: calc(2.2 * var(--unit));
+  --button-large-line-height: calc(3.2 * var(--unit));
+
   --button-height: 27;
   --button-toggle-font-size: calc(2 * var(--unit));
   --button-primary-color: var(--color-primary);
