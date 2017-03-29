@@ -1,9 +1,12 @@
-# Button
+## Button
 ***
 
 [cqaso](http://cqaso.com/) Button组件在html按钮模型的基础之上，重新对按钮表单元素进行审视和设计，它在包含文字，图标字体，颜色主题，行为样式之外，添加**水波纹过渡动画**，额外让按钮的行为样式在页面展示中别具一格。让我们一起来学习cqaso Button组件吧。
 
-	import { Button } from '../../components/button';
+### 例子
+
+```javascript
+	import { Button } from 'react-cqtoolbox/lib/button';
 	const ButtonTest = () => (
 	<div>
     	<Button
@@ -52,7 +55,8 @@
     </div>
     );
 
-## 属性
+```
+### 属性
 
 | 属性名             | 属性名                 | 默认值       | 描述|
 |:------------------|:----------------------|:------------|:------------------|
@@ -78,7 +82,7 @@
 
 注意：***theme***属性可对Button元素的样式颜色集中设置，Button元素的某些属性的应用具有顺序性和对立性。
 
-## Theme对象属性
+### Theme对象属性
 
 | 属性名          | 描述|
 |:---------------|:-----------|
