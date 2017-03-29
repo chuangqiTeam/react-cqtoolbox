@@ -1,11 +1,11 @@
-## Foot Icon
+## 字体图标（FontIcon）
 
-[cqaso](http://cqaso.com/) Foot Icon组件让图标文字更具语义和个性化，Font Icon组件并没有提供图标字体库，因为行内有更加专业的图标字体设计团队做这样的事情。Font Icon默认使用阿里的Iconfont字体库,如果您想更换字体库和使用Font Icon组件，就让我们一起来一探究竟吧。
+[cqaso](http://cqaso.com/) Font Icon组件让图标文字更具语义和个性化，Font Icon组件并没有提供图标字体库，因为行内有更加专业的图标字体设计团队做这样的事情。Font Icon默认使用阿里的Iconfont字体库,如果您想更换字体库和使用Font Icon组件，就让我们一起来一探究竟吧。
 
-![Button img](../../src/image/fontIcon.png)
+![Button img](../../.github/fontIcon.png)
 
 	<!-- example -->
-	import { FontIcon } from 'react-cqtoolbox/lib/components/font_icon';
+	import { FontIcon } from 'react-cqtoolbox/lib/font_icon';
 	const FontIconTest = () => (
 	<div>
     	<span>图标文字水平对齐</span>
@@ -34,8 +34,8 @@
 Look here ！ 如果你想在cqaso Font Icon组件的模板之上，想要引入新的图表字体库，定义属于自己的Font Icon组件行为样式主题，Theme对象属性帮你完全搞定，让我们来通过一个例子看看吧。
 
 <!--example-->
-1. 如果你想改变现有图标字体的颜色或者图标字体库，那么在项目文件中，定义footIconTheme.css（可定义其他文件名）文件（如果更换其他图标字体库，请引入相应的font字体库文件）。下面将图标字体颜色设置为#555eed;的例子做演示.
-	<!--footIconTheme.css部分内容（覆盖react-cqtoolbox/lib/components/font_icon/theme.css文件内容）-->
+1. 如果你想改变现有图标字体的颜色或者图标字体库，那么在项目文件中，定义fontIconTheme.css（可定义其他文件名）文件（如果更换其他图标字体库，请引入相应的font字体库文件）。下面将图标字体颜色设置为#555eed;的例子做演示.
+	<!--footIconTheme.css部分内容（覆盖react-cqtoolbox/lib/font_icon/theme.css文件内容）-->
 
 		.icon {
     		display: inline-block;
@@ -59,8 +59,8 @@ Look here ！ 如果你想在cqaso Font Icon组件的模板之上，想要引入
 
 	<!--设置theme属性的例子-->
 
-		import { FontIcon } from 'react-cqtoolbox/lib/components/font_icon';
-		import theme from 'react-cqtoolbox/lib/theme/fontIconTheme.css';
+		import { FontIcon } from 'react-cqtoolbox/lib/font_icon';
+		import theme from 'fontIconTheme.css';
 		const ButtonTest = () => (
 			<div>
 				<FontIcon value="minus-square" theme={theme} alt="explore icon"  className="world"/>
@@ -68,4 +68,4 @@ Look here ！ 如果你想在cqaso Font Icon组件的模板之上，想要引入
 			</div>);
 3. 最后让我们一起看看效果。
 
-	![Button img](../../src/image/fontIconTheme.png)
+	![Button img](../../.github/fontIconTheme.png)
