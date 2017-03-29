@@ -2,11 +2,12 @@
 
 [时间选择器](https://github.com/lockyang/react-cqtoolbox/tree/master/components/date_select)用于选择单点时间或时间范围
 
+## 例子
 <!-- example -->
 ```jsx
 //DateSelect 单点选择器
 //DateRangeSelect 范围选择器
-import {DateSelect, DateRangeSelect} from '../../components/date_select';
+import {DateSelect, DateRangeSelect} from 'react-cqtoolbox/lib/date_select';
 import moment from 'moment';
 
 class DatepickerTest extends React.Component {
