@@ -19,6 +19,7 @@
     color: var(--input-color);
     box-sizing: border-box;
     font-size: inherit;
+    padding: 0 var(--input-field-padding);
     line-height: inherit;
     border: 0;
     outline: none;
@@ -31,6 +32,10 @@
           width: 50%;
         }
     }
+}
+
+.icon {
+    font-size: var(--font-size-large);
 }
 
 .bar {

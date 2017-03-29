@@ -8,6 +8,7 @@ import FontIcon from './components/font_icon';
 import Select from './components/select';
 import Dialog from './components/dialog';
 import Input from './components/input';
+import InputGroup from './components/input_group';
 import Form from './components/form';
 import AutoComplete from './components/autocomplete';
 import Tooltip from './components/tooltip';
@@ -18,7 +19,7 @@ import Datepicker from './components/datepicker';
 import LazyImage from './components/lazyImage';
 import Alert from './components/alert';
 import {Layout, Content} from '../components/layout';
-
+import Tabs from './components/tabs';
 
 class Root extends Component {
   render() {
@@ -35,12 +36,14 @@ class Root extends Component {
               <Datepicker />
               <Dialog />
               <Input />
+              <InputGroup />
               <Form />
               <AutoComplete />
               <Tooltip />
               <Badge />
               <LazyImage />
               <Alert />
+              <Tabs />
             </div>
           </Content>
         </Layout>

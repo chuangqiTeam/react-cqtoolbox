@@ -1,25 +1,68 @@
+@import "../colors.css";
+@import "../variables.css";
+@import "./config.css";
+
 .select_input {
-    min-width: 120px;
-    text-align: left;
+  font-size: var(--font-size);
+  font-weight: normal;
+  line-height: var(--input-line-height);
 
-    .value {
-        float: left;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        max-width: 100%;
-        padding-right: 14px;
-    }
+  position: relative;
 
-    .arrow {
-        position: absolute;
-        top: 50%;
-        right: 8px;
-        margin-top: -12px;
-        transform: rotate(0deg);
-        transition: transform .2s ease;
-        &.open {
-            transform: rotate(180deg);
-        }
-    }
+  display: inline-block;
+
+  min-width: 120px;
+  padding: 0 0 0 var(--input-field-padding);
+
+  cursor: pointer;
+  transition-timing-function: var(--animation-curve-default);
+  transition-duration: var(--animation-duration);
+  transition-property: box-shadow, color;
+  text-align: left;
+  white-space: nowrap;
+  text-decoration: none;
+  letter-spacing: 0;
+  text-transform: uppercase;
+
+  color: var(--input-color);
+  border: 1px solid var(--input-border-color);
+  outline: none;
+  background-color: var(--input-background-color);
+
+  @apply --reset;
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  & > * {
+    pointer-events: none;
+  }
+
+  & > .rippleWrapper {
+    overflow: hidden;
+  }
+}
+
+.value {
+  overflow: hidden;
+
+  padding-right: var(--input-line-height);
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: 0;
+
+  margin-top: -12px;
+
+  transition: transform .2s ease;
+  transform: rotate(0deg);
+  &.open {
+    transform: rotate(180deg);
+  }
 }

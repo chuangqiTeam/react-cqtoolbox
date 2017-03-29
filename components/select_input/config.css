@@ -1,0 +1,7 @@
+:root {
+  --input-background-color: var(--color-white);
+  --input-border-color: var(--palette-grey-300);
+  --input-field-padding: calc(.8 * var(--unit));
+  --input-line-height: calc(2.8 * var(--unit));
+  --input-color: var(--palette-grey-900);
+}

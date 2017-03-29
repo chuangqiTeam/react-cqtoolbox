@@ -1,0 +1,68 @@
+@import "../colors.css";
+@import "../variables.css";
+
+:root {
+  --input-group-large-padding: calc(.8 * var(--unit));
+  --input-group-normal-padding: calc(.4 * var(--unit));
+  --input-text-border-color: color(var(--color-black) a(12%));
+}
+
+.inputGroup {
+  display: flex;
+
+  & > :first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+  & > * {
+    border-radius: 0;
+  }
+
+  & > :last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  & .select_input {
+    min-width: auto;
+  }
+
+  & .input,
+  & .select_input,
+  & .neutral:not([disabled]).flat {
+    border-width: 1px 0 1px 1px;
+    border-style: solid;
+    border-color: var(--input-text-border-color);
+
+    &:last-child {
+      border-right-width: 1px;
+    }
+  }
+
+  & .input {
+    flex: 1;
+  }
+
+  & .bar {
+    display: none;
+  }
+}
+
+.small {
+  & .input {
+    padding: 0;
+  }
+}
+
+.normal {
+  & .input {
+    padding: var(--input-group-normal-padding);
+  }
+}
+
+.large {
+  & .input {
+    padding: var(--input-group-large-padding);
+  }
+}

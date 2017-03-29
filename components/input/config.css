@@ -5,9 +5,9 @@
     --input-text-highlight-color: var(--color-primary);
     --input-field-padding: calc(0.8 * var(--unit));
     --input-border-color-focus: var(--color-primary);
-    --input-line-height: 26px;
-    --input-small-line-height: 22px;
-    --input-large-line-height: 30px;
+    --input-line-height: calc(2.8 * var(--unit));
+    --input-small-line-height: calc(2.2 * var(--unit));
+    --input-large-line-height: calc(3.2 * var(--unit));
 
 
     --input-icon-color: var(--palette-grey-900);

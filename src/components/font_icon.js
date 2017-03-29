@@ -4,8 +4,7 @@ import Section from '../../components/section';
 
 const FontIconTest = () => (
   <Section title="图标">
-
-    <span>图标文字水平对齐</span>
+    图标文字水平对齐
     <FontIcon value="github" />
     <FontIcon value="minus-square" alt="explore icon" />
     <FontIcon value="question-circle" alt="zoom icon" />

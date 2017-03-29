@@ -20,7 +20,6 @@ const InputTest = () => (
       <Input size="large" prefix="search" suffix="close-circle" defaultValue="你好"/>
       <br/>
       <Input type="textarea" prefix="search" suffix="close-circle" defaultValue="你好"/>
-
     </div>
 
   </Section>
