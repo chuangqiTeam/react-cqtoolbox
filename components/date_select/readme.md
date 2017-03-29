@@ -32,8 +32,6 @@ class DatepickerTest extends React.Component {
 export default DatepickerTest;
 
 ```
-
-
 ## DateSelect组件
 
 ### 属性
