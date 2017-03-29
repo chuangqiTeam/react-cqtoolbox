@@ -1,3 +1,4 @@
+
 ## Button
 ***
 
@@ -7,6 +8,7 @@
 
 ```javascript
 	import { Button } from 'react-cqtoolbox/lib/button';
+  
 	const ButtonTest = () => (
 	<div>
     	<Button
@@ -80,7 +82,7 @@
 | `theme`           | `Object`              |             | theme对象属性，用于对Button元素的样式颜色属性集中设置.|
 | `type`            | `String`              | `button`    | 用于设置Button元素的表单类型|
 
-注意：***theme***属性可对Button元素的样式颜色集中设置，Button元素的某些属性的应用具有顺序性和对立性。
+注意：**theme**属性可对Button元素的样式颜色集中设置，Button元素的某些属性的应用具有顺序性和对立性。
 
 ### Theme对象属性
 
