@@ -1,83 +1,101 @@
-# Button
 
-A [button](https://material.google.com/components/buttons.html) clearly communicates what action will occur when the user touches it. It consists of text, an image, or both, designed in accordance with your app’s color theme.
+## Button
+***
 
-<!-- example -->
-```jsx
-import {Button, IconButton} from 'react-toolbox/lib/button';
+[cqaso](http://cqaso.com/) Button组件在html按钮模型的基础之上，重新对按钮表单元素进行审视和设计，它在包含文字，图标字体，颜色主题，行为样式之外，添加**水波纹过渡动画**，额外让按钮的行为样式在页面展示中别具一格。让我们一起来学习cqaso Button组件吧。
 
-const GithubIcon = () => (
-  <svg viewBox="0 0 284 277">
-    <g><path d="M141.888675,0.0234927555 C63.5359948,0.0234927555 0,63.5477395 0,141.912168 C0,204.6023 40.6554239,257.788232 97.0321356,276.549924 C104.12328,277.86336 106.726656,273.471926 106.726656,269.724287 C106.726656,266.340838 106.595077,255.16371 106.533987,243.307542 C67.0604204,251.890693 58.7310279,226.56652 58.7310279,226.56652 C52.2766299,210.166193 42.9768456,205.805304 42.9768456,205.805304 C30.1032937,196.998939 43.9472374,197.17986 43.9472374,197.17986 C58.1953153,198.180797 65.6976425,211.801527 65.6976425,211.801527 C78.35268,233.493192 98.8906827,227.222064 106.987463,223.596605 C108.260955,214.426049 111.938106,208.166669 115.995895,204.623447 C84.4804813,201.035582 51.3508808,188.869264 51.3508808,134.501475 C51.3508808,119.01045 56.8936274,106.353063 65.9701981,96.4165325 C64.4969882,92.842765 59.6403297,78.411417 67.3447241,58.8673023 C67.3447241,58.8673023 79.2596322,55.0538738 106.374213,73.4114319 C117.692318,70.2676443 129.83044,68.6910512 141.888675,68.63701 C153.94691,68.6910512 166.09443,70.2676443 177.433682,73.4114319 C204.515368,55.0538738 216.413829,58.8673023 216.413829,58.8673023 C224.13702,78.411417 219.278012,92.842765 217.804802,96.4165325 C226.902519,106.353063 232.407672,119.01045 232.407672,134.501475 C232.407672,188.998493 199.214632,200.997988 167.619331,204.510665 C172.708602,208.913848 177.243363,217.54869 177.243363,230.786433 C177.243363,249.771339 177.078889,265.050898 177.078889,269.724287 C177.078889,273.500121 179.632923,277.92445 186.825101,276.531127 C243.171268,257.748288 283.775,204.581154 283.775,141.912168 C283.775,63.5477395 220.248404,0.0234927555 141.888675,0.0234927555" /></g>
-  </svg>
-);
+### 例子
 
-const TestButtons = () => (
-  <div>
-    <Button href='http://github.com/javivelasco' target='_blank' raised>
-      <GithubIcon /> Github
-    </Button>
-    <Button icon='bookmark' label='Bookmark' accent />
-    <Button icon='bookmark' label='Bookmark' raised primary />
-    <Button icon='inbox' label='Inbox' flat />
-    <Button icon='add' floating />
-    <Button icon='add' floating accent mini />
-    <IconButton icon='favorite' accent />
-    <IconButton icon={<GithubIcon />} accent />
-    <IconButton primary><GithubIcon /></IconButton>
-    <Button icon='add' label='Add this' flat primary />
-    <Button icon='add' label='Add this' flat disabled />
-  </div>
-);
+```javascript
+	import { Button } from 'react-cqtoolbox/lib/button';
+  
+	const ButtonTest = () => (
+	<div>
+    	<Button
+      	icon="book"
+      	label="书签"
+      	className="coco"
+      	iconSpin
+      	onRippleEnded={rippleEnded} />
+
+    	<Button
+      	icon="book"
+      	label="书签"
+      	primary
+      	onRippleEnded={rippleEnded} />
+
+    	<Button
+      	icon="book"
+      	label="书签"
+      	raised />
+
+    	<Button
+      	icon="book"
+      	label="书签"
+      	primary />
+
+    	<Button
+      	icon="book"
+      	label="书签"
+      	type="text"
+      	raised
+      	accent />
+
+    	<Button
+      	icon="loading"
+      	iconSpin
+      	label="Loading"
+      	raised
+      	primary
+      	rippleMultiple={false}
+      	onRippleEnded={rippleEnded} />
+    	<Button icon="plus" floating />
+    	<Button icon="plus" floating primary />
+    	<Button icon="plus" floating accent />
+    	<Button icon="plus" floating primary disabled />
+    	<Button icon="plus" floating accent mini />
+    </div>
+    );
+
 ```
+### 属性
 
-If you want to provide a theme via context, the component key is `RTButton`.
+| 属性名             | 属性名                 | 默认值       | 描述|
+|:------------------|:----------------------|:------------|:------------------|
+| `accent`          | `Boolean`             | `false`     | Theme对象属性中的一员，指定按钮元素的字体以及边框的强调色，颜色值为rgb(255, 64, 129).|
+| `children`        | `node`                | `''`        | 指定Button元素框内包含的内容,若Button元素还设置label属性，则children内容跟在label内容的后面.|
+| `className`       | `String`              | `''`        | 给Button元素设置一个class属性名.|
+| `disabled`        | `Boolean`             | `‘’`        | 如果给Button元素设置该属性，Button元素丧失所有样式，成为不可编辑元素.|
+| `flat`            | `Boolean`             | `false`     | 如果设置该属性，Button元素会拥有扁平的外形效果. |
+| `floating`        | `Boolean`             | `false`     | 如果设置该属性，Button元素会拥有圆圈的外形效果. |
+| `href`            | `String`              |             | 给Button元素指定一个href链接属性，并且<button></button>元素会被编译成<a></a>元素. |
+| `icon`            | `String` or `Element` |             | 指定Button元素的icon值（icon的值可以是描述图标字体的元素） |
+| `iconSpin`        | `Boolean`             |             | 如果Button元素设置了icon属性的前提之下，设置该属性，icon图标会顺时针动态旋转. |
+| `label`           | `String`              |             | 指定Buttton元素的标签内容|
+| `mini`            | `Boolean`             | `false`     | 用于设置了floating属性的Button元素，如果为true，Button元素会显的更小一点.|
+| `neutral`         | `Boolean`             | `true`      | 用于为button元素设置中立色，如果为true，Button元素会覆盖掉其他任何主题色调.|
+| `onMouseEnter`    | `Function`            |             | 指定鼠标进入Button元素区域的钩子函数.|
+| `onMouseLeave`    | `Function`            |             | 指定鼠标离开Button元素区域的钩子函数.|
+| `onMouseUp`       | `Function`            |             | 指定在Button元素区域释放鼠标的钩子函数.|
+| `primary`         | `Boolean`             | `false`     | Theme对象属性中的一员，指定按钮元素的字体以及边框的初始色，颜色值为rgb(0, 188, 212).|
+| `raised`          | `Boolean`             | `false`     | 如果为true，Button元素的字体元素与Button元素的背景色对调. |
+| `theme`           | `Object`              |             | theme对象属性，用于对Button元素的样式颜色属性集中设置.|
+| `type`            | `String`              | `button`    | 用于设置Button元素的表单类型|
 
-## Properties
+注意：**theme**属性可对Button元素的样式颜色集中设置，Button元素的某些属性的应用具有顺序性和对立性。
 
-| Name              | Type                  | Default     | Description|
-|:-----|:-----|:-----|:-----|
-| `accent`          | `Boolean`             | `false`     | Indicates if the button should have accent color.|
-| `className`       | `String`              | `''`        | Set a class to style the Component.|
-| `disabled`        | `Boolean`             | `false`     | If true, component will be disabled.|
-| `flat`            | `Boolean`             | `false`     | If true, the button will have a flat look. |
-| `floating`        | `Boolean`             | `false`     | If true, the button will have a floating look. |
-| `href`            | `String`              |             | Creates a link for the button. |
-| `icon`            | `String` or `Element` |             | Value of the icon (See Font Icon Component). |
-| `inverse`         | `Boolean`             |             | If true, the neutral colors are inverted. Useful to put a button over a dark background. |
-| `label`           | `String`              |             | The text string to use for the name of the button.|
-| `mini`            | `Boolean`             | `false`     | To be used with floating button. If true, the button will be smaller.|
-| `neutral`         | `Boolean`             | `true`      | Set it to `false` if you don't want the neutral styles to be included.|
-| `onMouseEnter`    | `Function`            |             | Fires after the mouse enters the Component.|
-| `onMouseLeave`    | `Function`            |             | Fires after the mouse leaves the Component.|
-| `onMouseUp`       | `Function`            |             | Fires after the mouse is released from the Component.|
-| `primary`         | `Boolean`             | `false`     | Indicates if the button should have primary color.|
-| `raised`          | `Boolean`             | `false`     | If true, the button will have a raised look. |
-| `ripple`          | `Boolean`             | `true`      | If true, component will have a ripple effect on click.|
-| `theme`           | `Object`              |             | Theme object will classnames that will be used to style the component.|
-| `type`            | `String`              | `button`    | Component root container type.|
+### Theme对象属性
 
-By default it will have neutral colors and a flat aspect even though the `flat` property is `false` by default. Also, some properties exclude others, for example a button cannot be `flat` and `raised` at the same time.
-
-The `Button` component also accept children so if you want to provide a custom component and text instead of a `label` and `icon` you can do it too. Just check the examples.
-
-## Theme
-
-| Name       | Description|
-|:-----------|:-----------|
-| `accent`   | Used for the root in case button is accent.|
-| `button`   | Used for the root element in any button.|
-| `flat`     | Used when the button is flat for the root element.|
-| `floating` | Used when the button is floating for the root element.|
-| `icon`     | For the icon inside a button.|
-| `inverse`  | Used when colors are inverted.|
-| `mini`     | Used for mini floating buttons.|
-| `neutral`  | Used for neutral colored buttons.|
-| `primary`  | Used for primary buttons when button is primary.|
-| `raised`   | Used when the button is raised for root element.|
-| `ripple`   | Used for the ripple element.|
-| `toggle`   | Used for toggle buttons in the root element.|
-
-## Icon Button
-
-Icons are appropriate for toggle buttons that allow a single choice to be selected or deselected, such as adding or removing a star to an item. They are best located in app bars, toolbars, action buttons or toggles. We provide an `IconButton` component bundled with `Button` component. They share a similar API excluding onMouseLeave, onMouseUp and aspect properties.
+| 属性名          | 描述|
+|:---------------|:-----------|
+| `accent`       | 指定按钮元素的字体以及边框的强调色，颜色值为rgb(255, 64, 129).|
+| `button`       | 用于根元素是按钮的元素|
+| `flat`         | 如果设置该属性，Button元素会拥有扁平的外形效果.|
+| `floating`     | 如果设置该属性，Button元素会拥有圆圈的外形效果.|
+| `icon`         | 指定Button元素的icon值（icon的值可以是描述图标字体的元素).|
+| `mini`         | 用于设置了floating属性的Button元素，如果为true，Button元素会显的更小一点.|
+| `neutral`      | 用于为button元素设置中立色，如果为true，Button元素会覆盖掉其他任何主题色调.|
+| `primary`      | Theme对象属性中的一员，指定按钮元素的字体以及边框的初始色，颜色值为rgb(0, 188, 212).|
+| `raised`       | 如果为true，Button元素的字体元素与Button元素的背景色对调.|
+| `rippleWrapper`| 用于水波纹元素|
+| `toggle`       | 用于切换元素的根元素|
