@@ -32,6 +32,18 @@ class DatepickerTest extends React.Component {
 export default DatepickerTest;
 
 ```
+## DateSelect组件
+
+### 属性
+
+| 值            | 值类型        | 默认     | 描述|
+|:-----         |:-----       |:-----         |:-----|
+| `date`        | `Object`    |               | `接受一个moment对象`             |
+| `minDate`     | `Object`    | `2016-03-01`  | `最小选择日期,接受一个moment对象`                   |
+| `maxDate`     | `Object`    |               | `最大选择日期,接受一个moment对象`                   |
+| `onChange`    | `Function`  |               | `当值变化触发onChange函数`       |
+
+
 
 ## DateRangeSelect组件
 
