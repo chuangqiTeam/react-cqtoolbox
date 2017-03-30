@@ -20,15 +20,5 @@ const ThemedTableTd = applyTheme(TableTd);
 const Table = tableFactory(ThemedTableHead, ThemedTableBody, ThemedTableTr, ThemedTableTh, ThemedTableTd, Loader);
 const ThemedTable = applyTheme(Table);
 
-ThemedTable.Head = ThemedTableHead;
-ThemedTable.Body = ThemedTableBody;
-ThemedTable.Tr = ThemedTableTr;
-ThemedTable.Th = ThemedTableTh;
-ThemedTable.Td = ThemedTableTd;
-
 export default ThemedTable;
-export {ThemedTableHead as TableHead};
-export {ThemedTableBody as TableBody};
-export {ThemedTableTr as TableTr};
-export {ThemedTableTh as TableTh};
-export {ThemedTableTd as TableTd};
+export {ThemedTable as Table};

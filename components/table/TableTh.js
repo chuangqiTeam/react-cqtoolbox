@@ -9,9 +9,9 @@ class TableTh extends Component {
   }
 
   render() {
-    const {theme, children, className, ...other} = this.props;
+    const {theme, children} = this.props;
     return (
-      <th {...other}  className={`${className} ${theme.th}`}>
+      <th className={theme.th}>
         {children}
       </th>
     );

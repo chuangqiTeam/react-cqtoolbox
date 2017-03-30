@@ -2,34 +2,57 @@ import React, {PropTypes, Component} from 'react';
 import pureRender from '../decorator/pureRender';
 import classnames from 'classnames';
 
-const isArray = (arr) => Object.prototype.toString.apply(arr) === '[object Array]';
-
 const factory = (Head, Body, Tr, Th, Td, Loader) => {
 
   class Table extends Component {
 
     static propTypes = {
-      children: PropTypes.node,
       className: PropTypes.string,
       columns: PropTypes.array,
       dataSource: PropTypes.array,
       loading: PropTypes.bool,
+      hoverable: PropTypes.bool,
+      scrollY: PropTypes.number,
       size: PropTypes.oneOf(['small', 'normal']),
-      theme: PropTypes.shape({table: PropTypes.string})
+      rowKey: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.func,
+      ]),
+      selectedRowKeys: PropTypes.array,
+      theme: PropTypes.shape({
+        table: PropTypes.string,
+        loadWrapper: PropTypes.string,
+        normal: PropTypes.string,
+        small: PropTypes.string,
+        th: PropTypes.string,
+        td: PropTypes.string,
+        withHover: PropTypes.string,
+        active: PropTypes.string,
+        scrollTable: PropTypes.string,
+        scrollHeader: PropTypes.string,
+        scrollBody: PropTypes.string,
+      }),
     }
 
     static defaultProps = {
       size: 'normal',
       loading: false,
+      hoverable: false,
+      selectedRowKeys: [],
     }
 
-    renderDataSource = (columns, dataSource) => {
-      return ([
-        this.renderColGroup(columns),
-        this.renderHead(columns),
-        this.renderBody(columns, dataSource),
-      ]);
+    getTableClasses = () => {
+      const {theme, size, className} = this.props;
+      return classnames(theme.table, [theme[size]], className);
     }
+
+    renderLoad = (columns) => (
+      <Tr>
+        <Td colSpan={columns.length}>
+          <Loader theme={this.props.theme} />
+        </Td>
+      </Tr>
+    )
 
     renderColGroup = (columns) => {
       return (
@@ -55,7 +78,8 @@ const factory = (Head, Body, Tr, Th, Td, Loader) => {
           <Tr>
             {columns.map(item => (
               <Th key={item.key}>
-                {item.title}
+                {typeof item.title === 'function' ?
+                  item.title() : item.title}
               </Th>
             ))}
           </Tr>
@@ -73,50 +97,90 @@ const factory = (Head, Body, Tr, Th, Td, Loader) => {
       );
     }
 
-    renderLoad = (columns) => (
-      <Tr>
-        <Td colSpan={columns.length}>
-          <Loader theme={this.props.theme} />
-        </Td>
-      </Tr>
-    )
-
     renderBodyTr = (item, index) => {
-      const {columns} = this.props;
+      const {columns, rowKey, hoverable, selectedRowKeys} = this.props;
+      const key = item.key || (typeof rowKey === 'function' ? rowKey(item) : item[rowKey]);
+      const isActive = !!~selectedRowKeys.indexOf(key);
+
       return (
-        <Tr key={item.key}>
-          {columns.map(column => (
-            <Td key={column.key}>
-              {column.render ?
-                column.render(item[column.field], item, index) :
-                item[column.field]}
-            </Td>
-          ))}
+        <Tr key={key} hoverable={hoverable} active={isActive}>
+          {columns.map(column => {
+            const {title, width, field, render, ...other} = column; // eslint-disable-line
+
+            return (
+              <Td {...other}>
+                {render ?
+                  column.render(item[field], item, index) :
+                  item[field]}
+              </Td>
+            );
+
+          })}
         </Tr>
       );
+    }
+
+    renderScrollHeader = (columns, dataSource) => {
+      const {theme} = this.props;
+
+      return (
+        <div key="scrollHeader" className={theme.scrollHeader}>
+          <table className={this.getTableClasses()}>
+            {[
+              this.renderColGroup(columns),
+              this.renderHead(columns),
+            ]}
+          </table>
+        </div>
+      )
+    }
+
+    renderScrollBody = (columns, dataSource) => {
+      const {theme, scrollY} = this.props;
+      const style = { maxHeight: scrollY };
+
+      return (
+        <div
+          key="scrollBody"
+          style={style}
+          className={theme.scrollBody}>
+          <table className={this.getTableClasses()}>
+            {[
+              this.renderColGroup(columns),
+              this.renderBody(columns, dataSource),
+            ]}
+          </table>
+        </div>
+      )
     }
 
     render() {
       const {
         theme,
-        size,
         columns,
+        scrollY,
         dataSource,
-        children,
-        className
       } = this.props;
 
-      let content;
-      if (columns && isArray(columns)) {
-        content = this.renderDataSource(columns, dataSource);
-      } else {
-        content = children;
+
+      if (scrollY) {
+        return (
+          <div className={theme.scrollTable}>
+            {[
+              this.renderScrollHeader(columns, dataSource),
+              this.renderScrollBody(columns, dataSource),
+            ]}
+          </div>
+        );
       }
 
-      const classes = classnames(theme.table, [theme[size]], className);
       return (
-        <table className={classes}>
-          {content}
+        <table className={this.getTableClasses()}>
+          {[
+            this.renderColGroup(columns),
+            this.renderHead(columns),
+            this.renderBody(columns, dataSource),
+          ]}
         </table>
       );
     }

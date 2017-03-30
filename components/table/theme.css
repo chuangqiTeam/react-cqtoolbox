@@ -4,14 +4,33 @@
 
 
 :root {
-  --table-tr-hover-background-color: rgb(242, 246, 250);
-  --table-tr-active-background-color: rgb(228, 235, 243);
   --table-background-color: var(--color-white);
   --table-border-color: var(--palette-grey-200);
   --table-cell-padding: calc(1.6 * var(--unit)) calc(.8 * var(--unit));
-  --table-small-cell-padding: calc(.6 * var(--unit)) calc(.8 * var(--unit));
+  --table-small-cell-padding: calc(.8 * var(--unit)) calc(.8 * var(--unit));
   --table-td-color: rgba(0,0,0,.65);
   --table-th-color: rgba(0,0,0,.85);
+  --table-tr-active-background-color: rgb(228, 235, 243);
+  --table-tr-hover-background-color: rgb(242, 246, 250);
+}
+
+.scrollTable {
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.scrollHeader {
+  overflow: scroll;
+
+  margin-bottom: -15px;
+}
+
+.scrollBody {
+  position: relative;
+
+  overflow-y: scroll;
+
+  background: var(--table-background-color);
 }
 
 .table {
@@ -30,10 +49,7 @@
 }
 
 .loadWrapper {
-    margin: calc(2 * var(--unit)) auto;
-    /*.load {
-        background: color(var(--table-tr-active-background-color) lightness(- 10%));
-    }*/
+  margin: calc(2 * var(--unit)) auto;
 }
 
 .normal {
@@ -70,6 +86,10 @@
 
   color: var(--table-td-color);
   border-bottom: 1px dashed var(--table-border-color);
+}
+
+.withHover:not(.active):hover {
+  background-color: var(--table-tr-hover-background-color);
 }
 
 .active {

@@ -5,8 +5,8 @@ class TableTr extends Component {
 
   static propTypes = {
     children: PropTypes.node,
-    className: PropTypes.string,
     active: PropTypes.bool,
+    hoverable: PropTypes.bool,
     theme: PropTypes.shape({
       tr: PropTypes.string,
       active: PropTypes.string,
@@ -15,19 +15,21 @@ class TableTr extends Component {
 
   static defaultProps = {
     active: false,
+    hoverable: false,
   }
 
   render() {
     const {
       theme,
       active,
+      hoverable,
       children,
-      className
     } = this.props;
 
     const classes = classnames(theme.tr, {
       [theme.active]: active,
-    }, className);
+      [theme.withHover]: hoverable,
+    });
 
     return (
       <tr className={classes}>
