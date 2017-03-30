@@ -20,6 +20,7 @@ import LazyImage from './components/lazyImage';
 import Alert from './components/alert';
 import {Layout, Content} from '../components/layout';
 import Tabs from './components/tabs';
+import Pagination from './components/pagination';
 
 class Root extends Component {
   render() {
@@ -44,6 +45,7 @@ class Root extends Component {
               <LazyImage />
               <Alert />
               <Tabs />
+              <Pagination />
             </div>
           </Content>
         </Layout>
