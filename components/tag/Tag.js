@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import classnames from 'classnames';
 import Animate from 'rc-animate';
 
@@ -31,7 +32,11 @@ const factory = (FontIcon) => {
     }
 
     handleCloseClick = (e) => {
+      const dom = ReactDOM.findDOMNode(this);
+      dom.style.width = `${dom.getBoundingClientRect().width}px`;
+
       this.setState({ closed: true });
+
       if (this.props.onClose) {
         this.props.onClose(e);
       }

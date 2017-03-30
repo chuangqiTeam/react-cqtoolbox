@@ -16,7 +16,11 @@
 
   cursor: pointer;
   user-select: none;
-  transition: all var(--animation-duration) var(--animation-curve-default);
+  transition: width var(--animation-duration) var(--animation-curve-default),
+  padding var(--animation-duration) var(--animation-curve-default),
+  background var(--animation-duration) var(--animation-curve-default),
+  color var(--animation-duration) var(--animation-curve-default),
+  margin var(--animation-duration) var(--animation-curve-default);
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
@@ -34,14 +38,14 @@
   background: var(--color-white);
 
   &:hover {
-    color: var(--color-white);
+    color: var(--color-white) !important;
     border-color: var(--color-primary);
     background: var(--color-primary);
   }
 }
 
 .raised {
-  color: var(--color-white);
+  color: var(--color-white) !important;
   border-color: transparent;
   background: var(--tag-raised-background-color);
 
@@ -69,6 +73,10 @@
 
 
 .animLeave {
+  width: 0!important;
+  margin: 0;
+  padding: 0;
+
   animation: ani-ZoomOut var(--animation-duration) var(--animation-curve-default);
 
   animation-fill-mode: both;
@@ -78,6 +86,8 @@
 @keyframes ani-ZoomOut {
   0% {
     transform: scale(1);
+
+    opacity: 1;
   }
 
   to {
