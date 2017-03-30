@@ -16,12 +16,13 @@ import Badge from './components/badge';
 import Header from './components/header';
 import Sider from './components/sider';
 import Datepicker from './components/datepicker';
-import LazyImage from './components/lazyImage';
+import LazyImage from './components/lazy_image';
 import Alert from './components/alert';
 import {Layout, Content} from '../components/layout';
 import Tabs from './components/tabs';
 import Pagination from './components/pagination';
 import Tag from './components/tag';
+import Table from './components/table';
 
 class Root extends Component {
   render() {
@@ -48,6 +49,7 @@ class Root extends Component {
               <Tabs />
               <Pagination />
               <Tag />
+              <Table />
             </div>
           </Content>
         </Layout>

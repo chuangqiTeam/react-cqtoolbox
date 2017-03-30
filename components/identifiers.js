@@ -22,3 +22,5 @@ export const ALERT = 'CQALERT';
 export const TABS = 'CQTABS';
 export const PAGINATION = 'CQPAGINATION';
 export const TAG = 'CQTAG';
+export const TABLE = 'CQTABLE';
+export const LOADER = 'CQLOADER';

@@ -1,4 +1,9 @@
+import { themr } from 'react-css-themr';
 import Loader from './Loader';
+import { LOADER } from '../identifiers';
+import theme from './theme.css';
 
-export default Loader;
-export { Loader };
+const ThemeLoader = themr(LOADER, theme)(Loader);
+
+export default ThemeLoader;
+export { ThemeLoader as Loader };
