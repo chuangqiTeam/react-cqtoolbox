@@ -21,6 +21,7 @@ import Alert from './components/alert';
 import {Layout, Content} from '../components/layout';
 import Tabs from './components/tabs';
 import Pagination from './components/pagination';
+import Tag from './components/tag';
 
 class Root extends Component {
   render() {
@@ -46,6 +47,7 @@ class Root extends Component {
               <Alert />
               <Tabs />
               <Pagination />
+              <Tag />
             </div>
           </Content>
         </Layout>

@@ -1,0 +1,9 @@
+:root {
+  --tag-border-close-color: var(--palette-grey-500);
+  --tag-border-close-color-hover: var(--palette-grey-700);
+  --tag-border-color: color(var(--color-black) a(12%));
+  --tag-margin: calc(.5 * var(--unit));
+  --tag-padding: calc(.2 * var(--unit)) calc(.6 * var(--unit));
+  --tag-raised-background-color: var(--color-primary);
+  --tag-raised-background-color-hover: color(var(--tag-raised-background-color) a(80%));
+}
