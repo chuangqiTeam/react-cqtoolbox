@@ -1,0 +1,97 @@
+
+@import "../colors.css";
+@import "../variables.css";
+
+
+:root {
+  --table-background-color: var(--color-white);
+  --table-border-color: var(--palette-grey-200);
+  --table-cell-padding: calc(1.6 * var(--unit)) calc(.8 * var(--unit));
+  --table-small-cell-padding: calc(.8 * var(--unit)) calc(.8 * var(--unit));
+  --table-td-color: rgba(0,0,0,.65);
+  --table-th-color: rgba(0,0,0,.85);
+  --table-tr-active-background-color: rgb(228, 235, 243);
+  --table-tr-hover-background-color: rgb(242, 246, 250);
+}
+
+.scrollTable {
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.scrollHeader {
+  overflow: scroll;
+
+  margin-bottom: -15px;
+}
+
+.scrollBody {
+  position: relative;
+
+  overflow-y: scroll;
+
+  background: var(--table-background-color);
+}
+
+.table {
+  overflow: hidden;
+
+  width: 100%;
+
+  border-spacing: 0;
+  border-collapse: separate;
+
+  text-align: left;
+
+  background: var(--table-background-color);
+
+  @apply --reset;
+}
+
+.loadWrapper {
+  margin: calc(2 * var(--unit)) auto;
+}
+
+.normal {
+  & .th {
+    padding: var(--table-cell-padding);
+  }
+
+  & .td {
+    padding: var(--table-cell-padding);
+  }
+}
+
+.small {
+  & .th {
+    padding: var(--table-small-cell-padding);
+  }
+
+  & .td {
+    padding: var(--table-small-cell-padding);
+  }
+}
+
+.th {
+  font-size: var(--font-size-small);
+  font-weight: normal;
+
+  color: var(--table-th-color);
+  border-bottom: 1px dashed var(--table-border-color);
+  background-color: var(--table-tr-hover-background-color);
+}
+
+.td {
+  font-size: var(--font-size-small);
+
+  color: var(--table-td-color);
+  border-bottom: 1px dashed var(--table-border-color);
+}
+
+.withHover:not(.active):hover {
+  background-color: var(--table-tr-hover-background-color);
+}
+
+.active {
+  background-color: var(--table-tr-active-background-color);
+}

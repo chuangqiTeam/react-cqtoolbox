@@ -1,0 +1,9 @@
+@import "../variables.css";
+
+.pagination {
+    margin: var(--unit) 0;
+}
+
+.space {
+    margin-left: var(--unit);
+}

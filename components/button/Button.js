@@ -17,7 +17,7 @@ const factory = (ripple, FontIcon) => {
         PropTypes.element,
       ]),
       iconSpin: PropTypes.bool,
-      label: PropTypes.string,
+      label: PropTypes.node,
       mini: PropTypes.bool,
       neutral: PropTypes.bool,
       onMouseLeave: PropTypes.func,

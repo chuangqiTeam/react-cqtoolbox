@@ -1,7 +1,6 @@
 import React  from 'react';
-import theme from './theme.css';
 
-const Loader = () => (
+const Loader = ({theme}) => (
   <div
       className={theme.loadWrapper}>
       <div className={theme.load}></div>

@@ -70,7 +70,7 @@ const factory = (FontIcon) => {
           animation={animationFactory(theme.anim)}>
           {!closed ?
           <div
-            data-react-toolbox="Alert"
+            data-react-toolbox="alert"
             className={classes}
             {...other}>
             <div className={theme.alertInner}>

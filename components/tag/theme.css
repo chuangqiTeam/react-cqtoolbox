@@ -1,0 +1,98 @@
+
+@import "../colors.css";
+@import "../variables.css";
+@import "./config.css";
+
+.tag {
+  font-size: var(--font-size-small);
+  line-height: 1.42;
+
+  position: relative;
+
+  display: inline-block;
+
+  margin: var(--tag-margin);
+  padding: var(--tag-padding);
+
+  cursor: pointer;
+  user-select: none;
+  transition: width var(--animation-duration) var(--animation-curve-default),
+  padding var(--animation-duration) var(--animation-curve-default),
+  background var(--animation-duration) var(--animation-curve-default),
+  color var(--animation-duration) var(--animation-curve-default),
+  margin var(--animation-duration) var(--animation-curve-default);
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+
+  @apply --reset;
+}
+
+.neutral {
+  color: var(--color-text);
+  border-color: var(--tag-border-color);
+  background: var(--color-white);
+
+  &:hover {
+    color: var(--color-white) !important;
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+  }
+}
+
+.raised {
+  color: var(--color-white) !important;
+  border-color: transparent;
+  background: var(--tag-raised-background-color);
+
+  &:hover {
+    background: var(--tag-raised-background-color-hover);
+  }
+}
+
+.close {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+
+  transition: color .2s var(--animation-curve-default);
+  transform: translate(-50%, -50%);
+
+  color: var(--tag-border-close-color);
+  border-radius: 50%;
+  background: var(--color-white);
+  &:hover {
+    color: var(--tag-border-close-color-hover);
+  }
+}
+
+
+.animLeave {
+  width: 0!important;
+  margin: 0;
+  padding: 0;
+
+  animation: ani-ZoomOut var(--animation-duration) var(--animation-curve-default);
+
+  animation-fill-mode: both;
+}
+
+
+@keyframes ani-ZoomOut {
+  0% {
+    transform: scale(1);
+
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(.2);
+
+    opacity: 0;
+  }
+}

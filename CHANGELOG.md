@@ -1,3 +1,21 @@
+[1.0.5](../../releases/tag/1.0.5)     2017-03-31 10:37:39
+---------------------------------------------------------
+
+- [33cd421](../../commit/33cd421) ✨  [feature] 添加Switch组件.
+- [04e3a73](../../commit/04e3a73) 📦  [refact] 更新表格组件固定标头功能。
+- [49d2dcd](../../commit/49d2dcd) ✨  [feature] 添加Table表格组件。
+- [7007509](../../commit/7007509) 📦  [refact] 修复Tag组件的动画效果。
+- [50bb841](../../commit/50bb841) ✨  [feature] 添加Tag标签组件.
+- [394d58a](../../commit/394d58a) ✨  [feature] 添加Pagination组件
+- [2fcebff](../../commit/2fcebff) ✨  [feature] add ButtonGroup Component.
+- [7557d31](../../commit/7557d31) 📚  [document] 更新doc文档
+- [db1a98c](../../commit/db1a98c) ✨  [feature] add InputGroup Component.
+- [d46cab3](../../commit/d46cab3) ✨  [feature] add Tabs Component.
+- [6e73fb2](../../commit/6e73fb2) 📚  [document] 增加date_select文档 reademe (#3)
+- [b0a9119](../../commit/b0a9119) 📚  [document] 更新Button组件文档 (#1)
+- [b0aeb77](../../commit/b0aeb77) 📦  [refact] update Alert Component demo code.
+
+
 [1.0.4](../../releases/tag/1.0.4)     2017-03-27 19:30:37
 ---------------------------------------------------------
 

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import LazyImage from '../../components/lazyImage';
+import LazyImage from '../../components/lazy_image';
 import Section from '../../components/section';
 
 const apps = [
