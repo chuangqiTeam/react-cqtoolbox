@@ -9,6 +9,7 @@ import Select from './components/select';
 import Dialog from './components/dialog';
 import Input from './components/input';
 import InputGroup from './components/input_group';
+import Switch from './components/switch';
 import Form from './components/form';
 import AutoComplete from './components/autocomplete';
 import Tooltip from './components/tooltip';
@@ -40,6 +41,7 @@ class Root extends Component {
               <Dialog />
               <Input />
               <InputGroup />
+              <Switch />
               <Form />
               <AutoComplete />
               <Tooltip />

@@ -24,3 +24,4 @@ export const PAGINATION = 'CQPAGINATION';
 export const TAG = 'CQTAG';
 export const TABLE = 'CQTABLE';
 export const LOADER = 'CQLOADER';
+export const SWITCH = 'CQSWITCH';
