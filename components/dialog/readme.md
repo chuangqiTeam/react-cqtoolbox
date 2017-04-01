@@ -4,6 +4,8 @@
 
 ![Button img](../../.github/Dialog.png)
 
+	import Dialog from 'react-cqtoolbox/lib/components/Dialog';
+
 	class DialogTest extends React.Component {
 		state = {
     		active: false,
@@ -23,56 +25,55 @@
         		console.log('cancel...');
       		}
     	});
-    }
 
-    handleSuccess = () => {
-    	Dialog.success({
-      		content: '恭喜你成功!',
-      		onConfirm: () => {
-        		console.log('confirm...');
-      		},
-    	});
-    }
+    	handleSuccess = () => {
+    		Dialog.success({
+      			content: '恭喜你成功!',
+      			onConfirm: () => {
+        			console.log('confirm...');
+      			},
+    		});
+    	}
 
-    handleWarning = () => {
-    	Dialog.warning({
-      		content: '警告!',
-    	});
-    }
+    	handleWarning = () => {
+    		Dialog.warning({
+      			content: '警告!',
+    		});
+		}
 
-    handleError = () => {
-    	Dialog.error({
-      		content: '服务器出错!',
-    	});
-    }
+    	handleError = () => {
+    		Dialog.error({
+      			content: '服务器出错!',
+    		});
+    	}
 
-    actions = [
-    	{ label: "取消", onClick: this.handleDialog },
-    	{ label: "确定", onClick: this.handleDialog }
-    ];
+    	actions = [
+    		{ label: "取消", onClick: this.handleDialog },
+    		{ label: "确定", onClick: this.handleDialog }
+    	];
 
 
-    render () {
-    	return (
-      		<Section title="对话框">
+    	render () {
+    		return (
         		<div>
           			<Button label='对话框' onClick={this.handleDialog} />
           			<Button label='验证框' onClick={this.handleConfirm} />
           			<Button label='成功框' onClick={this.handleSuccess} />
           			<Button label='警告框' onClick={this.handleWarning} />
           			<Button label='错误框' onClick={this.handleError} />
+         			<Dialog
+         				actions={this.actions}
+         				active={this.state.active}
+         				onEscKeyDown={this.handleDialog}
+            			onOverlayClick={this.handleDialog}
+            			title='对话框标题'>
+            			<p>在这里您可以添加任意内容。像Pickers这样的组件现在使用对话框。</p>
+          			</Dialog>
+        		</div>
+    		);
+    	}
+    }
 
-          	<Dialog
-            	actions={this.actions}
-            	active={this.state.active}
-            	onEscKeyDown={this.handleDialog}
-            	onOverlayClick={this.handleDialog}
-            	title='对话框标题'>
-            	<p>在这里您可以添加任意内容。像Pickers这样的组件现在使用对话框。</p>
-          	</Dialog>
-        </div>
-      </Section>
-    );}
 
 ### 属性
 
