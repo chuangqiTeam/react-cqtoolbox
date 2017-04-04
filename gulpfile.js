@@ -53,4 +53,11 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest('./lib'));
 });
 
-gulp.task('default', ['js', 'css', 'fonts']);
+gulp.task('md', function () {
+  return gulp.src([
+    './components/**/*.md',
+  ])
+    .pipe(gulp.dest('./lib'));
+});
+
+gulp.task('default', ['js', 'css', 'md', 'fonts']);

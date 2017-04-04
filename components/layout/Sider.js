@@ -21,7 +21,7 @@ class Sider extends React.Component {
 
   static defaultProps = {
     collapsible: true,
-    defaultCollapsed: true,
+    defaultCollapsed: false,
     width: 200,
     className: '',
     collapsedWidth: 64,
