@@ -1,6 +1,6 @@
 {
   "name": "react-cqtoolbox",
-  "version": "1.0.6",
+  "version": "1.0.7+17w15a",
   "main": "lib",
   "scripts": {
     "start": "node ./scripts/start.js",

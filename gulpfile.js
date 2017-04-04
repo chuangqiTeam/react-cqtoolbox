@@ -60,4 +60,11 @@ gulp.task('md', function () {
     .pipe(gulp.dest('./lib'));
 });
 
-gulp.task('default', ['js', 'css', 'md', 'fonts']);
+gulp.task('gif', function () {
+  return gulp.src([
+    './components/**/*.gif',
+  ])
+    .pipe(gulp.dest('./lib'));
+});
+
+gulp.task('default', ['js', 'css', 'md', 'fonts', 'gif']);
