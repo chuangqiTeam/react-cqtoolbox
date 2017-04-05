@@ -1,10 +1,9 @@
 ## 按钮(Button)
 
-[cqaso](http://cqaso.com/) Button组件在html按钮模型的基础之上，重新对按钮表单元素进行审视和设计，它在包含文字，图标字体，颜色主题，行为样式之外，添加**水波纹过渡动画**，额外让按钮的行为样式在页面展示中别具一格。让我们一起来学习cqaso Button组件吧。
+Button组件包含文字，图标字体，颜色主题，行为触发。
 
-<img alt="Button img" src="../../.github/Button.png" width="100%" />
+### 例子
 
-	<!-- example -->
 	import { Button } from 'react-cqtoolbox/lib/button';
 	const ButtonTest = () => (
 	<div>
@@ -81,9 +80,8 @@
 | `theme`           | `Object`                    |             | theme对象属性，用于对Button组件元素的样式颜色属性集中设置.|
 | `type`            | `String`                    | `button`    | 用于设置Button组件元素的表单类型|
 
-注意：***theme*** 属性可对Button组件元素的样式颜色集中设置，Button组件元素的某些属性的应用具有顺序性和对立性，Button组件元素属性的魔性由你来发现！
 
-### Theme对象属性
+### Theme对象
 
 | 属性名          | 描述|
 |:---------------|:-----------|
@@ -99,51 +97,11 @@
 | `rippleWrapper`| 用于水波纹元素|
 | `toggle`       | 用于切换元素的根元素|
 
-#### Theme对象属性使用说明
-Look here ！ 如果你想在cqaso Button组件的模板之上，想要拥有属于自己的Button组件行为样式主题，Theme对象属性帮你完全搞定，让我们来通过一个例子看看吧。
-
-<!--example-->
-1. 如果你想覆盖掉定义了accent属性定义的默认背景颜色rgba(0, 0, 0, 0)，那么在项目文件中，定义buttonTheme.css（可定义其他文件名）文件，在文件中，一定要使用 .accent 类名设置样式。
-	<!--buttonTheme.css内容-->
-
-		.accent{
-			color:rgb(255,250,120);
-		}
-
-2. 然后在Button组件文件中，引入buttonTheme.css文件，在需要设置Button元素中设置theme属性，但是一定要包含已有accent属性，这时theme属性中的accent设置的样式才会覆盖已有accent默认颜色。
-
-	<!--设置theme属性的例子-->
-
-		import { Button } from 'react-cqtoolbox/lib/button';
-		import theme from 'buttonTheme.css';
-		const ButtonTest = () => (
-			<div>
-				<Button
-					icon="book"
-					label="书签"
-					className="coco"
-					accent
-					onRippleEnded={rippleEnded} />
-				<Button
-					icon="book"
-					label="书签"
-					className="coco"
-					accent
-					theme={theme}
-					onRippleEnded={rippleEnded} />
-			</div>);
-3. 最后让我们一起看看效果。
-
-    <img alt="Button img" src="../../.github/buttonTheme.png" width="100%" />
-
-
 ***
 
 ## 按钮组(ButtonGroup)
 
-[cqaso](http://cqaso.com/) ButtonGroup组件在Button组件元素之上对Button组件元素进行包装和组合，让Button组件元素的使用逃离表单按钮的定性束缚。让我们一起来学习cqaso ButtonGroup组件吧。
-
-<img alt="Button img" src="../../.github/buttonGroup.png" width="100%" />
+ButtonGroup组件在Button组件元素之上对Button组件元素进行包装和组合。
 
 	<!-- example -->
 	import { ButtonGroup } from 'react-cqtoolbox/lib/button';
@@ -172,7 +130,3 @@ Look here ！ 如果你想在cqaso Button组件的模板之上，想要拥有属
 | `children`        | `node`                                |             | 用于指定ButtonGroup组件元素开始标签与结束标签中的文本内容，但是目前无效.|
 | `size`            | `'small','normal','large'`            | `normal`    | 指定ButtonGroup组件元素的大小，默认值是normal.|
 | `theme`           | `特定形状的参数对象{buttonGroup:String}` |             | 定义属于自己个性的ButtonGroup组件颜色样式.|
-
-
-
-注意：***theme*** 对象属性具有一定的参数格式，如何定义属于自己的颜色样式主题，请参考Button组件的theme对象属性。
