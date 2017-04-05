@@ -214,14 +214,12 @@ class SelectTest extends Component {
 
   render() {
     const selectData = {
-      value: 1,
       data: countrys,
       maxRowNum: 8,
       onChange: console.log.bind(console),
     };
 
     const cascadeSelectData = {
-      value: 1,
       data: genres,
       onChange: console.log.bind(console),
     };

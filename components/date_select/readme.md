@@ -1,9 +1,8 @@
-## 时间选择器
 
-[时间选择器](https://github.com/lockyang/react-cqtoolbox/tree/master/components/date_select)用于选择单点时间或时间范围
+## 日期选择器(DateSelect)
 
-### 例子
-<!-- example -->
+用于选择单个时间
+
 ```jsx
 //DateSelect 单点选择器
 //DateRangeSelect 范围选择器
@@ -30,9 +29,7 @@ class DatepickerTest extends React.Component {
 }
 
 export default DatepickerTest;
-
 ```
-## DateSelect组件
 
 ### 属性
 
@@ -45,7 +42,9 @@ export default DatepickerTest;
 
 
 
-## DateRangeSelect组件
+## (范围日期选择器)DateRangeSelect
+
+用于选择时间范围
 
 ### 属性
 
