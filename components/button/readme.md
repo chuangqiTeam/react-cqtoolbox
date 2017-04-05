@@ -2,7 +2,7 @@
 
 [cqaso](http://cqaso.com/) Button组件在html按钮模型的基础之上，重新对按钮表单元素进行审视和设计，它在包含文字，图标字体，颜色主题，行为样式之外，添加**水波纹过渡动画**，额外让按钮的行为样式在页面展示中别具一格。让我们一起来学习cqaso Button组件吧。
 
-![Button img](../../.github/Button.png)
+<img alt="Button img" src="../../.github/Button.png" width="100%" />
 
 	<!-- example -->
 	import { Button } from 'react-cqtoolbox/lib/button';
@@ -134,7 +134,7 @@ Look here ！ 如果你想在cqaso Button组件的模板之上，想要拥有属
 			</div>);
 3. 最后让我们一起看看效果。
 
-	![Button img](../../.github/buttonTheme.png)
+    <img alt="Button img" src="../../.github/buttonTheme.png" width="100%" />
 
 
 ***
@@ -143,7 +143,7 @@ Look here ！ 如果你想在cqaso Button组件的模板之上，想要拥有属
 
 [cqaso](http://cqaso.com/) ButtonGroup组件在Button组件元素之上对Button组件元素进行包装和组合，让Button组件元素的使用逃离表单按钮的定性束缚。让我们一起来学习cqaso ButtonGroup组件吧。
 
-![Button img](../../.github/buttonGroup.png)
+<img alt="Button img" src="../../.github/buttonGroup.png" width="100%" />
 
 	<!-- example -->
 	import { ButtonGroup } from 'react-cqtoolbox/lib/button';

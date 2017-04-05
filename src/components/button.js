@@ -9,19 +9,12 @@ const ButtonTest = () => (
 
     <div className="margin-bottom">
       <Button icon="book" label="书签" accent onRippleEnded={rippleEnded}/>
-
       <Button icon="book" label="书签" primary onRippleEnded={rippleEnded}/>
-
       <Button icon="book" label="书签" raised/>
-
       <Button icon="book" label="书签" raised primary/>
-
       <Button icon="book" label="书签" raised accent/>
-
       <Button icon="plus" label="添加" disabled/>
-
       <Button icon="plus" label="添加" raised disabled/>
-
       <Button icon="loading" iconSpin label="Loading" raised primary rippleMultiple={false} onRippleEnded={rippleEnded}/>
     </div>
 
@@ -35,17 +28,17 @@ const ButtonTest = () => (
 
     <div className="margin-bottom">
       <ButtonGroup>
-        <Button label="书签" onRippleEnded={rippleEnded}/>
-        <Button label="书签" onRippleEnded={rippleEnded}/>
-        <Button label="书签" onRippleEnded={rippleEnded}/>
+        <Button label="书签"/>
+        <Button label="书签"/>
+        <Button label="书签"/>
       </ButtonGroup>
     </div>
 
     <div className="margin-bottom">
       <ButtonGroup size="small">
-        <Button primary raised label="书签" onRippleEnded={rippleEnded}/>
-        <Button primary label="书签" onRippleEnded={rippleEnded}/>
-        <Button primary label="书签" onRippleEnded={rippleEnded}/>
+        <Button primary raised label="书签"/>
+        <Button primary label="书签"/>
+        <Button primary label="书签"/>
       </ButtonGroup>
     </div>
 

@@ -1,7 +1,7 @@
 import './utils/polyfills';
 
 export {default as Autocomplete} from './autocomplete';
-export {default as Button} from './button';
+export * from './button';
 export * from './date_select';
 export {default as Dialog} from './dialog';
 export {default as FontIcon} from './font_icon';
