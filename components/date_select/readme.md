@@ -1,8 +1,8 @@
-# 时间选择器
+## 时间选择器
 
 [时间选择器](https://github.com/lockyang/react-cqtoolbox/tree/master/components/date_select)用于选择单点时间或时间范围
 
-## 例子
+### 例子
 <!-- example -->
 ```jsx
 //DateSelect 单点选择器

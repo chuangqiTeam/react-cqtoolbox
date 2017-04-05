@@ -2,7 +2,8 @@
 
 [cqaso](http://cqaso.com/) Font Icon组件让图标文字更具语义和个性化，Font Icon组件并没有提供图标字体库，因为行内有更加专业的图标字体设计团队做这样的事情。Font Icon默认使用阿里的Iconfont字体库,如果您想更换字体库和使用Font Icon组件，就让我们一起来一探究竟吧。
 
-![Button img](../../.github/fontIcon.png)
+<img alt="Button img" src="../../.github/fontIcon.png" width="100%" />
+
 
 	<!-- example -->
 	import { FontIcon } from 'react-cqtoolbox/lib/font_icon';
@@ -68,4 +69,4 @@ Look here ！ 如果你想在cqaso Font Icon组件的模板之上，想要引入
 			</div>);
 3. 最后让我们一起看看效果。
 
-	![Button img](../../.github/fontIconTheme.png)
+	<img alt="Button img" src="../../.github/fontIconTheme.png" width="100%" />
