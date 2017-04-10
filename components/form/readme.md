@@ -50,8 +50,8 @@ export default FormTest;
 
 值           | 值类型      | 默认    | 描述
 :---------- | :------- | :---- | :--------
-`label`     | `String  | Node` |           | `label 标签的文本`
-`error`     | `String  | Node` |           | `错误信息`
+`label`     | `String`  or `Node` |           | `label 标签的文本`
+`error`     | `String`  or `Node` |           | `错误信息`
 `className` | `String` |       | `添加类`
 `children`  | `Object` |       | `子元素`
 `theme`     | `Object` |       | `添加自定义主题`

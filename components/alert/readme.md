@@ -1,4 +1,4 @@
-## 警告提示（Alert）
+## 警告提示(Alert)
 
 [警告提示](https://chuangqiteam.github.io/react-cqtoolbox/)当某个页面需要向用户显示警告的信息时。
 
@@ -46,7 +46,6 @@ class AlertTest extends Component {
 export default AlertTest;
 
 ```
-## Alert组件
 
 ### 属性(Props)
 
@@ -80,5 +79,3 @@ export default AlertTest;
 | `icon`          | 提示图标.|
 | `closeIcon`     | 关闭图标.|
 | `anim`          | 提示框进出动画.|
-
-
