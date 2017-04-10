@@ -7,19 +7,13 @@ const factory = (FontIcon) => {
       size: PropTypes.oneOf(['small', 'normal', 'large']),
       value: PropTypes.any,
       defaultValue: PropTypes.any,
-      name: PropTypes.string,
       className: PropTypes.string,
       prefix: PropTypes.node,
       suffix: PropTypes.node,
       onChange: PropTypes.func,
-      onKeyDown: PropTypes.func,
-      onKeyUp: PropTypes.func,
       onPrefixClick: PropTypes.func,
       onSuffixClick: PropTypes.func,
       placeholder: PropTypes.string,
-      onBlur: PropTypes.func,
-      onFocus: PropTypes.func,
-      disabled: PropTypes.bool,
       theme: PropTypes.shape({
         input: PropTypes.string,
         inputElement: PropTypes.string,
@@ -29,6 +23,8 @@ const factory = (FontIcon) => {
         large: PropTypes.string,
         prefix: PropTypes.string,
         suffix: PropTypes.string,
+        icon: PropTypes.string,
+        bar: PropTypes.string,
       }),
     }
 
