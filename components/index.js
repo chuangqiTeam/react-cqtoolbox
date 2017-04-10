@@ -11,7 +11,7 @@ export * from './layout';
 export * from './menu';
 export {default as Overlay} from './overlay';
 export {default as Popup} from './popup';
-export {default as Select} from './select';
+export * from './select';
 export {default as Tooltip} from './tooltip';
 export {default as Badge} from './badge';
 export {default as Trigger} from './trigger';
