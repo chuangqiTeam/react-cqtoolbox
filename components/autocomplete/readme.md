@@ -40,7 +40,6 @@ class AutoCompleteTest extends Component {
             value={value}
             dataSource={dataSource}
             onChange={this.onChange} />
-          </AutoComplete>
       </Section>
     )
   }
