@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Table from '../../components/table';
 import Section from '../../components/section';
 import FontIcon from '../../components/font_icon';
@@ -71,16 +71,12 @@ const columns = [
   }
 ];
 
-class TableTest extends Component {
-  render() {
-    return (
-      <Section title="表格">
-        <Table size="small" hoverable dataSource={dataSource} columns={columns} selectedRowKeys={['2', '3']}/>
-        <br/>
-        <Table scrollY={200} dataSource={dataSource} columns={columns}/>
-      </Section>
-    );
-  }
-}
+const TableTest = () => (
+  <Section title="表格">
+    <Table size="small" hoverable dataSource={dataSource} columns={columns} selectedRowKeys={['2', '3']}/>
+    <br/>
+    <Table scrollY={200} dataSource={dataSource} columns={columns}/>
+  </Section>
+);
 
 export default TableTest;

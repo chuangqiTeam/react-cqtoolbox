@@ -15,9 +15,12 @@ const factory = (SubMenuCaption) => {
       animation: PropTypes.object,
       open: PropTypes.bool,
       theme: PropTypes.shape({
+        subMenu: PropTypes.string,
+        subMenuItem: PropTypes.string,
+        popupMenu: PropTypes.string,
         caption: PropTypes.string,
         icon: PropTypes.string,
-        menuItem: PropTypes.string,
+        arrow: PropTypes.string,
       }),
     };
 

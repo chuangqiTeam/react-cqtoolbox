@@ -7,7 +7,16 @@ class Menu extends Component {
     children: PropTypes.node,
     className: PropTypes.string,
     mode: PropTypes.oneOf(['inline', 'vertical', 'horizontal']),
-    theme: PropTypes.object,
+    theme: PropTypes.shape({
+      menu: PropTypes.string,
+      inline: PropTypes.string,
+      vertical: PropTypes.string,
+      horizontal: PropTypes.string,
+    }),
+  }
+
+  static defaultProps = {
+    mode: 'inline',
   }
 
   renderMenuItem = (child, index) => {
