@@ -24,6 +24,7 @@ const factory = (Check) => {
         disabled: PropTypes.string,
         field: PropTypes.string,
         input: PropTypes.string,
+        text: PropTypes.string,
         ripple: PropTypes.string,
       }),
     };
