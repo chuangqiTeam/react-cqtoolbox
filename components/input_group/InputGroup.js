@@ -12,9 +12,14 @@ const factory = (Select, Input, Button) => {
     static propTypes = {
       children: PropTypes.node,
       size: PropTypes.oneOf(['small', 'normal', 'large']),
+      className: PropTypes.string,
       theme: PropTypes.shape({
         inputGroup: PropTypes.string,
         input: PropTypes.string,
+        select_input: PropTypes.string,
+        small: PropTypes.string,
+        normal: PropTypes.string,
+        large: PropTypes.string,
       }),
     }
 
@@ -34,10 +39,11 @@ const factory = (Select, Input, Button) => {
       const {
         size,
         theme,
+        className,
         children,
       } = this.props;
 
-      const classes = classnames(theme.inputGroup, theme[size]);
+      const classes = classnames(theme.inputGroup, theme[size], className);
 
       return (
         <div className={classes}>
