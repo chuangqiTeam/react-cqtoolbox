@@ -34,8 +34,9 @@ const tooltipFactory = (options = {}) => {
         ]),
         theme: PropTypes.shape({
           tooltip: PropTypes.string,
-          tooltipActive: PropTypes.string,
           tooltipInner: PropTypes.string,
+          tooltipArrow: PropTypes.string,
+          popup: PropTypes.string,
         }),
       }
 
@@ -57,9 +58,7 @@ const tooltipFactory = (options = {}) => {
       getPopupElement = () => {
         const {theme, className, tooltip, placement} = this.props;
 
-        const classes = classnames(theme.tooltip, {
-          [theme.tooltipActive]: this.state.open,
-        }, className);
+        const classes = classnames(theme.tooltip, className);
 
         const arrowClasses = classnames(theme.tooltipArrow, theme[placement]);
 

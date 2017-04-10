@@ -49,33 +49,33 @@ export default AlertTest;
 
 ### 属性(Props)
 
-| 值            | 值类型      | 默认     | 描述|
-|:-----         |:-----     |:-----         |:-----|
-| `type`        | `String`      | `success` | `success、info、warning、error四种样式,默认success`    |
-| `message`     | `Node|String` |           | `提示标题,可在标题中插入节点`       |
-| `description` | `Node|String` |           | `提示描述,可在描述中插入节点,`      |
-| `className`   | `String`      |           | `添加类`                      |
-| `showIcon`    | `Boolean`     | `true`    | `是否显示提示图标,默认显示`       |
-| `closable`    | `Boolean`     | `true`    | `提示是否可关闭,默认可关闭`       |
-| `theme`       | `Object`      |           | `添加自定义主题`                |
+值             | 值类型                | 默认        | 描述
+:------------ | :----------------- | :-------- | :-----------------------------------------
+`type`        | `String`           | `success` | `success、info、warning、error四种样式,默认success`
+`message`     | `Node` or `String` |           | `提示标题,可在标题中插入节点`
+`description` | `Node` or `String` |           | `提示描述,可在描述中插入节点,`
+`className`   | `String`           |           | `添加类`
+`showIcon`    | `Boolean`          | `true`    | `是否显示提示图标,默认显示`
+`closable`    | `Boolean`          | `true`    | `提示是否可关闭,默认可关闭`
+`theme`       | `Object`           |           | `添加自定义主题`
 
 
 
 ### 主题(Theme)
 
-| Name       | Description|
-|:-----------|:-----------|
-| `alert`         | 根类 作用于整个Alert组件.|
-| `hasDscription` | 具有描述内容.|
-| `noIcon`        | 没有图标.|
-| `floating`      | 当提示悬浮时.|
-| `success`       | 成功提示主题.|
-| `info`          | 信息提示主题.|
-| `warning`       | 警告提示主题.|
-| `error`         | 错误提示主题.|
-| `alertInner`    | 提示内容.|
-| `message`       | 标题.|
-| `description`   | 描述.|
-| `icon`          | 提示图标.|
-| `closeIcon`     | 关闭图标.|
-| `anim`          | 提示框进出动画.|
+Name            | Description
+:-------------- | :---------------
+`alert`         | 根类 作用于整个Alert组件.
+`hasDscription` | 具有描述内容.
+`noIcon`        | 没有图标.
+`floating`      | 当提示悬浮时.
+`success`       | 成功提示主题.
+`info`          | 信息提示主题.
+`warning`       | 警告提示主题.
+`error`         | 错误提示主题.
+`alertInner`    | 提示内容.
+`message`       | 标题.
+`description`   | 描述.
+`icon`          | 提示图标.
+`closeIcon`     | 关闭图标.
+`anim`          | 提示框进出动画.

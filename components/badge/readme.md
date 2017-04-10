@@ -32,15 +32,15 @@ export default BadgeTest;
 
 ### 属性(Props)
 
-值               | 值类型       | 默认      | 描述
-:-------------- | :-------- | :------ | :--------
-`count`         | `Number   | String` |           | `显示的数字`
-`text`          | `Node`    |         | `显示的文本`
-`dot`           | `Boolean` | false   | `是否显示圆点`
-`showZero`      | `Boolean` |         | `是否显示数字零`
-`overflowCount` | `Number`  | `99`    | `显示的最大数字`
-`className`     | `String`  |         | `添加类`
-`theme`         | `Object`  |         | `添加自定义主题`
+值               | 值类型                  | 默认    | 描述
+:-------------- | :------------------- | :---- | :--------
+`count`         | `Number` or `String` |       | `显示的数字`
+`text`          | `Node`               |       | `显示的文本`
+`dot`           | `Boolean`            | false | `是否显示圆点`
+`showZero`      | `Boolean`            |       | `是否显示数字零`
+`overflowCount` | `Number`             | `99`  | `显示的最大数字`
+`className`     | `String`             |       | `添加类`
+`theme`         | `Object`             |       | `添加自定义主题`
 
 ### 主题(Theme)
 
