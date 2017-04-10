@@ -1,8 +1,8 @@
-# 表单项(FormItem)
+## 表单项(FormItem)
 
 为输入框添加label和错误信息。
 
-## 例子
+### 例子
 
 ```jsx
 import React from 'react';
@@ -46,7 +46,7 @@ const FormTest = () => (
 export default FormTest;
 ```
 
-## 属性(Props)
+### 属性(Props)
 
 值           | 值类型      | 默认    | 描述
 :---------- | :------- | :---- | :--------
@@ -56,7 +56,7 @@ export default FormTest;
 `children`  | `Object` |       | `子元素`
 `theme`     | `Object` |       | `添加自定义主题`
 
-## 主题(Theme)
+### 主题(Theme)
 
 Name        | Description
 :---------- | :---------------

@@ -1,6 +1,8 @@
-# 徽章数(Badge)
+## 徽章数(Badge)
 
 图标右上角的圆形徽标数字或文字。
+
+### 例子
 
 ```jsx
 import React, {Component} from 'react';
@@ -28,7 +30,7 @@ class BadgeTest extends Component {
 export default BadgeTest;
 ```
 
-## 属性(Props)
+### 属性(Props)
 
 值               | 值类型       | 默认      | 描述
 :-------------- | :-------- | :------ | :--------
@@ -40,7 +42,7 @@ export default BadgeTest;
 `className`     | `String`  |         | `添加类`
 `theme`         | `Object`  |         | `添加自定义主题`
 
-## 主题(Theme)
+### 主题(Theme)
 
 Name    | Description
 :------ | :----------
