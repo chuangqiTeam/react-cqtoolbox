@@ -86,6 +86,10 @@
   line-height: var(--button-large-line-height);
 }
 
+.fullWidth {
+  width: 100%;
+}
+
 .squared {
   min-width: var(--button-squared-min-width);
   padding: var(--button-squared-padding);

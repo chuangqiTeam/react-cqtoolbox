@@ -4,8 +4,11 @@
 
 .formItem {
   position: relative;
+  padding-bottom: var(--input-padding);
+}
 
-  padding: var(--input-padding) 0;
+.withInput {
+  padding-top: var(--input-padding);
 }
 
 .label {

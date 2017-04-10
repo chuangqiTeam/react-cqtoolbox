@@ -65,6 +65,7 @@ Button组件包含文字，图标字体，颜色主题，行为触发。
 | `disabled`        | `Boolean`                   |             | 如果给Button组件元素设置该属性，Button组件元素丧失所有样式，成为不可编辑元素.|
 | `flat`            | `Boolean`                   | `false`     | 如果设置该属性，Button组件元素会拥有扁平的外形效果. |
 | `floating`        | `Boolean`                   | `false`     | 如果设置该属性，Button组件元素会拥有圆圈的外形效果. |
+| `fullWidth`        | `Boolean`                   | `false`     | 宽度是否100% |
 | `href`            | `String`                    |             | 给Button组件元素指定一个href链接属性，并且<button></button>元素会被编译成<a></a>元素. |
 | `size`            | `'small','normal','large'`  | `normal`    | 指定Button组件元素的大小，默认值是normal. |
 | `icon`            | `String` or `Element`       |             | 指定Button组件元素的icon值（icon的值可以是描述图标字体的元素） |
@@ -89,6 +90,7 @@ Button组件包含文字，图标字体，颜色主题，行为触发。
 | `button`       | 用于根元素是按钮的元素|
 | `flat`         | 如果设置该属性，Button组件元素会拥有扁平的外形效果.|
 | `floating`     | 如果设置该属性，Button组件元素会拥有圆圈的外形效果.|
+| `fullWidth`     | 响应式宽度 |
 | `icon`         | 指定Button组件元素的icon值（icon的值可以是描述图标字体的元素).|
 | `mini`         | 用于设置了floating属性的Button组件元素，如果为true，Button组价元素会显的更小一点.|
 | `neutral`      | 用于为button组件元素设置中立色，如果为true，Button组件元素会覆盖掉其他任何主题色调.|

@@ -5,7 +5,6 @@
 .field {
   display: block;
   height: var(--checkbox-size);
-  margin-bottom: var(--checkbox-field-margin-bottom);
   position: relative;
   white-space: nowrap;
 
