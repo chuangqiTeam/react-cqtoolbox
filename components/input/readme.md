@@ -1,6 +1,6 @@
-# 输入框(Input)
+## 输入框(Input)
 
-## 例子
+### 例子
 
 ```jsx
 import React from 'react';
@@ -33,7 +33,7 @@ const InputTest = () => (
 export default InputTest;
 ```
 
-## 属性(Props)
+### 属性(Props)
 
 值               | 值类型        | 默认       | 描述
 :-------------- | :--------- | :------- | :-----------------------------
@@ -50,7 +50,7 @@ export default InputTest;
 `className`     | `String`   |          | `添加类`
 `theme`         | `Object`   |          | `添加自定义主题`
 
-## 主题(Theme)
+### 主题(Theme)
 
 Name           | Description
 :------------- | :----------
