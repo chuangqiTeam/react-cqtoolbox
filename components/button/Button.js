@@ -1,45 +1,63 @@
-import React, { Component, PropTypes } from 'react';
+// flow
+
+import React, { Component } from 'react';
 import classnames from 'classnames';
 
+type Theme = {
+  accent: string,
+  button: string,
+  flat: string,
+  floating: string,
+  icon: string,
+  mini: string,
+  neutral: string,
+  primary: string,
+  raised: string,
+  rippleWrapper: string,
+  toggle: string,
+};
+
+type DefaultProps = {
+  accent: boolean,
+  className: string,
+  flat: boolean,
+  floating: boolean,
+  mini: boolean,
+  neutral: boolean,
+  primary: boolean,
+  raised: boolean,
+  size: string,
+  type: string,
+};
+
+type Props = {
+  accent: boolean,
+  children: React.Element<*>,
+  className: string,
+  disabled: boolean,
+  flat: boolean,
+  floating: boolean,
+  fullWidth: boolean,
+  href: string,
+  size: 'small' | 'normal' | 'large',
+  icon: string | React.Element<*>,
+  iconSpin: boolean,
+  label: React.Element<*>,
+  mini: boolean,
+  neutral: boolean,
+  onMouseLeave: () => void,
+  onMouseUp: () => void,
+  primary: boolean,
+  raised: boolean,
+  theme: Theme,
+  type: string,
+};
+
+type State = empty;
+
+
 const factory = (ripple, FontIcon) => {
-  class Button extends Component {
-    static propTypes = {
-      accent: PropTypes.bool,
-      children: PropTypes.node,
-      className: PropTypes.string,
-      disabled: PropTypes.bool,
-      flat: PropTypes.bool,
-      floating: PropTypes.bool,
-      fullWidth: PropTypes.bool,
-      href: PropTypes.string,
-      size: PropTypes.oneOf(['small', 'normal', 'large']),
-      icon: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.element,
-      ]),
-      iconSpin: PropTypes.bool,
-      label: PropTypes.node,
-      mini: PropTypes.bool,
-      neutral: PropTypes.bool,
-      onMouseLeave: PropTypes.func,
-      onMouseUp: PropTypes.func,
-      primary: PropTypes.bool,
-      raised: PropTypes.bool,
-      theme: PropTypes.shape({
-        accent: PropTypes.string,
-        button: PropTypes.string,
-        flat: PropTypes.string,
-        floating: PropTypes.string,
-        icon: PropTypes.string,
-        mini: PropTypes.string,
-        neutral: PropTypes.string,
-        primary: PropTypes.string,
-        raised: PropTypes.string,
-        rippleWrapper: PropTypes.string,
-        toggle: PropTypes.string,
-      }),
-      type: PropTypes.string,
-    }
+  class Button extends Component<DefaultProps, Props, State> {
 
     static defaultProps = {
       accent: false,

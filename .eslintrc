@@ -1,5 +1,9 @@
 {
-  "extends": "cqaso-kit",
+  "extends": ["cqaso-kit"],
+  "rules": {
+      "flowtype/define-flow-type": 1,
+      "flowtype/use-flow-type": 1
+  },
   "globals": {
     "warning": true
   }

@@ -1,27 +1,36 @@
-import React, { PropTypes, Component } from 'react';
+// flow
+
+import React, { Component } from 'react';
 import classnames from 'classnames';
 
-const factory = (Button) => {
+type Theme = {
+  buttonGroup: string,
+}
 
-  const isButton = child => child.type === Button;
+type DefaultProps =  {
+  size: string;
+}
 
-  class ButtonGroup extends Component {
-    static propTypes = {
-      children: PropTypes.node,
-      size: PropTypes.oneOf(['small', 'normal', 'large']),
-      theme: PropTypes.shape({
-        buttonGroup: PropTypes.string,
-      }),
-    }
+type  Props = {
+  children: React.Element<*>,
+  size: 'small' | 'normal' | 'large',
+  theme: Theme,
+}
+
+const factory = (Button: React.Class<*>) => {
+
+  const isButton = (child: React.Element<*>): boolean => child.type === Button;
+
+  class ButtonGroup extends Component<DefaultProps, Props, State> {
 
     static defaultProps = {
       size: 'normal',
     }
 
-    renderChildren = (children) => {
+    renderChildren = (children: Array<React.Element<*>>) => {
       const {size, theme} = this.props;
 
-      return React.Children.map(this.props.children, (item, index) =>
+      return React.Children.map(this.props.children, (item: React.Element<*>, index: number) =>
         isButton(item) && React.cloneElement(item, {
           key: index,
           theme: theme,
@@ -35,7 +44,7 @@ const factory = (Button) => {
         children,
       } = this.props;
 
-      const classes = classnames(theme.buttonGroup);
+      const classes: object = classnames(theme.buttonGroup);
 
       return (
         <div className={classes}>

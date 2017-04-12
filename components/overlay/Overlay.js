@@ -1,36 +1,46 @@
-import React, {Component, PropTypes} from 'react';
+// @flow
+
+import React, {Component} from 'react';
 import classnames from 'classnames';
 
-class Overlay extends Component {
-  static propTypes = {
-    active: PropTypes.bool,
-    children: PropTypes.node,
-    className: PropTypes.string,
-    onClick: PropTypes.func,
-    lockScroll: PropTypes.bool,
-    onEscKeyDown: PropTypes.func,
-    theme: PropTypes.shape({
-      active: PropTypes.string,
-      overlay: PropTypes.string,
-    }),
-  }
+type Theme = {
+  active: string,
+  overlay: string,
+};
+
+type DefaultProps = { lockScroll: boolean };
+
+type Props = {
+  active: boolean,
+  children: React.Element<any>,
+  className: string,
+  onClick: () => void,
+  lockScroll: boolean,
+  onEscKeyDown: () => void,
+  theme: Theme,
+};
+
+type State = any;
+
+class Overlay extends Component<DefaultProps, Props, State> {
 
   static defaultProps = {
     lockScroll: true,
-  }
+  };
+
+  keydownHandler: bool;
 
   componentDidMount() {
     const { active, lockScroll, onEscKeyDown } = this.props;
     if (onEscKeyDown) {
       this.keydownHandler = true;
-      this.addBodyKeydownListener(onEscKeyDown);
+      this.addBodyKeydownListener();
     }
     if (active && lockScroll) this.addLockScroll(active, lockScroll);
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps: Props, prevState: State) {
     const { active, lockScroll, onEscKeyDown } = this.props;
-
 
     if (active && !prevProps.active && lockScroll) {
       this.addLockScroll(active, lockScroll);
@@ -58,22 +68,30 @@ class Overlay extends Component {
   }
 
   addBodyKeydownListener = () => {
-    document.body.addEventListener('keydown', this.handleEscKey);
+    if (document.body) {
+      document.body.addEventListener('keydown', this.handleEscKey);
+    }
   }
 
   removeBodyKeydownListener = () => {
-    document.body.removeEventListener('keydown', this.handleEscKey);
+    if (document.body) {
+      document.body.removeEventListener('keydown', this.handleEscKey);
+    }
   }
 
   addLockScroll = () => {
-    document.body.style.overflow = 'hidden';
+    if (document.body) {
+      document.body.style.overflow = 'hidden';
+    }
   }
 
   removeLockScroll = () => {
-    document.body.style.overflow = '';
+    if (document.body) {
+      document.body.style.overflow = '';
+    }
   }
 
-  handleEscKey = (e) => {
+  handleEscKey = (e: Event) => {
     if (this.props.active &&
       this.props.onEscKeyDown &&
       e.which === 27) {
@@ -81,7 +99,7 @@ class Overlay extends Component {
     }
   }
 
-  handleClick = (event) => {
+  handleClick = (event: MouseEvent) => {
     event.preventDefault();
     event.stopPropagation();
     if (this.props.onClick) {
