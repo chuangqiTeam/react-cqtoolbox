@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for components/utils/events.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">components/utils</a> events.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">3.7% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>1/27</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">4.17% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/24</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
+export default {
+  getMousePosition(event) {
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      x: event.pageX - (window.scrollX || window.pageXOffset),
+      y: event.pageY - (window.scrollY || window.pageYOffset),
+    };
+  },
+&nbsp;
+  getTouchPosition(event) {
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      x: event.touches[0].pageX - (window.scrollX || window.pageXOffset),
+      y: event.touches[0].pageY - (window.scrollY || window.pageYOffset),
+    };
+  },
+&nbsp;
+  pauseEvent(event) {
+<span class="cstat-no" title="statement not covered" >    event.stopPropagation();</span>
+<span class="cstat-no" title="statement not covered" >    event.preventDefault();</span>
+  },
+&nbsp;
+  addEventsToDocument(eventMap) {
+<span class="cstat-no" title="statement not covered" >    Object.keys(eventMap).forEach(<span class="fstat-no" title="function not covered" >(k</span>ey) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      document.addEventListener(key, eventMap[key], false);</span>
+    });
+  },
+&nbsp;
+  removeEventsFromDocument(eventMap) {
+<span class="cstat-no" title="statement not covered" >    Object.keys(eventMap).forEach(<span class="fstat-no" title="function not covered" >(k</span>ey) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      document.removeEventListener(key, eventMap[key], false);</span>
+    });
+  },
+&nbsp;
+  targetIsDescendant(event, parent) {
+    let node = <span class="cstat-no" title="statement not covered" >event.target;</span>
+<span class="cstat-no" title="statement not covered" >    while (node !== null) {</span>
+<span class="cstat-no" title="statement not covered" >      if (node === parent) <span class="cstat-no" title="statement not covered" >return true;</span></span>
+<span class="cstat-no" title="statement not covered" >      node = node.parentNode;</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return false;</span>
+  },
+&nbsp;
+  addEventListenerOnTransitionEnded(element, fn) {
+    const eventName = <span class="cstat-no" title="statement not covered" >transitionEventNamesFor(element);</span>
+<span class="cstat-no" title="statement not covered" >    if (!eventName) <span class="cstat-no" title="statement not covered" >return false;</span></span>
+<span class="cstat-no" title="statement not covered" >    element.addEventListener(eventName, fn);</span>
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+  },
+&nbsp;
+  removeEventListenerOnTransitionEnded(element, fn) {
+    const eventName = <span class="cstat-no" title="statement not covered" >transitionEventNamesFor(element);</span>
+<span class="cstat-no" title="statement not covered" >    if (!eventName) <span class="cstat-no" title="statement not covered" >return false;</span></span>
+<span class="cstat-no" title="statement not covered" >    element.removeEventListener(eventName, fn);</span>
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+  },
+};
+&nbsp;
+const TRANSITIONS = {
+  transition: 'transitionend',
+  OTransition: 'oTransitionEnd',
+  MozTransition: 'transitionend',
+  WebkitTransition: 'webkitTransitionEnd',
+};
+&nbsp;
+function <span class="fstat-no" title="function not covered" >transitionEventNamesFor(</span>element) {
+<span class="cstat-no" title="statement not covered" >  return Object.keys(TRANSITIONS).reduce(<span class="fstat-no" title="function not covered" >(r</span>esult, transition) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >    !result &amp;&amp; (element &amp;&amp; element.style[transition] !== undefined)</span>
+      ? TRANSITIONS[transition]
+      : result
+  ), null);
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Apr 13 2017 11:49:33 GMT+0800 (CST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -1,4 +1,5 @@
 # react-cqtoolbox
+[![Travis][build-badge]][build] [![npm package][npm-badge]][npm] [![Coveralls][coveralls-badge]][coveralls]
 
 `react-cqtoolbox` 是针对于cqaso产品场景开发的一系列的pc端react组件集。
 包括的场景有：后台管理系统，CQASO，TOPASM操作复杂的PC网站。
@@ -53,7 +54,7 @@ npm install react-cqtoolbox --save
       },
 ```
 
-webpack配置请参考[这里](https://github.com/lanjingling0510/react-babel-webpack-kit)
+webpack配置请参考[这里](https://github.com/chuangqiTeam/react-babel-webpack-kit)
 
 ## 用法
 下面是简单的例子，以按钮为例：
@@ -113,3 +114,10 @@ CSS Modules 对CSS中的class名都做了处理，使用对象来保存原class�
 
 - [react-toolbox](http://react-toolbox.com/)
 - [antd](https://ant.design)
+
+[npm-badge]: https://img.shields.io/npm/v/react-cqtoolbox.svg?style=flat-square
+[npm]: https://www.npmjs.com/package/react-cqtoolbox
+[build-badge]: https://img.shields.io/travis/chuangqiTeam/react-cqtoolbox/master.svg?style=flat-square
+[build]: https://travis-ci.org/chuangqiTeam/react-cqtoolbox
+[coveralls-badge]: https://img.shields.io/coveralls/chuangqiTeam/react-cqtoolbox.svg?style=flat-square
+[coveralls]: https://coveralls.io/github/chuangqiTeam/react-cqtoolbox
