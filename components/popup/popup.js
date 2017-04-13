@@ -1,42 +1,68 @@
-import React, { PropTypes } from 'react';
+//flow
+
+import React from 'react';
 import { findDOMNode } from 'react-dom';
 import domAlign from 'dom-align';
 import classnames from 'classnames';
 import events from '../utils/events.js';
-
 import Overlay from '../overlay';
 
-class Popup extends React.Component {
+type Theme = {
+  overlay: string,
+  popup: string,
+  active: string,
+}
 
-  static propTypes = {
-    active: PropTypes.bool,
-    align: PropTypes.object,
-    mask: PropTypes.bool,
-    theme: PropTypes.object,
-    children: PropTypes.node,
-    matchTargetWidth: PropTypes.bool,
-    onMouseEnter: PropTypes.func,
-    onMouseLeave: PropTypes.func,
-    getRootDomNode: PropTypes.func,
-    onRequestClose: PropTypes.func,
-  }
+type DefaultProps = {
+  mask: boolean,
+  active: boolean,
+  matchTargetWidth: boolean,
+}
+
+type Props = {
+  // 是否激活
+  active: boolean,
+  // 位置
+  align: any,
+  // 是否显示浮层
+  mask: boolean,
+
+  children: React.Element<*>,
+  // 是否宽度等于目标元素
+  matchTargetWidth: boolean,
+
+  onMouseEnter: () => void,
+
+  onMouseLeave: () => void,
+  // 获得目标元素
+  getRootDomNode: () => void,
+  // 请求关闭popup
+  onRequestClose: () => void,
+
+  theme: Theme,
+}
+
+class Popup extends React.Component<DefaultProps, Props, any> {
 
   static defaultProps = {
+    mask: false,
     active: false,
     matchTargetWidth: false,
   }
 
   componentDidMount() {
+    const { active, align, matchTargetWidth, getRootDomNode } = this.props;
     const source = this.getPopupDomNode();
-    const target = this.props.getRootDomNode();
-    const { active, align, matchTargetWidth } = this.props;
+    const target = getRootDomNode && getRootDomNode();
 
-    // set popup width
-    const widthProp = matchTargetWidth ? 'width' : 'minWidth';
-    source.style[widthProp] = `${target.offsetWidth}px`;
+    if (target) {
+      // set popup width
+      const widthProp = matchTargetWidth ? 'width' : 'minWidth';
+      source.style[widthProp] = `${target.offsetWidth}px`;
 
-    // set popup position
-    this.setPopupAlign(source, target, align);
+      // set popup position
+      this.setPopupAlign(source, target, align);
+    }
 
     if (active) {
       this.clickOutsideHandler = true;

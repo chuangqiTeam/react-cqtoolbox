@@ -1,4 +1,7 @@
 import React, { Component, PropTypes } from 'react';
+import Trigger from '../trigger';
+import {Menu, MenuItem} from '../menu';
+import SelectInput from '../select_input';
 import splitEvery from 'ramda/src/splitEvery';
 import addIndex from 'ramda/src/addIndex';
 import map from 'ramda/src/map';
@@ -137,4 +140,7 @@ const factory = (Trigger, SelectInput, Menu, MenuItem) => {
   return Select;
 };
 
+const Select = factory(Trigger, SelectInput, Menu, MenuItem);
+
 export {factory as selectFactory};
+export {Select};

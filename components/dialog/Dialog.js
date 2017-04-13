@@ -1,5 +1,8 @@
 import React, { PropTypes, Component } from 'react';
 import activableRenderer from '../decorator/activableRenderer.js';
+import Overlay from '../overlay';
+import Button from '../button';
+import Portal from '../portal';
 import classnames from 'classnames';
 
 const factory = (Overlay, Portal, Button) => {
@@ -81,5 +84,7 @@ const factory = (Overlay, Portal, Button) => {
   return activableRenderer()(Dialog);
 }
 
+const Dialog = factory(Overlay, Portal, Button);
 
 export {factory as dialogFactory};
+export {Dialog};

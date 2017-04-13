@@ -214,7 +214,7 @@ class SelectTest extends Component {
 
   render() {
     const selectData = {
-      data: countrys,
+      data: countrys.slice(0, 2),
       maxRowNum: 8,
       onChange: console.log.bind(console),
     };

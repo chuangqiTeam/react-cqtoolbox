@@ -10,6 +10,7 @@
     .vertical {
         &.menu {
             background: #fff;
+            flex: 1;
         }
 
         .popupMenu {

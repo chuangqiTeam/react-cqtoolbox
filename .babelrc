@@ -1,0 +1,12 @@
+{
+    "presets": [
+        ["cq", {
+            "target": "web",
+            "modules": "commonjs",
+            "env": "development"
+        }]
+    ],
+    "plugins": [
+        "transform-decorators-legacy"
+    ]
+}

@@ -8,6 +8,7 @@ node_modules
 webpack_cache
 .eslintignore
 .editorconfig
+.babelrc
 .happypack
 .*.yml
 .eslintrc

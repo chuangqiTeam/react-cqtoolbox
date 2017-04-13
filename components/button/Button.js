@@ -2,6 +2,8 @@
 
 import React, { Component } from 'react';
 import classnames from 'classnames';
+import rippleFactory from '../ripple/Ripple';
+import FontIcon from '../font_icon';
 
 type Theme = {
   accent: string,
@@ -71,6 +73,8 @@ const factory = (ripple, FontIcon) => {
       size: 'normal',
       type: 'button',
     }
+
+    buttonNode: HTMLButtonElement;
 
     getLevel = () => {
       if (this.props.primary) return 'primary';
@@ -148,4 +152,7 @@ const factory = (ripple, FontIcon) => {
   return ripple(Button);
 };
 
+const Button = factory(rippleFactory({ centered: false }), FontIcon);
+
+export {Button};
 export {factory as buttonFactory};

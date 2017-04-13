@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popup #render 渲染出mask浮层 1`] = `
+<div>
+  <div
+    class="overlay"
+    data-react-toolbox="overlay"
+  />
+  <div
+    class="popup"
+  >
+    <span>
+      浮层
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Popup #render 渲染正确 1`] = `
+<div>
+  <div
+    class="popup"
+  >
+    <span>
+      浮层
+    </span>
+  </div>
+</div>
+`;
