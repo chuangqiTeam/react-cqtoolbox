@@ -5,6 +5,7 @@ scripts
 src
 build
 node_modules
+coverage
 webpack_cache
 .eslintignore
 .editorconfig

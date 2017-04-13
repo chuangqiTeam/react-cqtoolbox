@@ -48,10 +48,10 @@
     "normalize.css": "^5.0.0",
     "postcss": "^5.1.2",
     "postcss-cssnext": "^2.8.0",
+    "postcss-import": "^9.1.0",
     "postcss-loader": "^1.2.1",
     "postcss-mixins": "^5.2.0",
     "postcss-nested": "^1.0.0",
-    "postcss-smart-import": "^0.6.6",
     "postcss-url": "^5.1.2",
     "pre-commit": "^1.2.2",
     "react": "^15.4.1",
@@ -81,7 +81,7 @@
     "rc-animate": "^2.3.3",
     "react-css-themr": "^2.0.0",
     "react-date-range": "^0.9.3",
-    "react-ultimate-pagination": "^1.0.0",
+    "react-ultimate-pagination": "^1.0.1",
     "warning": "^3.0.0"
   },
   "peerDependencies": {

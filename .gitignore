@@ -5,4 +5,4 @@ webpack_cache
 .happypack
 npm-debug.log
 .DS_Store
-yarn.lock
+coverage
