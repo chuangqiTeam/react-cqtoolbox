@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Popup from '../popup';
+import Popup from '../Popup';
 import theme from '../theme.css';
 
 
