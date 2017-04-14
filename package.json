@@ -9,6 +9,7 @@
     "doc": "rm -rf ./docs && webpack --config ./config/webpack.pro.js",
     "test": "jest",
     "test:watch": "jest --watch --no-watchman",
+    "test:cov": "npm test -- --coverage -w 2",
     "lint": "eslint components ./.eslintrc --ext '.js,.jsx'",
     "release": "npm run build && cqgit"
   },

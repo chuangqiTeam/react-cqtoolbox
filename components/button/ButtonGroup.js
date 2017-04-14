@@ -1,7 +1,9 @@
-// flow
+// @flow
 
-import React, { Component } from 'react';
+import React from 'react';
 import classnames from 'classnames';
+
+type Component = Class<React.Component<{}, {}, mixed>>;
 
 type Theme = {
   buttonGroup: string,
@@ -12,16 +14,16 @@ type DefaultProps =  {
 }
 
 type  Props = {
-  children: React.Element<*>,
+  children: Array<React.Element<*>>,
   size: 'small' | 'normal' | 'large',
   theme: Theme,
 }
 
-const factory = (Button: React.Class<*>) => {
+const factory = (Button: Component) => {
 
   const isButton = (child: React.Element<*>): boolean => child.type === Button;
 
-  class ButtonGroup extends Component<DefaultProps, Props, State> {
+  class ButtonGroup extends React.Component<DefaultProps, Props, *> {
 
     static defaultProps = {
       size: 'normal',
@@ -44,7 +46,7 @@ const factory = (Button: React.Class<*>) => {
         children,
       } = this.props;
 
-      const classes: object = classnames(theme.buttonGroup);
+      const classes = classnames(theme.buttonGroup);
 
       return (
         <div className={classes}>

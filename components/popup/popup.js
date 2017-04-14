@@ -1,4 +1,4 @@
-//flow
+// @flow
 
 import React from 'react';
 import { findDOMNode } from 'react-dom';
@@ -39,6 +39,8 @@ type Props = {
   // 请求关闭popup
   onRequestClose: () => void,
 
+  onOverlayClick: () => void,
+
   theme: Theme,
 }
 
@@ -50,14 +52,18 @@ class Popup extends React.Component<DefaultProps, Props, any> {
     matchTargetWidth: false,
   }
 
+  // 控制document事件的监听
+  clickOutsideHandler: boolean;
+
   componentDidMount() {
     const { active, align, matchTargetWidth, getRootDomNode } = this.props;
     const source = this.getPopupDomNode();
     const target = getRootDomNode && getRootDomNode();
 
-    if (target) {
+    if (target && source) {
       // set popup width
       const widthProp = matchTargetWidth ? 'width' : 'minWidth';
+      // $FlowIgnore
       source.style[widthProp] = `${target.offsetWidth}px`;
 
       // set popup position
@@ -72,7 +78,7 @@ class Popup extends React.Component<DefaultProps, Props, any> {
     }
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps: Props, prevState: any) {
     if (this.props.active && !this.clickOutsideHandler) {
       this.clickOutsideHandler = true;
       events.addEventsToDocument({
@@ -92,11 +98,11 @@ class Popup extends React.Component<DefaultProps, Props, any> {
     });
   }
 
-  setPopupAlign = (sourceNode, targetNode, popupAlign) => {
+  setPopupAlign = (sourceNode: Element | Text, targetNode: Element | Text, popupAlign: {}) => {
     domAlign(sourceNode, targetNode, popupAlign);
   }
 
-  onDocumentClick = (event) => {
+  onDocumentClick = (event: MouseEvent) => {
     if (this.props.mask && !this.props.maskClosable) {
       return;
     }

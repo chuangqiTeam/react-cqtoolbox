@@ -1,9 +1,11 @@
-// flow
+// @flow
 
-import React, { Component } from 'react';
+import React from 'react';
 import classnames from 'classnames';
 import rippleFactory from '../ripple/Ripple';
 import FontIcon from '../font_icon';
+
+type Component = Class<React.Component<{}, {}, mixed>>;
 
 type Theme = {
   accent: string,
@@ -17,6 +19,10 @@ type Theme = {
   raised: string,
   rippleWrapper: string,
   toggle: string,
+  normal: string,
+  large: string,
+  small: string,
+  fullWidth: string,
 };
 
 type DefaultProps = {
@@ -55,11 +61,9 @@ type Props = {
   type: string,
 };
 
-type State = empty;
 
-
-const factory = (ripple, FontIcon) => {
-  class Button extends Component<DefaultProps, Props, State> {
+const factory = (ripple: () => void, FontIcon: Component) => {
+  class Button extends React.Component<DefaultProps, Props, *> {
 
     static defaultProps = {
       accent: false,

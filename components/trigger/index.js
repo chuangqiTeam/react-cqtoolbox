@@ -1,3 +1,4 @@
 import Trigger from './Trigger';
+import popupRenderFactory from './popupRender.js';
 
-export default Trigger;
+export default popupRenderFactory()(Trigger);

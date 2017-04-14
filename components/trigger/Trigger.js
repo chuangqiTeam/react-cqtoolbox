@@ -2,10 +2,7 @@ import React, {cloneElement, PropTypes, Component} from 'react';
 import { findDOMNode } from 'react-dom';
 import Popup from '../popup';
 import pureRender from '../decorator/pureRender.js';
-import popupRenderFactory from './popupRender.js';
 
-@popupRenderFactory()
-@pureRender
 class Trigger extends Component {
   static propTypes = {
     children: PropTypes.any,
@@ -39,8 +36,19 @@ class Trigger extends Component {
     onPopupVisibleChange: () => void 0
   }
 
-  state = {
-    popupVisible: this.props.popupVisible,
+  constructor(props) {
+    super(props);
+
+    let popupVisible;
+    if ('popupVisible' in props) {
+      popupVisible = this.props.popupVisible;
+    } else {
+      popupVisible = false;
+    }
+
+    this.state = {
+      popupVisible: popupVisible,
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -190,4 +198,4 @@ class Trigger extends Component {
   }
 }
 
-export default Trigger;
+export default pureRender(Trigger);
