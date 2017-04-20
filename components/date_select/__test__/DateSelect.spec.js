@@ -23,6 +23,17 @@ describe('DateSelect', () => {
     return mountedComp;
   }
 
+  it("是否渲染SelectInput", () => {
+    const comp = getComp();
+    const selectInput = comp.find("SelectInput");
+    expect(selectInput.length).toBeGreaterThan(0);
+  })
+
+  it("是否渲染Trigger", () => {
+    const comp = getComp();
+    const trigger = comp.find("Trigger");
+    expect(trigger.length).toBeGreaterThan(0);
+  })
 
   it("测试click事件", () => {
     const comp = getComp();
