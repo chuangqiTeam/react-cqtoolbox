@@ -1,3 +1,19 @@
+[1.0.12](../../releases/tag/1.0.12)     2017-05-03 17:41:26
+-----------------------------------------------------------
+
+- [8c5cad3](../../commit/8c5cad3) ✨  [feature] 添加returnValue属性在Select组件上.
+- [04cef46](../../commit/04cef46) ✨  [feature] 添加Autocomplete,Tirgger组件测试.
+- [710d53e](../../commit/710d53e) ✨  [feature] 添加coverage覆盖率检测.
+- [a87c05a](../../commit/a87c05a) 🐛  [bug]修改popup.js为Popup.js
+- [aaeae47](../../commit/aaeae47) 🐛  [bug]更新package依赖包版本.
+- [db8d341](../../commit/db8d341) 🐛  [bug]更新yarn.lock配置.
+- [0aa0fc4](../../commit/0aa0fc4) 🔧  [config] 添加yarn.lock，防止包版本不同.
+- [aa0a6f9](../../commit/aa0a6f9) ✨  [feature] 添加.travis.yml位置.
+- [d5c18ff](../../commit/d5c18ff) ✨  [feature] 添加jest测试用例.
+- [37f2091](../../commit/37f2091) ✨  [feature] 添加FLow静态类型检测.
+- [7c4fac4](../../commit/7c4fac4) 📚  [document] 添加项目说明文档.
+
+
 [1.0.11](../../releases/tag/1.0.11)     2017-04-10 19:04:21
 -----------------------------------------------------------
 
