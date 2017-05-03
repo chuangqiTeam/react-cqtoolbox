@@ -16,6 +16,7 @@ const factory = (Trigger, SelectInput, Menu, SubMenu, MenuItem) => {
     static propTypes = {
       value: PropTypes.any,
       data: PropTypes.array,
+      returnValue: PropTypes.bool,
       maxRowNum: PropTypes.number,
       maxCascadeRowNum: PropTypes.number,
       cascadeAction: PropTypes.oneOf(['click', 'hover']),
@@ -28,6 +29,7 @@ const factory = (Trigger, SelectInput, Menu, SubMenu, MenuItem) => {
 
     static defaultProps = {
       maxRowNum: 10,
+      returnValue: false,
       maxCascadeRowNum: 5,
       cascadeAction: 'hover',
       onChange: () => void 0,
@@ -138,7 +140,11 @@ const factory = (Trigger, SelectInput, Menu, SubMenu, MenuItem) => {
         this.setState({ value: item.value });
       }
 
-      this.props.onChange(item);
+      if (this.props.returnValue) {
+        this.props.onChange(item.value);
+      } else {
+        this.props.onChange(item);
+      }
     }
 
     handleSelectToggle = () => {

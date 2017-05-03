@@ -11,54 +11,80 @@ const countrys = [
 ];
 
 describe('Select', () => {
-  it('传入value（智能组件下）选择正常', () => {
-    const onChange = jest.fn();
 
-    const selectData = {
-      value: countrys[0].value,
+  let mountedComp;
+  let props;
+
+  beforeEach(() => {
+    props = {
       data: countrys,
-      onChange: onChange,
+      onChange: undefined,
       theme: theme,
     };
+    mountedComp = undefined;
+    document.querySelector('.menu') &&
+      document.querySelector('.menu').remove();
+  });
 
-    const wrapper = mount(<Select {...selectData} />);
+  const getComp = () => {
+    if (!mountedComp) {
+      mountedComp = mount(<Select {...props} />);
+    }
+    return mountedComp;
+  }
+
+
+  it('传入value（智能组件下）选择正常', () => {
+    const onChange = jest.fn();
+    props.onChange = onChange;
+    props.value = countrys[0].value;
+
 
     // 选择第二项
-    wrapper.find('SelectInput').simulate('click');
+    getComp().find('SelectInput').simulate('click');
 
     document.querySelectorAll('.menuItem')[1].click();
-    wrapper.setProps({value: countrys[1].value});
+    getComp().setProps({value: countrys[1].value});
 
     // 正常调用onChange
     expect(onChange.mock.calls.length).toBe(1);
-    expect(onChange.mock.calls[0][0]).toBe(countrys[1]);
+    expect(onChange.mock.calls[0][0]).toBe(countrys[1].value);
 
     // 正常显示
-    expect(wrapper.state('value')).toBe(countrys[1].value);
+    expect(getComp().state('value')).toBe(countrys[1].value);
   });
 
   it('不传入value（木偶组件下）选择正常', () => {
     const onChange = jest.fn();
-
-    const selectData = {
-      data: countrys,
-      onChange: onChange,
-      theme: theme,
-    };
-
-    const wrapper = mount(<Select {...selectData} />);
+    props.onChange = onChange;
 
     // 选择第二项
-    wrapper.find('SelectInput').simulate('click');
+    getComp().find('SelectInput').simulate('click');
+    document.querySelectorAll('.menuItem')[1].click();
 
-    document.querySelectorAll('.menuItem')[5].click();
+    // 正常调用onChange
+    expect(onChange.mock.calls.length).toBe(1);
+    expect(onChange.mock.calls[0][0]).toBe(countrys[1].value);
+
+    // 正常显示
+    expect(getComp().state('value')).toBe(countrys[1].value);
+  });
+
+  it('当returnValue属性为false, 返回数据一项', () => {
+    const onChange = jest.fn();
+    props.onChange = onChange;
+    props.returnValue = false;
+    props.value = countrys[0].value;
+    // 选择第二项
+    getComp().find('SelectInput').simulate('click');
+
+    document.querySelectorAll('.menuItem')[1].click();
+    getComp().setProps({value: countrys[1].value});
 
     // 正常调用onChange
     expect(onChange.mock.calls.length).toBe(1);
     expect(onChange.mock.calls[0][0]).toBe(countrys[1]);
 
-    // 正常显示
-    expect(wrapper.state('value')).toBe(countrys[1].value);
-  });
+  })
 
 })

@@ -18,6 +18,7 @@ const factory = (Trigger, SelectInput, Menu, MenuItem) => {
     static propTypes = {
       value: PropTypes.any,
       data: PropTypes.array,
+      returnValue: PropTypes.bool,
       maxRowNum: PropTypes.number,
       onChange: PropTypes.func,
       theme: PropTypes.shape({
@@ -28,6 +29,7 @@ const factory = (Trigger, SelectInput, Menu, MenuItem) => {
 
     static defaultProps = {
       maxRowNum: 10,
+      returnValue: true,
       onChange: () => void 0,
     }
 
@@ -105,7 +107,11 @@ const factory = (Trigger, SelectInput, Menu, MenuItem) => {
         this.setState({ value: item.value });
       }
 
-      this.props.onChange(item);
+      if (this.props.returnValue) {
+        this.props.onChange(item.value);
+      } else {
+        this.props.onChange(item);
+      }
     }
 
     handleSelectToggle = () => {
