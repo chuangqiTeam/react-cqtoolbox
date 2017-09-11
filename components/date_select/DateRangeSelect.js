@@ -61,7 +61,7 @@ const factory = (Trigger, SelectInput, DateRange) => {
       }
 
       if ('endDate' in nextProps) {
-        this.setState({ date: nextProps.endDate });
+        this.setState({ endDate: nextProps.endDate });
       }
 
       if (nextProps.ranges !== this.props.ranges) {
