@@ -18,10 +18,7 @@ gulp.task('js', function () {
 
 gulp.task('css', function () {
   const plugins = [
-    require('postcss-smart-import')({
-      root: __dirname,
-      path: [path.join(__dirname, './components')],
-    }),
+    require('postcss-import')(),
     require('postcss-url')(),
     require('postcss-mixins')(),
     require('postcss-cssnext')({
