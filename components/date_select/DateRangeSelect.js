@@ -19,7 +19,7 @@ const factory = (Trigger, SelectInput, DateRange) => {
       maxDate: PropTypes.object,
       onChange: PropTypes.func,
       ranges: PropTypes.arrayOf(
-        PropTypes.oneOf(['今日', '昨日', '近7日', '近30日', '近三个月', '近一年'])
+        PropTypes.oneOf(['今日', '昨日', '近7日', '近30日', '近三个月', '近一年', '全部'])
       ),
       theme: PropTypes.shape({
         DaySelected: PropTypes.object,
@@ -30,7 +30,7 @@ const factory = (Trigger, SelectInput, DateRange) => {
     static defaultProps = {
       minDate: moment('2016-03-01'),
       maxDate: moment(),
-      ranges: ['今日', '昨日', '近7日', '近30日', '近三个月', '近一年'],
+      ranges: ['今日', '昨日', '近7日', '近30日', '近三个月', '近一年', '全部'],
       onChange: () => void 0,
     }
 
@@ -38,7 +38,7 @@ const factory = (Trigger, SelectInput, DateRange) => {
       super(props);
 
       this.state = {
-        ranges: pick(props.ranges, allRanges),
+        ranges: pick(props.ranges, allRanges(this.props.minDate)),
         startDate: 'startDate' in props ? props.startDate : moment(),
         endDate: 'endDate' in props ? props.endDate : moment(),
         open: false,
@@ -65,7 +65,7 @@ const factory = (Trigger, SelectInput, DateRange) => {
       }
 
       if (nextProps.ranges !== this.props.ranges) {
-        this.setState({ ranges: pick(nextProps.ranges, allRanges) })
+        this.setState({ ranges: pick(nextProps.ranges, allRanges(nextProps.minDate)) })
       }
     }
 
