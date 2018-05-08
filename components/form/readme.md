@@ -6,11 +6,11 @@
 
 ```jsx
 import React from 'react';
-import Input from 'react-cqtoolbox/lib/input';
-import FormItem from 'react-cqtoolbox/lib/form';
-import Section from 'react-cqtoolbox/lib/section';
-import Button from 'react-cqtoolbox/lib/button';
-import Checkbox from 'react-cqtoolbox/lib/checkbox';
+import Input from 'react-rainie-toolbox/lib/input';
+import FormItem from 'react-rainie-toolbox/lib/form';
+import Section from 'react-rainie-toolbox/lib/section';
+import Button from 'react-rainie-toolbox/lib/button';
+import Checkbox from 'react-rainie-toolbox/lib/checkbox';
 
 const CodeButton = () => <Button label="获取验证码" />;
 

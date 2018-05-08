@@ -6,7 +6,7 @@
 ```jsx
 //DateSelect 单点选择器
 //DateRangeSelect 范围选择器
-import {DateSelect, DateRangeSelect} from 'react-cqtoolbox/lib/date_select';
+import {DateSelect, DateRangeSelect} from 'react-rainie-toolbox/lib/date_select';
 import moment from 'moment';
 
 class DatepickerTest extends React.Component {

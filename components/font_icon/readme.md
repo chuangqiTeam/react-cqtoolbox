@@ -4,7 +4,7 @@ Font Icon默认使用阿里的[Iconfont](http://www.iconfont.cn/plus/collections
 
 ### 例子
 
-	import { FontIcon } from 'react-cqtoolbox/lib/font_icon';
+	import { FontIcon } from 'react-rainie-toolbox/lib/font_icon';
 	const FontIconTest = () => (
 	<div>
     	<span>图标文字水平对齐</span>

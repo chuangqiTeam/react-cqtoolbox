@@ -6,9 +6,9 @@
 
 ```jsx
 import React, {Component} from 'react';
-import Badge from 'react-cqtoolbox/lib/badge';
-import Button from 'react-cqtoolbox/lib/button';
-import Section from 'react-cqtoolbox/lib/section';
+import Badge from 'react-rainie-toolbox/lib/badge';
+import Button from 'react-rainie-toolbox/lib/button';
+import Section from 'react-rainie-toolbox/lib/section';
 
 const BadgeButton = Badge(Button);
 

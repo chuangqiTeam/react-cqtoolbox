@@ -4,8 +4,8 @@
 
 ```jsx
 import React from 'react';
-import Input from 'react-cqtoolbox/lib/input';
-import Section from 'react-cqtoolbox/lib/section';
+import Input from 'react-rainie-toolbox/lib/input';
+import Section from 'react-rainie-toolbox/lib/section';
 
 const InputTest = () => (
   <Section title="输入框">

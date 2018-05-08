@@ -8,8 +8,8 @@
 
 ```jsx
 import React, {Component} from 'react';
-import {Menu, MenuItem} from 'react-cqtoolbox/lib/menu';
-import Section from 'react-cqtoolbox/lib/section';
+import {Menu, MenuItem} from 'react-rainie-toolbox/lib/menu';
+import Section from 'react-rainie-toolbox/lib/section';
 
 class MenuTest extends Component {
   render() {
@@ -57,8 +57,8 @@ Name         | Description
 
 ```jsx
 import React, {Component} from 'react';
-import {Menu, SubMenu, MenuItem} from 'react-cqtoolbox/lib/menu';
-import Section from 'react-cqtoolbox/lib/section';
+import {Menu, SubMenu, MenuItem} from 'react-rainie-toolbox/lib/menu';
+import Section from 'react-rainie-toolbox/lib/section';
 
 class MenuTest extends Component {
   render() {

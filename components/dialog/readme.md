@@ -5,7 +5,7 @@ Dialog组件默认定义了普通对话框、验证框、成功框、警告框�
 ### 例子
 
 ```JSX
-import Dialog from 'react-cqtoolbox/lib/components/Dialog';
+import Dialog from 'react-rainie-toolbox/lib/components/Dialog';
 
 class DialogTest extends React.Component {
   state = {

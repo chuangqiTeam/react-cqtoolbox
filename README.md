@@ -1,7 +1,7 @@
-# react-cqtoolbox
+# react-rainie-toolbox
 [![Travis][build-badge]][build] [![npm package][npm-badge]][npm] [![Coveralls][coveralls-badge]][coveralls]
 
-`react-cqtoolbox` 是针对于cqaso产品场景开发的一系列的pc端react组件集。
+`react-rainie-toolbox` 是针对于cqaso产品场景开发的一系列的pc端react组件集。
 包括的场景有：后台管理系统，CQASO，TOPASM操作复杂的PC网站。
 
 
@@ -14,7 +14,7 @@
 ## 安装
 
 ```
-npm install react-cqtoolbox --save
+npm install react-rainie-toolbox --save
 ```
 
 ## 开发环境
@@ -61,7 +61,7 @@ webpack配置请参考[这里](https://github.com/chuangqiTeam/react-babel-webpa
 
 ```javascript
 import React from 'react';
-import Button from 'react-cqtoolbox/lib/button';
+import Button from 'react-rainie-toolbox/lib/button';
 
 ReactDOM.render(
   <Button label="Hello World!" />,
@@ -87,7 +87,7 @@ ReactDOM.render(
 ```jsx
 import React from 'react';
 
-import Input from 'react-cqtoolbox/lib/input';
+import Input from 'react-rainie-toolbox/lib/input';
 import theme from './customInput.css';
 
 
@@ -115,9 +115,9 @@ CSS Modules 对CSS中的class名都做了处理，使用对象来保存原class�
 - [react-toolbox](http://react-toolbox.com/)
 - [antd](https://ant.design)
 
-[npm-badge]: https://img.shields.io/npm/v/react-cqtoolbox.svg?style=flat-square
-[npm]: https://www.npmjs.com/package/react-cqtoolbox
-[build-badge]: https://img.shields.io/travis/chuangqiTeam/react-cqtoolbox/master.svg?style=flat-square
-[build]: https://travis-ci.org/chuangqiTeam/react-cqtoolbox
-[coveralls-badge]: https://img.shields.io/coveralls/chuangqiTeam/react-cqtoolbox.svg?style=flat-square
-[coveralls]: https://coveralls.io/github/chuangqiTeam/react-cqtoolbox
+[npm-badge]: https://img.shields.io/npm/v/react-rainie-toolbox.svg?style=flat-square
+[npm]: https://www.npmjs.com/package/react-rainie-toolbox
+[build-badge]: https://img.shields.io/travis/chuangqiTeam/react-rainie-toolbox/master.svg?style=flat-square
+[build]: https://travis-ci.org/chuangqiTeam/react-rainie-toolbox
+[coveralls-badge]: https://img.shields.io/coveralls/chuangqiTeam/react-rainie-toolbox.svg?style=flat-square
+[coveralls]: https://coveralls.io/github/chuangqiTeam/react-rainie-toolbox

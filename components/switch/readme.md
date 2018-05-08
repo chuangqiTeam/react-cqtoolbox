@@ -6,8 +6,8 @@
 
 ```jsx
 import React, {Component} from 'react';
-import Switch from 'react-cqtoolbox/lib/switch';
-import Section from 'react-cqtoolbox/lib/section';
+import Switch from 'react-rainie-toolbox/lib/switch';
+import Section from 'react-rainie-toolbox/lib/section';
 
 
 class SwitchTest extends Component {

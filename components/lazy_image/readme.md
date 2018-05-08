@@ -4,8 +4,8 @@
 
 ```JSX
 import React, {Component} from 'react';
-import LazyImage from 'react-cqtoolbox/lib/lazy_image';
-import Section from 'react-cqtoolbox/lib/section';
+import LazyImage from 'react-rainie-toolbox/lib/lazy_image';
+import Section from 'react-rainie-toolbox/lib/section';
 
 const apps = [
   'http://a3.mzstatic.com/us/r30/Purple122/v4/94/0e/00/940e0024-08ef-b416-bb70-7745be3568ab/icon125x125.jpeg',

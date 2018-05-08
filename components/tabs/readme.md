@@ -8,8 +8,8 @@
 
 ```jsx
 import React from 'react';
-import {Tabs, Tab} from 'react-cqtoolbox/lib/tabs';
-import Section from 'react-cqtoolbox/lib/section';
+import {Tabs, Tab} from 'react-rainie-toolbox/lib/tabs';
+import Section from 'react-rainie-toolbox/lib/section';
 
 class TabsTest extends React.Component {
   state = {

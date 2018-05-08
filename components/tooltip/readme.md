@@ -5,9 +5,9 @@
 
 ```JSX
 import React, {Component} from 'react';
-import Tooltip from 'react-cqtoolbox/lib/tooltip';
-import Button from 'react-cqtoolbox/lib/button';
-import Section from 'react-cqtoolbox/lib/section';
+import Tooltip from 'react-rainie-toolbox/lib/tooltip';
+import Button from 'react-rainie-toolbox/lib/button';
+import Section from 'react-rainie-toolbox/lib/section';
 
 const TooltipButton = Tooltip(Button);
 

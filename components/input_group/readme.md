@@ -6,11 +6,11 @@
 
 ```JSX
 import React from 'react';
-import Input from 'react-cqtoolbox/lib/input';
-import Select from 'react-cqtoolbox/lib/select';
-import InputGroup from 'react-cqtoolbox/lib/input_group';
-import Section from 'react-cqtoolbox/lib/section';
-import Button from 'react-cqtoolbox/lib/button';
+import Input from 'react-rainie-toolbox/lib/input';
+import Select from 'react-rainie-toolbox/lib/select';
+import InputGroup from 'react-rainie-toolbox/lib/input_group';
+import Section from 'react-rainie-toolbox/lib/section';
+import Button from 'react-rainie-toolbox/lib/button';
 
 const countrys = [
   {value: 'RU', label: '俄罗斯'},

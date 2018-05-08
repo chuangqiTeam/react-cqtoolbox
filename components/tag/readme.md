@@ -4,8 +4,8 @@
 
 ```jsx
 import React, {Component} from 'react';
-import Tag from 'react-cqtoolbox/lib/tag';
-import Section from 'react-cqtoolbox/lib/section';
+import Tag from 'react-rainie-toolbox/lib/tag';
+import Section from 'react-rainie-toolbox/lib/section';
 
 class TagTest extends Component {
   render() {

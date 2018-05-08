@@ -1,14 +1,14 @@
 ## 警告提示(Alert)
 
-[警告提示](https://chuangqiteam.github.io/react-cqtoolbox/)当某个页面需要向用户显示警告的信息时。
+[警告提示](https://chuangqiteam.github.io/react-rainie-toolbox/)当某个页面需要向用户显示警告的信息时。
 
 ### 例子
 <!-- example -->
 ```jsx
 import React, {Component} from 'react';
-import Alert from 'react-cqtoolbox/lib/alert';
-import Button from 'react-cqtoolbox/lib/button';
-import Section from 'react-cqtoolbox/lib/section';
+import Alert from 'react-rainie-toolbox/lib/alert';
+import Button from 'react-rainie-toolbox/lib/button';
+import Section from 'react-rainie-toolbox/lib/section';
 
 class AlertTest extends Component {
   render() {

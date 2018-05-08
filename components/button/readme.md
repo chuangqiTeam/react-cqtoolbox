@@ -4,7 +4,7 @@ Button组件包含文字，图标字体，颜色主题，行为触发。
 
 ### 例子
 
-	import { Button } from 'react-cqtoolbox/lib/button';
+	import { Button } from 'react-rainie-toolbox/lib/button';
 	const ButtonTest = () => (
 	<div>
     	<Button
@@ -106,7 +106,7 @@ Button组件包含文字，图标字体，颜色主题，行为触发。
 ButtonGroup组件在Button组件元素之上对Button组件元素进行包装和组合。
 
 	<!-- example -->
-	import { ButtonGroup } from 'react-cqtoolbox/lib/button';
+	import { ButtonGroup } from 'react-rainie-toolbox/lib/button';
 	const ButtonTest = () => (
 		<div className="margin-bottom">
       		<ButtonGroup>

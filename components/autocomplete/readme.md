@@ -6,9 +6,9 @@
 
 ```jsx
 import React, {Component} from 'react';
-import AutoComplete from 'react-cqtoolbox/lib/autocomplete';
-import Input from 'react-cqtoolbox/lib/input';
-import Section from 'react-cqtoolbox/lib/section';
+import AutoComplete from 'react-rainie-toolbox/lib/autocomplete';
+import Input from 'react-rainie-toolbox/lib/input';
+import Section from 'react-rainie-toolbox/lib/section';
 
 class AutoCompleteTest extends Component {
   state = {

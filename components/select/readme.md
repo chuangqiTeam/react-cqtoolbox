@@ -4,8 +4,8 @@
 
 ```JSX
 import React, {Component} from 'react';
-import {Select} from 'react-cqtoolbox/lib/select';
-import Section from 'react-cqtoolbox/lib/section';
+import {Select} from 'react-rainie-toolbox/lib/select';
+import Section from 'react-rainie-toolbox/lib/section';
 
 const countrys = [
     {value: 'CN', label: '中国'},
@@ -60,8 +60,8 @@ Name       | Description
 ```jsx
 
 import React, {Component} from 'react';
-import {CascadeSelect} from 'react-cqtoolbox/lib/select';
-import Section from 'react-cqtoolbox/lib/section';
+import {CascadeSelect} from 'react-rainie-toolbox/lib/select';
+import Section from 'react-rainie-toolbox/lib/section';
 
 const genres = [
   {

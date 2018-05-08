@@ -7,8 +7,8 @@
 
 ```jsx
 import React, {Component} from 'react';
-import Pagination from 'react-cqtoolbox/lib/pagination';
-import Section from 'react-cqtoolbox/lib/section';
+import Pagination from 'react-rainie-toolbox/lib/pagination';
+import Section from 'react-rainie-toolbox/lib/section';
 
 class PaginationTest extends Component {
   state = {
