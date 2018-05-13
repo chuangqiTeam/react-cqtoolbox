@@ -160,12 +160,13 @@ const factory = (Head, Body, Tr, Th, Td, Loader) => {
         columns,
         scrollY,
         dataSource,
+        onMouseOut,
+        onMouseOver,
       } = this.props;
-
 
       if (scrollY) {
         return (
-          <div className={theme.scrollTable}>
+          <div className={theme.scrollTable} onMouseOut={onMouseOut} onMouseOver={onMouseOver}>
             {[
               this.renderScrollHeader(columns, dataSource),
               this.renderScrollBody(columns, dataSource),

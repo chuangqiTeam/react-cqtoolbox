@@ -79,6 +79,15 @@ const factory = (Trigger, SelectInput, Calendar) => {
     }
 
     render() {
+      const {
+        date, // eslint-disable-line
+        minDate, // eslint-disable-line
+        maxDate, // eslint-disable-line
+        onChange, // eslint-disable-line
+        theme, // eslint-disable-line
+        ...other,
+      } = this.props;
+
       const state = this.state;
       const calendar = this.getCalendar();
       const selectedItem = {label: state.date.format('YYYY年MM月D日')};
@@ -90,6 +99,7 @@ const factory = (Trigger, SelectInput, Calendar) => {
           onPopupVisibleChange={this.handleSelectToggle}
           popup={calendar}>
           <SelectInput
+            {...other}
             selectedItem={selectedItem}
             isActive={state.open}
             onClick={this.handleSelectToggle} />

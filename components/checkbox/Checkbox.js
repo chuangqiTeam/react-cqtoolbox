@@ -56,7 +56,7 @@ const factory = (Check) => {
 
     render() {
       const { checked, children, disabled, label, name, style, onChange, // eslint-disable-line
-        onMouseEnter, onMouseLeave, theme, ...others } = this.props;
+        onMouseEnter, onMouseLeave, onMouseOver, onMouseOut, theme, ...others } = this.props;
       const className = classnames(theme.field, {
         [theme.disabled]: this.props.disabled,
       }, this.props.className);
@@ -65,6 +65,8 @@ const factory = (Check) => {
         <label
           data-react-toolbox="checkbox"
           className={className}
+          onMouseOver={onMouseOver}
+          onMouseOut={onMouseOut}
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
         >
