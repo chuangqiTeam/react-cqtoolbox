@@ -126,6 +126,15 @@ const factory = (Trigger, SelectInput, Menu, MenuItem) => {
         props.data.find(item => item.value === state.value) ||
         props.data[0];
 
+      const {
+        value,
+        data,
+        returnValue,
+        maxRowNum,
+        onChange,
+        ...other,
+      } = this.props;
+
       return (
         <Trigger
           popupAlign={popupAlign}
@@ -134,7 +143,7 @@ const factory = (Trigger, SelectInput, Menu, MenuItem) => {
           popupTheme={props.theme}
           popup={menu}>
           <SelectInput
-            theme={props.theme}
+            {...other}
             selectedItem={selectedItem}
             isActive={state.open}
             onClick={this.handleSelectToggle} />

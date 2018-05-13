@@ -57,6 +57,8 @@ class Section extends Component {
       isNull,
       nullText,
       isLoading,
+      children,
+      ...other
     } = this.props;
 
     const classes = classnames(theme.section, className);
@@ -64,13 +66,13 @@ class Section extends Component {
       [theme.center]: isNull || isLoading,
     });
 
-    let children;
+    let childrenElement;
     if (isLoading) {
-        children = <Loader />;
+      childrenElement = <Loader />;
     } else if (isNull) {
-        children = <div className={theme.nullText}>{nullText}</div>;
+      childrenElement = <div className={theme.nullText}>{nullText}</div>;
     } else {
-        children = this.props.children;
+      childrenElement = children;
     }
 
     let titleElement = this.renderTitle(title, subTitle, rightTitle);
@@ -79,10 +81,11 @@ class Section extends Component {
       <div
         data-react-toolbox="section"
         style={{ height }}
-        className={classes}>
+        className={classes}
+        {...other}>
         {titleElement}
         <div className={contentClasses}>
-          {children}
+          {childrenElement}
         </div>
       </div>
     );

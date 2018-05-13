@@ -4,7 +4,7 @@
   "main": "lib",
   "scripts": {
     "start": "node ./scripts/start.js",
-    "build": "flow && rm -rf ./lib && gulp",
+    "build": "rm -rf ./lib && gulp",
     "flow": "flow server",
     "doc": "rm -rf ./docs && webpack --config ./config/webpack.pro.js",
     "test": "jest",
