@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import activableRenderer from '../decorator/activableRenderer.js';
 import Overlay from '../overlay';
 import Button from '../button';

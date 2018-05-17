@@ -1,9 +1,10 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Loader from '../loader';
 
 class Section extends Component {
-  static PropTypes = {
+  static propTypes = {
     title: PropTypes.node,
     subTitle: PropTypes.node,
     rightTitle: PropTypes.node,
@@ -16,7 +17,7 @@ class Section extends Component {
     isNull: PropTypes.bool,
     nullText: PropTypes.node,
     className: PropTypes.string,
-    theme: PropTypes.string,
+    theme: PropTypes.object,
   }
 
   static defaultProps = {

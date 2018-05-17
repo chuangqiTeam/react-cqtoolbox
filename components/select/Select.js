@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Trigger from '../trigger';
 import {Menu, MenuItem} from '../menu';
 import SelectInput from '../select_input';
@@ -127,11 +128,11 @@ const factory = (Trigger, SelectInput, Menu, MenuItem) => {
         props.data[0];
 
       const {
-        value,
-        data,
-        returnValue,
-        maxRowNum,
-        onChange,
+        value, // eslint-disable-line
+        data, // eslint-disable-line
+        returnValue, // eslint-disable-line
+        maxRowNum, // eslint-disable-line
+        onChange, // eslint-disable-line
         ...other,
       } = this.props;
 

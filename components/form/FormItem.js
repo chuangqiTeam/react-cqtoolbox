@@ -1,14 +1,15 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 const factory = (Input) => {
 
-  const isInput = child => child.type === Input;
+  // const isInput = child => child.type === Input;
 
   class FormItem extends Component {
     static propTypes = {
-      label: PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.node]),
-      error: PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.node]),
+      label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+      error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
       children: PropTypes.node,
       className: PropTypes.string,
       theme: PropTypes.shape({
@@ -33,7 +34,8 @@ const factory = (Input) => {
 
       const classes = classnames(theme.formItem, {
         [theme.errored]: !!error,
-        [theme.withInput]: isInput(child),
+        // [theme.withInput]: isInput(child),
+        [theme.withInput]: true,
       }, className);
 
       return (

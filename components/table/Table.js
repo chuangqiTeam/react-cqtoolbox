@@ -1,4 +1,5 @@
-import React, {PropTypes, Component} from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import pureRender from '../decorator/pureRender';
 import classnames from 'classnames';
 
@@ -56,7 +57,7 @@ const factory = (Head, Body, Tr, Th, Td, Loader) => {
 
     renderColGroup = (columns) => {
       return (
-        <colGroup key="colgroup">
+        <colgroup key="colgroup">
           {columns.map(item => {
             const props = {
               key: item.key,
@@ -68,7 +69,7 @@ const factory = (Head, Body, Tr, Th, Td, Loader) => {
 
             return <col {...props} />;
           })}
-        </colGroup>
+        </colgroup>
       );
     }
 
@@ -162,11 +163,12 @@ const factory = (Head, Body, Tr, Th, Td, Loader) => {
         dataSource,
         onMouseOut,
         onMouseOver,
+        onMouseDown,
       } = this.props;
 
       if (scrollY) {
         return (
-          <div className={theme.scrollTable} onMouseOut={onMouseOut} onMouseOver={onMouseOver}>
+          <div className={theme.scrollTable} onMouseOut={onMouseOut} onMouseOver={onMouseOver} onMouseDown={onMouseDown}>
             {[
               this.renderScrollHeader(columns, dataSource),
               this.renderScrollBody(columns, dataSource),
@@ -176,7 +178,7 @@ const factory = (Head, Body, Tr, Th, Td, Loader) => {
       }
 
       return (
-        <table className={this.getTableClasses()}>
+        <table className={this.getTableClasses()} onMouseOut={onMouseOut} onMouseOver={onMouseOver} onMouseDown={onMouseDown}>
           {[
             this.renderColGroup(columns),
             this.renderHead(columns),

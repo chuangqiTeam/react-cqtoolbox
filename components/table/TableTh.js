@@ -1,5 +1,5 @@
-import React, {PropTypes, Component} from 'react';
-
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 class TableTh extends Component {
 
   static propTypes = {

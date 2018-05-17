@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import {CaretDownIcon} from '../font_icon';
 import classnames from 'classnames';
 

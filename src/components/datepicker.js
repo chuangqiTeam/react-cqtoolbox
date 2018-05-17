@@ -1,11 +1,10 @@
 import React from 'react';
 import {DateSelect, DateRangeSelect} from '../../components/date_select';
 import Section from '../../components/section';
-import moment from 'moment';
 
 class DatepickerTest extends React.Component {
   state = {
-    value: moment().add(-30, 'days'),
+    value: new Date(),
   }
 
   handleSelect = (value) => {

@@ -1,4 +1,5 @@
-import React, {cloneElement, PropTypes, Component} from 'react';
+import React, {cloneElement, Component} from 'react';
+import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
 import Popup from '../popup';
 import pureRender from '../decorator/pureRender.js';

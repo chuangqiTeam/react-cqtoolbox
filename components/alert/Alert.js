@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Animate from 'rc-animate';
 import animationFactory from '../utils/animationHeightFactory.js';
 import classnames from 'classnames';

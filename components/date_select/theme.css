@@ -1,8 +1,4 @@
-@import '../colors.css';
-@import '../variables.css';
-
-:export {
-    DaySelected_background: var(--color-primary);
-    DayInRange_background: var(--palette-cyan-200);
-    DayInRange_color: var(--color-white);
+.DangePicker {
+    display: inline-flex;
+    user-select: none;
 }

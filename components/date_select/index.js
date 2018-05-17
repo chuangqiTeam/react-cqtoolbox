@@ -1,6 +1,9 @@
 import {dateSelectFactory} from './DateSelect';
 import {dateRangeSelectFactory} from './DateRangeSelect';
-import { Calendar, DateRange } from 'react-date-range';
+import { Calendar } from 'react-date-range';
+import DateRange from './DateRange';
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
 
 import Trigger from '../trigger';
 import SelectInput from '../select_input';

@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 const factory = (FontIcon) => {
@@ -53,6 +54,7 @@ const factory = (FontIcon) => {
         size,
         onPrefixClick,
         onSuffixClick,
+        style,
         ...other,
       } = this.props;
 
@@ -87,10 +89,12 @@ const factory = (FontIcon) => {
 
       return (
         <div
+          style={style}
           className={classes}>
           {prefixIcon}
           <input
             data-react-toolbox="Input"
+            autoComplete="new-password"
             {...other}
             type={type}
             className={theme.inputElement}

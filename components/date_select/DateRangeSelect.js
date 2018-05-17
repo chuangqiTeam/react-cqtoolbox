@@ -1,8 +1,8 @@
-import React, { Component, PropTypes } from 'react';
-import theme from './theme.css';
-import moment from 'moment';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import allRanges from './ranges.js';
-import pick from 'ramda/src/pick';
+import format from 'date-fns/format';
+import locale from 'react-date-range/dist/locale/zh-CN.js';
 
 const popupAlign = {
   points: ['tl', 'bl'],
@@ -20,16 +20,12 @@ const factory = (Trigger, SelectInput, DateRange) => {
       onChange: PropTypes.func,
       ranges: PropTypes.arrayOf(
         PropTypes.oneOf(['今日', '昨日', '近7日', '近30日', '近三个月', '近一年'])
-      ),
-      theme: PropTypes.shape({
-        DaySelected: PropTypes.object,
-        DayInRange: PropTypes.object,
-      })
+      )
     }
 
     static defaultProps = {
-      minDate: moment('2016-03-01'),
-      maxDate: moment(),
+      minDate: new Date(2016, 3, 1),
+      maxDate: new Date(),
       ranges: ['今日', '昨日', '近7日', '近30日', '近三个月', '近一年'],
       onChange: () => void 0,
     }
@@ -38,20 +34,13 @@ const factory = (Trigger, SelectInput, DateRange) => {
       super(props);
 
       this.state = {
-        ranges: pick(props.ranges, allRanges),
-        startDate: 'startDate' in props ? props.startDate : moment(),
-        endDate: 'endDate' in props ? props.endDate : moment(),
+        ranges: props.ranges.reduce((ranges, key) => {
+          ranges.push(allRanges[key]);
+          return ranges;
+        }, []),
+        startDate: 'startDate' in props ? props.startDate : new Date(),
+        endDate: 'endDate' in props ? props.endDate : new Date(),
         open: false,
-      };
-
-      this.defaultTheme = {
-        DaySelected: {
-          background: theme.DaySelected_background,
-        },
-        DayInRange: {
-            background: theme.DayInRange_background,
-            color: theme.DayInRange_color,
-        },
       };
     }
 
@@ -65,7 +54,10 @@ const factory = (Trigger, SelectInput, DateRange) => {
       }
 
       if (nextProps.ranges !== this.props.ranges) {
-        this.setState({ ranges: pick(nextProps.ranges, allRanges) })
+        this.setState({ ranges: nextProps.ranges.reduce((ranges, key) => {
+          ranges.push(allRanges[key]);
+          return ranges;
+        }, []), })
       }
     }
 
@@ -73,7 +65,7 @@ const factory = (Trigger, SelectInput, DateRange) => {
       this.setState({ open: !this.state.open });
     }
 
-    handleRangeSelect = ({ startDate, endDate }) => {
+    handleRangeSelect = ({section1: {startDate, endDate}}) => {
       const props = this.props;
 
       if (!('startDate' in props)) {
@@ -84,13 +76,15 @@ const factory = (Trigger, SelectInput, DateRange) => {
         this.setState({ endDate });
       }
 
-      this.handleSelectToggle();
       props.onChange(startDate, endDate);
+    }
+
+    handleTwoStepChange = () => {
+      this.handleSelectToggle();
     }
 
     getDateRange = () => {
       const {
-        theme,
         minDate,
         maxDate,
       } = this.props;
@@ -101,18 +95,24 @@ const factory = (Trigger, SelectInput, DateRange) => {
         endDate,
       } = this.state;
 
+      const range = [{
+        startDate,
+        endDate,
+        key: 'section1',
+      }];
+
       return (
         <DateRange
-          lang="cn"
-          startDate={startDate}
-          endDate={endDate}
+          locale={locale}
+          ranges={range}
+          inputRanges={[]}
+          rangeColors={['rgb(0, 188, 212)']}
+          direction="horizontal"
           minDate={minDate}
           maxDate={maxDate}
-          twoStepChange={true}
           onChange={this.handleRangeSelect}
-          linkedCalendars={true}
-          theme={theme || this.defaultTheme}
-          ranges={ranges} />
+          onTwoStepChange={this.handleTwoStepChange}
+          staticRanges={ranges} />
       );
     }
 
@@ -124,7 +124,7 @@ const factory = (Trigger, SelectInput, DateRange) => {
       } = this.state;
 
       const dateRange = this.getDateRange();
-      const selectedItem = {label: startDate.format('YYYY年MM月D日') + '~' + endDate.format('YYYY年MM月D日')};
+      const selectedItem = {label: format(startDate, 'YYYY年MM月D日') + '~' + format(endDate, 'YYYY年MM月D日')};
 
       return (
         <Trigger

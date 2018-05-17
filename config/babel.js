@@ -22,7 +22,13 @@ module.exports = {
     "presets": [["cq", {target: 'web', modules: 'commonjs', env: 'production'}]],
     "plugins": [
       "dev-expression",
-      "transform-decorators-legacy"
+      "transform-decorators-legacy",
+      [
+        "transform-react-remove-prop-types",
+        {
+          "removeImport": true
+        }
+      ]
     ]
   }
 };

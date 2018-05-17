@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import splitEvery from 'ramda/src/splitEvery';
 import addIndex from 'ramda/src/addIndex';
 import map from 'ramda/src/map';

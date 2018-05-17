@@ -1,6 +1,8 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import theme from './theme.css';
-import moment from 'moment';
+import format from 'date-fns/format';
+import locale from 'react-date-range/dist/locale/zh-CN.js';
 
 const popupAlign = {
   points: ['tl', 'bl'],
@@ -21,8 +23,8 @@ const factory = (Trigger, SelectInput, Calendar) => {
     }
 
     static defaultProps = {
-      minDate: moment('2016-03-01'),
-      maxDate: moment(),
+      minDate: new Date(2016, 3, 1),
+      maxDate: new Date(),
       onChange: () => void 0,
     }
 
@@ -30,7 +32,7 @@ const factory = (Trigger, SelectInput, Calendar) => {
       super(props);
 
       this.state = {
-        date: 'date' in props ? props.date : moment(),
+        date: 'date' in props ? props.date : new Date(),
         open: false,
       }
 
@@ -69,10 +71,11 @@ const factory = (Trigger, SelectInput, Calendar) => {
 
       return (
         <Calendar
-          lang="cn"
+          locale={locale}
           date={this.state.date}
           minDate={minDate}
           maxDate={maxDate}
+          color="rgb(0, 188, 212)"
           onChange={this.handleDateSelect}
           theme={this.props.theme || this.defaultTheme} />
       );
@@ -90,7 +93,7 @@ const factory = (Trigger, SelectInput, Calendar) => {
 
       const state = this.state;
       const calendar = this.getCalendar();
-      const selectedItem = {label: state.date.format('YYYY年MM月D日')};
+      const selectedItem = {label: format(state.date, 'YYYY年MM月D日')};
 
       return (
         <Trigger
